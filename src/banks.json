@@ -1,0 +1,23 @@
+{
+  "shi": [
+    { "type": "cloze", "prompt": "我___学生。", "pinyin": "wǒ ___ xuéshēng", "hint": "links two equal things", "answer": "是", "accept": ["是"] },
+    { "type": "translate_e2c", "prompt": "She is a teacher.", "pinyin": "", "hint": "是 for a role", "answer": "她是老师。", "accept": ["她是老师"] },
+    { "type": "translate_c2e", "prompt": "他是中国人。", "pinyin": "tā shì zhōngguó rén", "hint": "", "answer": "He is Chinese.", "accept": ["he's chinese", "he is chinese"] },
+    { "type": "error_correction", "prompt": "我是很高。", "pinyin": "wǒ shì hěn gāo", "hint": "是 before an adjective?", "answer": "我很高。", "accept": ["我很高"] },
+    { "type": "production", "prompt": "Say your nationality using 是.", "pinyin": "", "hint": "我是 … 人", "answer": "我是塞浦路斯人。", "accept": [] }
+  ],
+  "de": [
+    { "type": "cloze", "prompt": "这是我___手机。", "pinyin": "zhè shì wǒ ___ shǒujī", "hint": "possession marker", "answer": "的", "accept": ["的"] },
+    { "type": "translate_e2c", "prompt": "This is my book.", "pinyin": "", "hint": "我的 …", "answer": "这是我的书。", "accept": ["这是我的书"] },
+    { "type": "translate_c2e", "prompt": "那是爸爸的车。", "pinyin": "nà shì bàba de chē", "hint": "", "answer": "That is dad's car.", "accept": ["that's dad's car", "that is dad's car", "that is my dad's car"] },
+    { "type": "error_correction", "prompt": "这是我手机的。", "pinyin": "zhè shì wǒ shǒujī de", "hint": "where does 的 go?", "answer": "这是我的手机。", "accept": ["这是我的手机"] },
+    { "type": "production", "prompt": "Say 'this is my phone' using 的.", "pinyin": "", "hint": "这是我的 …", "answer": "这是我的手机。", "accept": [] }
+  ],
+  "adj": [
+    { "type": "cloze", "prompt": "今天___热。", "pinyin": "jīntiān ___ rè", "hint": "neutral link before an adjective", "answer": "很", "accept": ["很"] },
+    { "type": "translate_e2c", "prompt": "She is very pretty.", "pinyin": "", "hint": "她很 …", "answer": "她很漂亮。", "accept": ["她很漂亮"] },
+    { "type": "translate_c2e", "prompt": "今天很冷。", "pinyin": "jīntiān hěn lěng", "hint": "", "answer": "It's cold today.", "accept": ["it's cold today", "it is cold today", "today is cold"] },
+    { "type": "error_correction", "prompt": "今天是热。", "pinyin": "jīntiān shì rè", "hint": "adjectives don't take 是", "answer": "今天很热。", "accept": ["今天很热"] },
+    { "type": "production", "prompt": "Describe today's weather with 很.", "pinyin": "", "hint": "今天很 …", "answer": "今天很热。", "accept": [] }
+  ]
+}
