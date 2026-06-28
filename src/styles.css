@@ -21,7 +21,8 @@ body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--pa
 .progtxt{font-size:12px;color:var(--soft);white-space:nowrap}
 .qsec{margin-top:26px}
 .qhead{font-family:Spectral,serif;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--soft);margin:0 0 12px}
-.trow{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:11px;padding:13px 16px;margin-bottom:9px}
+.trow{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:11px;padding:13px 16px;margin-bottom:9px;transition:transform .16s ease,box-shadow .16s ease}
+.trow:hover{transform:translateY(-2px);box-shadow:0 4px 14px rgba(35,42,38,.07)}
 .tname{font-family:'Noto Sans SC',Inter,sans-serif;font-size:15px;font-weight:500;flex:1}
 .tcat{font-size:11.5px;color:var(--soft);display:none}
 @media(min-width:560px){.tcat{display:inline}}
@@ -38,7 +39,8 @@ body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--pa
 .mini{width:54px;height:6px;background:#E6E8E1;border-radius:99px;overflow:hidden}
 .mini span{display:block;height:100%;background:var(--jade);border-radius:99px}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;padding:18px 0 6px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;transition:transform .16s ease,box-shadow .16s ease}
+.card:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(35,42,38,.08)}
 .cardhead{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
 .rule{font-size:13px;color:var(--soft);line-height:1.55;margin:12px 0 14px;flex:1}
 .frame{display:flex;flex-wrap:wrap;gap:10px 8px;align-items:flex-end;padding:6px 0 2px}
@@ -62,7 +64,10 @@ body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--pa
 .note{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px;color:var(--soft);font-size:14px;line-height:1.5}
 .note code{background:#ECEEE8;padding:1px 6px;border-radius:5px;font-size:13px}
 .ex{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;margin-top:8px}
-.exhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.exhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:11px}
+.exprog{height:6px;background:#E6E8E1;border-radius:99px;overflow:hidden;margin:0 0 18px}
+.exprog>span{display:block;height:100%;width:0;background:var(--jade);border-radius:99px;transition:width .45s cubic-bezier(.4,0,.2,1)}
+.exprog.done>span{background:linear-gradient(90deg,var(--jade),var(--gold),var(--jade));background-size:220% 100%;animation:shimmer 1.3s ease}
 .extype{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--jade)}
 .prog{font-size:12px;color:var(--soft)}
 .prompt{font-family:'Noto Sans SC',Spectral,serif;font-size:22px;line-height:1.5;margin:0 0 6px}
@@ -93,3 +98,20 @@ body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--pa
 /* online/offline */
 .offbar{background:var(--gold);color:#fff;text-align:center;font-size:12.5px;padding:7px 14px;font-weight:500}
 .verdict .src{font-family:Inter,sans-serif;font-weight:400;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--soft);margin-left:10px;vertical-align:middle}
+
+/* motion & delight */
+@keyframes rise{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:none}}
+.rise{animation:rise .34s ease both}
+@keyframes shimmer{from{background-position:120% 0}to{background-position:-120% 0}}
+@keyframes dotpop{0%{transform:scale(1)}45%{transform:scale(1.7)}100%{transform:scale(1)}}
+.dot.pulse{animation:dotpop .7s ease;box-shadow:0 0 0 4px rgba(44,110,89,.16)}
+@keyframes barbump{0%{box-shadow:0 0 0 0 rgba(169,128,58,0)}40%{box-shadow:0 0 0 3px rgba(169,128,58,.28)}100%{box-shadow:0 0 0 0 rgba(169,128,58,0)}}
+.progbar.bump{animation:barbump 1s ease}
+.progbar.full{animation:barbump 1s ease}
+.progbar.full span{background:linear-gradient(90deg,var(--jade),var(--gold),var(--jade));background-size:220% 100%;animation:shimmer 1.4s ease}
+
+@media(prefers-reduced-motion:reduce){
+  .rise{animation:none}
+  .trow:hover,.card:hover{transform:none}
+  .dot.pulse,.progbar.bump,.progbar.full,.progbar.full span,.exprog.done>span{animation:none}
+}

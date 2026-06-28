@@ -61,11 +61,11 @@ function Frame({ pattern }) {
     </div>
   );
 }
-function Dot({ state }) { return <span className={"dot " + state} title={STATE_LABEL[state]} />; }
-function Row({ s, onGo }) {
+function Dot({ state, pulse }) { return <span className={"dot " + state + (pulse ? " pulse" : "")} title={STATE_LABEL[state]} />; }
+function Row({ s, onGo, i = 0, pulse }) {
   return (
-    <div className="trow">
-      <Dot state={s.state} />
+    <div className="trow rise" style={{ animationDelay: i * 45 + "ms" }}>
+      <Dot state={s.state} pulse={pulse} />
       <span className="tname">{s.name}</span>
       <span className="tcat">{CAT_LABEL[s.cat]}</span>
       <button className="btn small" onClick={onGo}>Practice</button>
@@ -93,6 +93,13 @@ export default function App() {
   const [result, setResult] = useState(null);
   const [score, setScore] = useState(0);
   const [empty, setEmpty] = useState(false);
+  const [justKnown, setJustKnown] = useState(null);
+
+  useEffect(() => {
+    if (!justKnown) return;
+    const t = setTimeout(() => setJustKnown(null), 2200);
+    return () => clearTimeout(t);
+  }, [justKnown]);
 
   useEffect(() => {
     const map = {};
@@ -149,6 +156,7 @@ export default function App() {
       let ns = s.state;
       if (ratio >= 0.6) ns = s.state === "new" ? "learning" : "known";
       else if (s.state === "new") ns = "learning";
+      if (ns === "known" && s.state !== "known") setJustKnown(s.id);
       return { ...s, state: ns, lastScore: ratio };
     }));
   }
@@ -161,6 +169,8 @@ export default function App() {
   const done = exercises.length > 0 && idx >= exercises.length;
   const total = structures.length;
   const pct = Math.round((counts.known / total) * 100);
+  const sessDone = idx + (result ? 1 : 0);
+  const sessPct = exercises.length ? Math.round((sessDone / exercises.length) * 100) : 0;
   const prodOfflineReveal = ex && isProduction(ex) && !online;
 
   return (
@@ -183,9 +193,9 @@ export default function App() {
       {view === "home" && tab === "today" && (
         <main className="wrap">
           <div className="lead"><h1>Today</h1><p>A short queue, not the whole list. {counts.learning + counts.known} of {total} patterns underway.</p></div>
-          <div className="progwrap"><div className="progbar"><span style={{ width: pct + "%" }} /></div><span className="progtxt">{counts.known} known · {counts.learning} learning · {counts.new} new</span></div>
-          {learningQueue.length > 0 && <section className="qsec"><h2 className="qhead">Keep going</h2>{learningQueue.map((s) => <Row key={s.id} s={s} onGo={() => startPractice(s)} />)}</section>}
-          {newQueue.length > 0 && <section className="qsec"><h2 className="qhead">Start something new</h2>{newQueue.map((s) => <Row key={s.id} s={s} onGo={() => startPractice(s)} />)}</section>}
+          <div className="progwrap"><div className={"progbar" + (justKnown ? " bump" : "") + (pct === 100 ? " full" : "")}><span style={{ width: pct + "%" }} /></div><span className="progtxt">{counts.known} known · {counts.learning} learning · {counts.new} new</span></div>
+          {learningQueue.length > 0 && <section className="qsec"><h2 className="qhead">Keep going</h2>{learningQueue.map((s, i) => <Row key={s.id} s={s} i={i} pulse={s.id === justKnown} onGo={() => startPractice(s)} />)}</section>}
+          {newQueue.length > 0 && <section className="qsec"><h2 className="qhead">Start something new</h2>{newQueue.map((s, i) => <Row key={s.id} s={s} i={learningQueue.length + i} pulse={s.id === justKnown} onGo={() => startPractice(s)} />)}</section>}
           {learningQueue.length === 0 && newQueue.length === 0 && <div className="note">Everything's marked known — open the Library to review anything you like.</div>}
         </main>
       )}
@@ -205,9 +215,9 @@ export default function App() {
                 </button>
                 {open && (
                   <div className="grid">
-                    {arr.map((s) => (
-                      <article key={s.id} className="card">
-                        <div className="cardhead"><span className="kicker">{s.name}</span><Dot state={s.state} /></div>
+                    {arr.map((s, i) => (
+                      <article key={s.id} className="card rise" style={{ animationDelay: i * 35 + "ms" }}>
+                        <div className="cardhead"><span className="kicker">{s.name}</span><Dot state={s.state} pulse={s.id === justKnown} /></div>
                         <Frame pattern={s.pattern} />
                         {s.rule && <p className="rule">{s.rule}</p>}
                         {s.zh && <div className="exline"><Zh s={s.zh} cls="exzh" />{s.en && <span className="exen">{s.en}</span>}</div>}
@@ -231,7 +241,8 @@ export default function App() {
 
           {!empty && ex && (
             <section className="ex">
-              <div className="exhead"><span className="extype">{TYPE_LABEL[ex.type] || ex.type}</span><span className="prog">{idx + 1} / {exercises.length}</span></div>
+              <div className="exhead"><span className="extype">{TYPE_LABEL[ex.type] || ex.type}</span><span className="prog">{sessDone} of {exercises.length} done</span></div>
+              <div className={"exprog" + (sessPct === 100 ? " done" : "")}><span style={{ width: sessPct + "%" }} /></div>
               <p className="prompt">{ex.prompt}</p>
               {ex.pinyin && (showPy ? <p className="pyline">{ex.pinyin}</p> : <button className="pylink" onClick={() => setShowPy(true)}>show pinyin</button>)}
               {ex.hint && <p className="hint">hint · {ex.hint}</p>}
