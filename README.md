@@ -46,6 +46,11 @@ npm run gen        # writes src/banks.json for every structure
 1. Add an entry to `src/structures.js` (hanzi tokens are `char|pinyin`).
 2. Run `npm run gen`.
 
+No Claude Code / no Node? See **[ADDING-STRUCTURES.md](ADDING-STRUCTURES.md)** — a
+self-contained playbook with a copy-paste prompt for any chatbot (claude.ai free
+tier, etc.) that drafts both the structure and its exercises so you can paste them
+in by hand.
+
 ## Deploy free (Vercel — recommended, runs the AI grader)
 
 The grading function needs a server, which GitHub Pages can't provide — so deploy
