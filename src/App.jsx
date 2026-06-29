@@ -371,14 +371,16 @@ export default function App() {
 
   async function callChat(history) {
     const r = await fetch("/api/chat", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ messages: history }) });
-    if (!r.ok) throw new Error("chat " + r.status);
-    return r.json();
+    let data = null;
+    try { data = await r.json(); } catch {}
+    if (!r.ok || !data) throw new Error(data?.error ? `Tutor error (${r.status}): ${data.error}` : CHAT_ERR);
+    return data;
   }
   async function startChat() {
     if (chatBusy) return;
     setChatBusy(true); setChatErr("");
     try { const reply = await callChat([]); if (reply?.hanzi) { setChat([{ role: "ai", ...reply, text: reply.hanzi }]); speak(reply.hanzi); } else setChatErr(CHAT_ERR); }
-    catch { setChatErr(CHAT_ERR); }
+    catch (e) { setChatErr(String(e?.message || e)); }
     setChatBusy(false);
   }
   async function sendChat() {
@@ -388,7 +390,7 @@ export default function App() {
     const convo = [...chat, { role: "me", text }];
     setChat(convo); setChatInput(""); setChatBusy(true); setChatErr(""); markToday();
     try { const reply = await callChat(convo.map((m) => ({ role: m.role, text: m.text }))); if (reply?.hanzi) { setChat([...convo, { role: "ai", ...reply, text: reply.hanzi }]); speak(reply.hanzi); } else setChatErr(CHAT_ERR); }
-    catch { setChatErr(CHAT_ERR); }
+    catch (e) { setChatErr(String(e?.message || e)); }
     setChatBusy(false);
   }
   function restartChat() { setChatInput(""); setChat([]); startChat(); }

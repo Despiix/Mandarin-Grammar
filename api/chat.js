@@ -41,7 +41,7 @@ export default async function handler(req, res) {
     let parsed;
     try { parsed = JSON.parse(clean); }
     catch { const m = clean.match(/\{[\s\S]*\}/); parsed = m ? JSON.parse(m[0]) : null; }
-    if (!parsed || !parsed.hanzi) return res.status(502).json({ error: "unparseable" });
+    if (!parsed || !parsed.hanzi) return res.status(502).json({ error: "unparseable model output: " + String(text).slice(0, 160) });
     return res.status(200).json(parsed);
   } catch (e) {
     return res.status(502).json({ error: String(e).slice(0, 120) });
