@@ -1,6 +1,10 @@
-// Builds src/banks.json from src/structures.js using YOUR Anthropic key.
-// Run locally (never deployed):  ANTHROPIC_API_KEY=sk-ant-... npm run gen
-// The deployed site makes no API calls — it just reads the bank this produces.
+// Builds src/banks.json from src/structures.js using Google Gemini's free tier.
+// Run locally (never deployed):  GEMINI_API_KEY=... npm run gen
+// Get a free key (no billing) at https://aistudio.google.com/apikey
+// The deployed site makes no API calls for exercises — it just reads the bank this produces.
+//
+// Optional env: GEMINI_MODEL (default gemini-2.0-flash), PER (exercises per structure, default 8),
+// DELAY_MS (pause between calls to stay under the free-tier rate limit, default 4500).
 
 import { writeFileSync, readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
@@ -9,12 +13,17 @@ import { STRUCTURES } from "../src/structures.js";
 
 const __dir = dirname(fileURLToPath(import.meta.url));
 const OUT = join(__dir, "..", "src", "banks.json");
-const KEY = process.env.ANTHROPIC_API_KEY;
-const MODEL = process.env.MODEL || "claude-sonnet-4-6";
+const KEY = process.env.GEMINI_API_KEY;
+const MODEL = process.env.GEMINI_MODEL || "gemini-2.0-flash";
 const PER = Number(process.env.PER || 8);
+const DELAY_MS = Number(process.env.DELAY_MS || 4500);
 
-if (!KEY) { console.error("Set ANTHROPIC_API_KEY in your environment first."); process.exit(1); }
+if (!KEY) {
+  console.error("Set GEMINI_API_KEY in your environment first. Free key: https://aistudio.google.com/apikey");
+  process.exit(1);
+}
 
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const strip = (s) => s.replace(/\|[^\s]+/g, "");
 
 function prompt(s) {
@@ -46,19 +55,25 @@ function parse(text) {
 }
 
 async function gen(s) {
-  const res = await fetch("https://api.anthropic.com/v1/messages", {
+  const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent`, {
     method: "POST",
-    headers: { "content-type": "application/json", "x-api-key": KEY, "anthropic-version": "2023-06-01" },
-    body: JSON.stringify({ model: MODEL, max_tokens: 1500, messages: [{ role: "user", content: prompt(s) }] }),
+    headers: { "content-type": "application/json", "x-goog-api-key": KEY },
+    body: JSON.stringify({
+      contents: [{ parts: [{ text: prompt(s) }] }],
+      generationConfig: { temperature: 0.7, maxOutputTokens: 4096, responseMimeType: "application/json" },
+    }),
   });
   if (!res.ok) throw new Error(`${res.status} ${await res.text()}`);
   const data = await res.json();
-  const text = (data.content || []).filter((b) => b.type === "text").map((b) => b.text).join("\n");
+  const text = (data.candidates?.[0]?.content?.parts || []).map((p) => p.text || "").join("\n");
   return parse(text);
 }
 
 const bank = JSON.parse(readFileSync(OUT, "utf8"));
+let first = true;
 for (const s of STRUCTURES) {
+  if (!first) await sleep(DELAY_MS);
+  first = false;
   try {
     process.stdout.write(`· ${s.id} … `);
     bank[s.id] = await gen(s);

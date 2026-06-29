@@ -33,10 +33,11 @@ get the offline fallback unless you run `vercel dev`.
 
 ## Fill the full exercise bank
 
-Runs on your machine, never on the deployed site. Costs a few cents.
+Runs on your machine, never on the deployed site. Uses Google Gemini's free
+tier — get a key (no billing required) at https://aistudio.google.com/apikey.
 
 ```bash
-export ANTHROPIC_API_KEY=sk-ant-...
+export GEMINI_API_KEY=...
 npm run gen        # writes src/banks.json for every structure
 ```
 
@@ -59,22 +60,21 @@ on Vercel's free tier. Your code still lives on GitHub.
 2. On [vercel.com](https://vercel.com): **Add New → Project → import your repo**.
    Vercel auto-detects Vite; just deploy.
 3. In the project's **Settings → Environment Variables**, add
-   `ANTHROPIC_API_KEY` = your key, then redeploy.
+   `GEMINI_API_KEY` = your free key (https://aistudio.google.com/apikey), then redeploy.
 4. Live at `https://<project>.vercel.app`. The `/api/grade` function is picked up
    automatically from the `api/` folder.
 
 On your phone: open the URL → **Add to Home Screen**. It installs and runs
 offline; AI grading kicks in whenever you have a connection.
 
-> Prefer GitHub Pages? You can still deploy the static app there using the
-> included `.github/workflows/deploy.yml`, but the AI grader won't run — it'll
-> behave as if permanently offline (local grading only). Cloudflare Pages is
-> another free option that *does* support functions, with a slightly different
-> function signature.
+> Prefer GitHub Pages? It can host the static app but not the `/api/grade`
+> function, so the app would behave as if permanently offline (local grading
+> only). Cloudflare Pages is another free option that *does* support functions,
+> with a slightly different function signature.
 
 ## Cost summary
 
 - Hosting (Vercel Hobby): free.
 - Offline use: free — no API calls.
-- Online grading: a few cents' worth of API usage per session, billed to your key.
-- `npm run gen`: a few cents, only when you rebuild the bank.
+- Online grading: free — Google Gemini free tier (no billing on the key).
+- `npm run gen`: free — same Gemini free tier, only when you rebuild the bank.
