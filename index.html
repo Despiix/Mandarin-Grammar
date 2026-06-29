@@ -6,6 +6,15 @@
     <meta name="theme-color" content="#2C6E59" />
     <link rel="icon" type="image/svg+xml" href="./icon.svg" />
     <title>Frame</title>
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("frame.theme.v1");
+          if (!t) t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

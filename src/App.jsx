@@ -62,6 +62,17 @@ function Frame({ pattern }) {
   );
 }
 function Dot({ state, pulse }) { return <span className={"dot " + state + (pulse ? " pulse" : "")} title={STATE_LABEL[state]} />; }
+function ThemeIcon({ dark }) {
+  return dark ? (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <circle cx="12" cy="12" r="4" /><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" />
+    </svg>
+  ) : (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" />
+    </svg>
+  );
+}
 function Row({ s, onGo, i = 0, pulse }) {
   return (
     <div className="trow rise" style={{ animationDelay: i * 45 + "ms" }}>
@@ -75,6 +86,14 @@ function Row({ s, onGo, i = 0, pulse }) {
 
 export default function App() {
   const online = useOnline();
+  const [theme, setTheme] = useState(() => {
+    try { const t = localStorage.getItem("frame.theme.v1"); if (t) return t; } catch {}
+    return typeof matchMedia !== "undefined" && matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  });
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    try { localStorage.setItem("frame.theme.v1", theme); } catch {}
+  }, [theme]);
   const [structures, setStructures] = useState(() => {
     const saved = loadStates();
     return STRUCTURES.map((s) => ({ ...s, state: saved[s.id]?.state || "new", lastScore: saved[s.id]?.lastScore ?? null }));
@@ -182,12 +201,22 @@ export default function App() {
           <span className="seal">字</span>
           <div><div className="title">Frame</div><div className="sub">grammar patterns, drilled</div></div>
         </div>
-        {view !== "practice" && (
-          <nav className="tabs">
-            <button className={tab === "today" ? "tab on" : "tab"} onClick={() => setTab("today")}>Today</button>
-            <button className={tab === "library" ? "tab on" : "tab"} onClick={() => setTab("library")}>Library</button>
-          </nav>
-        )}
+        <div className="barright">
+          {view !== "practice" && (
+            <nav className="tabs">
+              <button className={tab === "today" ? "tab on" : "tab"} onClick={() => setTab("today")}>Today</button>
+              <button className={tab === "library" ? "tab on" : "tab"} onClick={() => setTab("library")}>Library</button>
+            </nav>
+          )}
+          <button
+            className="themetog"
+            onClick={() => setTheme((t) => (t === "dark" ? "light" : "dark"))}
+            title={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+            aria-label="Toggle dark mode"
+          >
+            <ThemeIcon dark={theme === "dark"} />
+          </button>
+        </div>
       </header>
 
       {view === "home" && tab === "today" && (
