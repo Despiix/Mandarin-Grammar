@@ -116,7 +116,7 @@ function Speaker({ text, label = "Listen" }) {
 }
 
 const SpeechRec = typeof window !== "undefined" && (window.SpeechRecognition || window.webkitSpeechRecognition);
-const CHAT_ERR = "Couldn't reach the tutor. Chat needs the /api/chat function — it runs on the deployed site (or locally via `vercel dev`), not under plain `npm run dev`. Also check GEMINI_API_KEY is set.";
+const CHAT_ERR = "Couldn't reach the tutor. Chat needs the /api/chat function — it runs on the deployed site (or locally via `vercel dev`), not under plain `npm run dev`. Also check GROQ_API_KEY is set.";
 function MicIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">

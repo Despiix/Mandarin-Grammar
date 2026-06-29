@@ -16,9 +16,9 @@ copy-paste prompt below. Pick the path that matches what you have available.
    (use the chatbot prompt below for just **step 1**, or hand-write it).
 2. Build the exercises automatically:
    ```powershell
-   $env:GEMINI_API_KEY="your-free-key"; npm run gen
+   $env:GROQ_API_KEY="your-free-key"; npm run gen
    ```
-   (Free key: https://aistudio.google.com/apikey)
+   (Free key, no card: https://console.groq.com)
 3. Commit `src/structures.js` **and** `src/banks.json`, then push. Vercel redeploys.
 
 ## Path B — browser only (no Node, no Claude Code)

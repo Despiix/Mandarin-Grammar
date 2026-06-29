@@ -33,11 +33,12 @@ get the offline fallback unless you run `vercel dev`.
 
 ## Fill the full exercise bank
 
-Runs on your machine, never on the deployed site. Uses Google Gemini's free
-tier — get a key (no billing required) at https://aistudio.google.com/apikey.
+Runs on your machine, never on the deployed site. Uses Groq (open-weight
+Llama/Qwen models) — get a free key (no card) at https://console.groq.com.
 
 ```bash
-export GEMINI_API_KEY=...
+# bash:        export GROQ_API_KEY=...
+# PowerShell:  $env:GROQ_API_KEY="..."
 npm run gen        # writes src/banks.json for every structure
 ```
 
@@ -65,12 +66,12 @@ on Vercel's free tier. Your code still lives on GitHub.
 2. On [vercel.com](https://vercel.com): **Add New → Project → import your repo**.
    Vercel auto-detects Vite; just deploy.
 3. In the project's **Settings → Environment Variables**, add
-   `GEMINI_API_KEY` = your free key (https://aistudio.google.com/apikey), then redeploy.
-4. Live at `https://<project>.vercel.app`. The `/api/grade` function is picked up
-   automatically from the `api/` folder.
+   `GROQ_API_KEY` = your free key (https://console.groq.com), then redeploy.
+4. Live at `https://<project>.vercel.app`. The `/api/grade` and `/api/chat`
+   functions are picked up automatically from the `api/` folder.
 
 On your phone: open the URL → **Add to Home Screen**. It installs and runs
-offline; AI grading kicks in whenever you have a connection.
+offline; AI grading and the Talk tutor kick in whenever you have a connection.
 
 > Prefer GitHub Pages? It can host the static app but not the `/api/grade`
 > function, so the app would behave as if permanently offline (local grading
@@ -81,5 +82,5 @@ offline; AI grading kicks in whenever you have a connection.
 
 - Hosting (Vercel Hobby): free.
 - Offline use: free — no API calls.
-- Online grading: free — Google Gemini free tier (no billing on the key).
-- `npm run gen`: free — same Gemini free tier, only when you rebuild the bank.
+- Online grading + Talk tutor: free — Groq free tier (no card on the key).
+- `npm run gen`: free — same Groq free tier, only when you rebuild the bank.

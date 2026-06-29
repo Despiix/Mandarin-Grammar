@@ -1,10 +1,11 @@
-// Builds src/banks.json from src/structures.js using Google Gemini's free tier.
-// Run locally (never deployed):  GEMINI_API_KEY=... npm run gen
-// Get a free key (no billing) at https://aistudio.google.com/apikey
+// Builds src/banks.json from src/structures.js using Groq (open-weight Llama/Qwen
+// models) via its OpenAI-compatible endpoint — fast, generous free tier, no card.
+// Run locally (never deployed):  GROQ_API_KEY=... npm run gen
+// Free key: https://console.groq.com
 // The deployed site makes no API calls for exercises — it just reads the bank this produces.
 //
-// Optional env: GEMINI_MODEL (default gemini-3.5-flash), PER (exercises per structure, default 8),
-// DELAY_MS (pause between calls to stay under the free-tier rate limit, default 4500).
+// Optional env: GROQ_MODEL (default llama-3.3-70b-versatile), GROQ_BASE,
+// PER (exercises per structure, default 8), DELAY_MS (pause between calls, default 1500).
 // Flags: --only id1,id2 (regenerate just those) · --force (redo all, ignoring resume).
 // A full run resumes by default (skips structures that already have exercises) and saves
 // after every structure, so Ctrl+C is safe and re-running continues where it left off.
@@ -16,16 +17,17 @@ import { STRUCTURES } from "../src/structures.js";
 
 const __dir = dirname(fileURLToPath(import.meta.url));
 const OUT = join(__dir, "..", "src", "banks.json");
-const KEY = process.env.GEMINI_API_KEY;
-const MODEL = process.env.GEMINI_MODEL || "gemini-3.5-flash";
+const KEY = process.env.GROQ_API_KEY;
+const MODEL = process.env.GROQ_MODEL || "llama-3.3-70b-versatile";
+const BASE = process.env.GROQ_BASE || "https://api.groq.com/openai/v1";
 const PER = Number(process.env.PER || 8);
-const DELAY_MS = Number(process.env.DELAY_MS || 4500);
+const DELAY_MS = Number(process.env.DELAY_MS || 1500);
 
 function argVal(name) { const i = process.argv.indexOf(name); return i >= 0 ? process.argv[i + 1] : undefined; }
 const ONLY = (process.env.ONLY || argVal("--only") || "").split(",").map((x) => x.trim()).filter(Boolean);
 
 if (!KEY) {
-  console.error("Set GEMINI_API_KEY in your environment first. Free key: https://aistudio.google.com/apikey");
+  console.error("Set GROQ_API_KEY in your environment first. Free key: https://console.groq.com");
   process.exit(1);
 }
 
@@ -62,13 +64,10 @@ function parse(text) {
 }
 
 async function gen(s, attempt = 0) {
-  const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent`, {
+  const res = await fetch(`${BASE}/chat/completions`, {
     method: "POST",
-    headers: { "content-type": "application/json", "x-goog-api-key": KEY },
-    body: JSON.stringify({
-      contents: [{ parts: [{ text: prompt(s) }] }],
-      generationConfig: { temperature: 0.7, maxOutputTokens: 4096, responseMimeType: "application/json" },
-    }),
+    headers: { "content-type": "application/json", authorization: `Bearer ${KEY}` },
+    body: JSON.stringify({ model: MODEL, messages: [{ role: "user", content: prompt(s) }], temperature: 0.7, max_tokens: 4096 }),
   });
   if (res.status === 429 && attempt < 3) {
     const wait = 20000 * (attempt + 1);
@@ -78,7 +77,7 @@ async function gen(s, attempt = 0) {
   }
   if (!res.ok) throw new Error(`${res.status} ${await res.text()}`);
   const data = await res.json();
-  const text = (data.candidates?.[0]?.content?.parts || []).map((p) => p.text || "").join("\n");
+  const text = data.choices?.[0]?.message?.content || "";
   return parse(text);
 }
 

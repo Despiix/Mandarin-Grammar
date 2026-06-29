@@ -1,8 +1,11 @@
 // Serverless HSK1 conversation partner. Runs on Vercel, never in the browser,
-// so your GEMINI_API_KEY stays secret. Free: uses Google Gemini's free tier.
-// Optional: set GEMINI_MODEL (default gemini-3.5-flash).
+// so your GROQ_API_KEY stays secret. Uses Groq (open-weight Llama/Qwen models)
+// through its OpenAI-compatible endpoint — fast, generous free tier, no card.
+// Free key: https://console.groq.com → API Keys
+// Optional env: GROQ_MODEL (default llama-3.3-70b-versatile), GROQ_BASE.
 
-const MODEL = process.env.GEMINI_MODEL || "gemini-3.5-flash";
+const MODEL = process.env.GROQ_MODEL || "llama-3.3-70b-versatile";
+const BASE = process.env.GROQ_BASE || "https://api.groq.com/openai/v1";
 
 const SYSTEM = `You are a warm, patient Mandarin conversation partner for an absolute beginner (HSK1).
 Rules:
@@ -15,26 +18,25 @@ Return ONLY JSON: {"hanzi": your reply in simplified characters, "pinyin": full 
 
 export default async function handler(req, res) {
   if (req.method !== "POST") return res.status(405).json({ error: "POST only" });
-  const key = process.env.GEMINI_API_KEY;
-  if (!key) return res.status(500).json({ error: "GEMINI_API_KEY not set" });
+  const key = process.env.GROQ_API_KEY;
+  if (!key) return res.status(500).json({ error: "GROQ_API_KEY not set" });
 
   const { messages } = req.body || {};
-  const contents = [{ role: "user", parts: [{ text: "Let's have a simple HSK1 Chinese conversation. Greet me and ask one easy question to begin." }] }];
-  for (const m of messages || []) contents.push({ role: m.role === "ai" ? "model" : "user", parts: [{ text: String(m.text || "") }] });
+  const msgs = [
+    { role: "system", content: SYSTEM },
+    { role: "user", content: "Let's have a simple HSK1 Chinese conversation. Greet me and ask one easy question to begin." },
+  ];
+  for (const m of messages || []) msgs.push({ role: m.role === "ai" ? "assistant" : "user", content: String(m.text || "") });
 
   try {
-    const r = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${MODEL}:generateContent`, {
+    const r = await fetch(`${BASE}/chat/completions`, {
       method: "POST",
-      headers: { "content-type": "application/json", "x-goog-api-key": key },
-      body: JSON.stringify({
-        systemInstruction: { parts: [{ text: SYSTEM }] },
-        contents,
-        generationConfig: { temperature: 0.7, maxOutputTokens: 300, responseMimeType: "application/json" },
-      }),
+      headers: { "content-type": "application/json", authorization: `Bearer ${key}` },
+      body: JSON.stringify({ model: MODEL, messages: msgs, temperature: 0.7, max_tokens: 300, response_format: { type: "json_object" } }),
     });
-    if (!r.ok) return res.status(502).json({ error: "upstream " + r.status });
+    if (!r.ok) return res.status(502).json({ error: ("upstream " + r.status + " " + (await r.text())).slice(0, 200) });
     const data = await r.json();
-    const text = (data.candidates?.[0]?.content?.parts || []).map((p) => p.text || "").join("\n");
+    const text = data.choices?.[0]?.message?.content || "";
     const clean = text.replace(/```json/g, "").replace(/```/g, "").trim();
     let parsed;
     try { parsed = JSON.parse(clean); }
