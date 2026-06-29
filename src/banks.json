@@ -3,8 +3,8 @@
     {
       "type": "cloze",
       "prompt": "他 ___ 中国人。",
-      "pinyin": "tā ___ zhōng guó rén.",
-      "hint": "Fill in the verb 'to be' (is) to express nationality.",
+      "pinyin": "tā ___ Zhōngguórén。",
+      "hint": "Fill in the verb 'to be' (is) to link he and Chinese person.",
       "answer": "是",
       "accept": [
         "shì"
@@ -14,7 +14,7 @@
       "type": "translate_e2c",
       "prompt": "She is my teacher.",
       "pinyin": "",
-      "hint": "Use the 'A 是 B' structure. 'Teacher' is 老师 (lǎoshī).",
+      "hint": "Use '是' for identity. 'Teacher' is 老师 (lǎoshī).",
       "answer": "她是我的老师。",
       "accept": [
         "她是我的老师",
@@ -24,32 +24,32 @@
     },
     {
       "type": "translate_c2e",
-      "prompt": "这是我的书。",
-      "pinyin": "zhè shì wǒ de shū.",
-      "hint": "Translate the identity sentence to English.",
-      "answer": "This is my book.",
+      "prompt": "我是学生。",
+      "pinyin": "wǒ shì xuésheng。",
+      "hint": "Translate the sentence to English.",
+      "answer": "I am a student.",
       "accept": [
-        "This is my book",
-        "this is my book"
+        "I am student.",
+        "I'm a student.",
+        "I'm a student"
       ]
     },
     {
       "type": "error_correction",
-      "prompt": "今天是热。",
-      "pinyin": "jīn tiān shì rè.",
-      "hint": "Remember the rule: drop 是 before adjectives and use 很 (hěn) instead.",
-      "answer": "今天很热。",
+      "prompt": "我爸爸是很高。",
+      "pinyin": "wǒ bàba shì hěn gāo。",
+      "hint": "Rule check: Drop '是' before adjectives — use '很' instead.",
+      "answer": "我爸爸很高。",
       "accept": [
-        "今天很热",
-        "今天天气很热",
-        "今天天气很热。"
+        "我爸爸很高",
+        "我爸爸高。"
       ]
     },
     {
       "type": "cloze",
-      "prompt": "那 ___ 我的猫。",
-      "pinyin": "nà ___ wǒ de māo.",
-      "hint": "Fill in the verb 'to be' (is) to show identity.",
+      "prompt": "这 ___ 我的书。",
+      "pinyin": "zhè ___ wǒ de shū。",
+      "hint": "Fill in the verb 'to be' (is) to show identity (This = my book).",
       "answer": "是",
       "accept": [
         "shì"
@@ -57,138 +57,1918 @@
     },
     {
       "type": "translate_e2c",
-      "prompt": "Are you American?",
+      "prompt": "David is an American.",
       "pinyin": "",
-      "hint": "Use 'A 是 B' with the question particle 吗 (ma). 'American' is 美国人 (měiguórén).",
-      "answer": "你是美国人吗？",
+      "hint": "David is 大卫 (Dàwèi). American is 美国人 (Měiguórén).",
+      "answer": "大卫是美国人。",
       "accept": [
-        "你是美国人吗",
-        "你是美国人吗？"
+        "大卫是美国人",
+        "大卫是美国人"
       ]
     },
     {
       "type": "error_correction",
       "prompt": "我老师。",
-      "pinyin": "wǒ lǎo shī.",
-      "hint": "This sentence is missing the verb 'to be' to link the subject and their role.",
+      "pinyin": "wǒ lǎoshī。",
+      "hint": "Add the missing linking verb '是' to state identity.",
       "answer": "我是老师。",
       "accept": [
         "我是老师",
-        "我是个老师",
-        "我是个老师。"
+        "我是一个老师。"
       ]
     },
     {
       "type": "production",
-      "prompt": "Write a sentence in Chinese meaning 'I am a student' using the 'A 是 B' pattern.",
+      "prompt": "Write a sentence in Chinese saying 'I am a doctor' (doctor = 医生).",
       "pinyin": "",
-      "hint": "Use 我 (I), 是 (am), and 学生 (student).",
-      "answer": "我是学生。",
+      "hint": "Use the 'A 是 B' identity structure.",
+      "answer": "我是医生。",
       "accept": []
     }
   ],
   "de": [
     {
       "type": "cloze",
-      "prompt": "这是我___手机。",
-      "pinyin": "zhè shì wǒ ___ shǒujī",
-      "hint": "possession marker",
+      "prompt": "这是我___书。",
+      "pinyin": "zhè shì wǒ ___ shū.",
+      "hint": "Fill in the possessive particle to make it 'my book'.",
       "answer": "的",
       "accept": [
-        "的"
+        "de"
       ]
     },
     {
       "type": "translate_e2c",
-      "prompt": "This is my book.",
+      "prompt": "This is my teacher's cup.",
       "pinyin": "",
-      "hint": "我的 …",
-      "answer": "这是我的书。",
+      "hint": "Use '老师' (teacher), '杯子' (cup), and the possessive '的'.",
+      "answer": "这是我老师的杯子。",
       "accept": [
-        "这是我的书"
+        "这是老师的杯子。",
+        "那是老师的杯子。",
+        "这是我老师的杯子"
       ]
     },
     {
       "type": "translate_c2e",
-      "prompt": "那是爸爸的车。",
-      "pinyin": "nà shì bàba de chē",
-      "hint": "",
-      "answer": "That is dad's car.",
+      "prompt": "他的汉语老师是谁？",
+      "pinyin": "tā de hànyǔ lǎoshī shì shéi?",
+      "hint": "Translate the question to English. '汉语' means Chinese language.",
+      "answer": "Who is his Chinese teacher?",
       "accept": [
-        "that's dad's car",
-        "that is dad's car",
-        "that is my dad's car"
+        "Who is his Mandarin teacher?",
+        "Who's his Chinese teacher?",
+        "Who is his Chinese language teacher?"
       ]
     },
     {
       "type": "error_correction",
-      "prompt": "这是我手机的。",
-      "pinyin": "zhè shì wǒ shǒujī de",
-      "hint": "where does 的 go?",
-      "answer": "这是我的手机。",
+      "prompt": "这是老师书。",
+      "pinyin": "zhè_shì_lǎoshī_shū.",
+      "hint": "Add the missing possessive particle to link 'teacher' and 'book'.",
+      "answer": "这是老师的书。",
       "accept": [
-        "这是我的手机"
+        "那是老师的书。",
+        "这是老师的书"
       ]
     },
     {
       "type": "production",
-      "prompt": "Say 'this is my phone' using 的.",
+      "prompt": "Write a sentence in Chinese meaning 'My cat is very cute.' using the possessive '的'.",
       "pinyin": "",
-      "hint": "这是我的 …",
-      "answer": "这是我的手机。",
+      "hint": "Use '猫' (cat) and '可爱' (cute).",
+      "answer": "我的猫很可爱。",
       "accept": []
+    },
+    {
+      "type": "cloze",
+      "prompt": "爸爸___电脑在桌子上。",
+      "pinyin": "bàba ___ diànnǎo zài zhuōzi shàng.",
+      "hint": "Fill in the possessive particle to mean 'Dad's computer'.",
+      "answer": "的",
+      "accept": [
+        "de"
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "Where is your school?",
+      "pinyin": "",
+      "hint": "Use '你的学校' (your school) and '在哪儿' (where).",
+      "answer": "你的学校在哪儿？",
+      "accept": [
+        "你的学校在哪里？",
+        "你学校在哪里？",
+        "你学校在哪儿？"
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "她的衣服很漂亮。",
+      "pinyin": "tā de yīfu hěn piàoliang.",
+      "hint": "Translate to English. '衣服' means clothes; '漂亮' means beautiful.",
+      "answer": "Her clothes are very beautiful.",
+      "accept": [
+        "Her clothes are very pretty.",
+        "Her clothing is very beautiful.",
+        "Her clothes are pretty."
+      ]
     }
   ],
   "adj": [
     {
       "type": "cloze",
-      "prompt": "今天___热。",
-      "pinyin": "jīntiān ___ rè",
-      "hint": "neutral link before an adjective",
+      "prompt": "这个苹果 ___ 大。",
+      "pinyin": "Zhège píngguǒ ___ dà.",
+      "hint": "Fill in the neutral link used before adjectives instead of 'is' (to be).",
       "answer": "很",
       "accept": [
+        "hen",
         "很"
       ]
     },
     {
       "type": "translate_e2c",
-      "prompt": "She is very pretty.",
+      "prompt": "My older brother is very tall.",
       "pinyin": "",
-      "hint": "她很 …",
-      "answer": "她很漂亮。",
+      "hint": "Use the 'A 很 adj' structure. Brother = 哥哥, tall = 高",
+      "answer": "我哥哥很高。",
       "accept": [
-        "她很漂亮"
+        "我哥哥很高",
+        "哥哥很高",
+        "哥哥很高。"
       ]
     },
     {
       "type": "translate_c2e",
       "prompt": "今天很冷。",
-      "pinyin": "jīntiān hěn lěng",
-      "hint": "",
-      "answer": "It's cold today.",
+      "pinyin": "Jīntiān hěn lěng.",
+      "hint": "Translate the sentence to English.",
+      "answer": "Today is very cold.",
       "accept": [
-        "it's cold today",
-        "it is cold today",
-        "today is cold"
+        "Today is cold.",
+        "It is very cold today.",
+        "It's very cold today."
       ]
     },
     {
       "type": "error_correction",
-      "prompt": "今天是热。",
-      "pinyin": "jīntiān shì rè",
-      "hint": "adjectives don't take 是",
-      "answer": "今天很热。",
+      "prompt": "汉语是很难。",
+      "pinyin": "Hànyǔ shì hěn nán.",
+      "hint": "Remove the unnecessary verb 'to be' (是) which should not be used directly with adjectives.",
+      "answer": "汉语很难。",
       "accept": [
-        "今天很热"
+        "汉语很难",
+        "中文很难",
+        "中文很难。"
       ]
     },
     {
       "type": "production",
-      "prompt": "Describe today's weather with 很.",
+      "prompt": "Write a Chinese sentence meaning 'I am very busy' using the 'A 很 adj' structure.",
       "pinyin": "",
-      "hint": "今天很 …",
-      "answer": "今天很热。",
+      "hint": "I = 我, busy = 忙",
+      "answer": "我很忙。",
       "accept": []
+    },
+    {
+      "type": "cloze",
+      "prompt": "这杯咖啡很 ___ 。",
+      "pinyin": "Zhè bēi kāfēi hěn ___ .",
+      "hint": "Fill in the adjective for 'hot' (rè).",
+      "answer": "热",
+      "accept": [
+        "re",
+        "rè"
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "我的猫是小。",
+      "pinyin": "Wǒ de māo shì xiǎo.",
+      "hint": "Replace the verb 'is' with the correct neutral link used for adjectives.",
+      "answer": "我的猫很小。",
+      "accept": [
+        "我的猫很小",
+        "我猫很小",
+        "我猫很小。"
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "The school is very big.",
+      "pinyin": "",
+      "hint": "School = 学校, big = 大. Use the 'A 很 adj' structure.",
+      "answer": "学校很大。",
+      "accept": [
+        "学校很大",
+        "这个学校很大",
+        "这个学校很大。"
+      ]
+    }
+  ],
+  "xihuan": [
+    {
+      "type": "cloze",
+      "prompt": "我们___猫。",
+      "pinyin": "wǒ men ___ māo 。",
+      "hint": "like",
+      "answer": "喜欢",
+      "accept": [
+        "很喜欢",
+        "最喜欢"
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "He likes reading books.",
+      "pinyin": "",
+      "hint": "Use '喜欢' (like) and '看书' (read books)",
+      "answer": "他喜欢看书。",
+      "accept": [
+        "他喜欢看书",
+        "他很喜欢看书",
+        "他喜欢读书"
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "我不喜欢下雨天。",
+      "pinyin": "wǒ bù xǐ huan xià yǔ tiān 。",
+      "hint": "Translate to English",
+      "answer": "I don't like rainy days.",
+      "accept": [
+        "I do not like rainy days.",
+        "I don't like rain.",
+        "I do not like rain."
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "我喜欢不喝茶。",
+      "pinyin": "wǒ xǐ huan bù hē chá 。",
+      "hint": "Negation '不' should be placed before '喜欢'.",
+      "answer": "我不喜欢喝茶。",
+      "accept": [
+        "我不喜欢喝茶",
+        "我不喜欢喝茶。"
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Write a sentence in Chinese saying you like to watch movies.",
+      "pinyin": "",
+      "hint": "Use '喜欢' (like) and '看电影' (watch movies)",
+      "answer": "我喜欢看电影。",
+      "accept": []
+    },
+    {
+      "type": "cloze",
+      "prompt": "姐姐喜欢___。",
+      "pinyin": "jiě jie xǐ huan ___ 。",
+      "hint": "singing songs",
+      "answer": "唱歌",
+      "accept": [
+        "听音乐",
+        "跳舞",
+        "听歌"
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "Do you like Chinese food?",
+      "pinyin": "",
+      "hint": "Chinese food = 中国菜",
+      "answer": "你喜欢中国菜吗？",
+      "accept": [
+        "你喜欢中国菜吗",
+        "你喜欢吃中国菜吗",
+        "你喜欢吃中国菜吗？"
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "我喜欢学中文。",
+      "pinyin": "wǒ xǐ huan xué zhōng wén 。",
+      "hint": "Translate to English",
+      "answer": "I like learning Chinese.",
+      "accept": [
+        "I like to learn Chinese.",
+        "I like studying Chinese.",
+        "I like to study Chinese."
+      ]
+    }
+  ],
+  "ma": [
+    {
+      "type": "cloze",
+      "prompt": "你 喜欢 喝茶 ___ ？",
+      "pinyin": "nǐ xǐhuan hēchá ___ ?",
+      "hint": "Add the yes/no question particle to the end of the sentence.",
+      "answer": "吗",
+      "accept": [
+        "ma",
+        "吗？"
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "Is he a teacher?",
+      "pinyin": "",
+      "hint": "Use the structure: 他 (he) + 是 (is) + 老师 (teacher) + 吗？",
+      "answer": "他是老师吗？",
+      "accept": [
+        "他是老师吗",
+        "他是教师吗？",
+        "他是教师吗"
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "你妈妈好吗？",
+      "pinyin": "nǐ māma hǎo ma?",
+      "hint": "Translate the sentence literally: Your mother + well + 吗?",
+      "answer": "Is your mother well?",
+      "accept": [
+        "How is your mother?",
+        "Is your mom doing well?",
+        "Is your mom OK?"
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "吗你是学生？",
+      "pinyin": "ma nǐ shì xuéshēng?",
+      "hint": "The question particle '吗' must be placed at the very end of the sentence.",
+      "answer": "你是学生吗？",
+      "accept": [
+        "你是学生吗",
+        "你 是 学生 吗 ？"
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Ask someone \"Do you eat apples?\" in Mandarin using the 'S 吗？' structure.",
+      "pinyin": "",
+      "hint": "Use the words: 你 (you), 吃 (eat), 苹果 (apple), and the question particle.",
+      "answer": "你吃苹果吗？",
+      "accept": []
+    },
+    {
+      "type": "cloze",
+      "prompt": "它是你的猫 ___ ？",
+      "pinyin": "tā shì nǐ de māo ___ ?",
+      "hint": "Complete the yes/no question: 'Is it your cat?'",
+      "answer": "吗",
+      "accept": [
+        "ma",
+        "吗？"
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "Do you have a book?",
+      "pinyin": "",
+      "hint": "Use the structure: 你 (you) + 有 (have) + 书 (book) + 吗？",
+      "answer": "你有书吗？",
+      "accept": [
+        "你有书吗",
+        "你有一本书吗？",
+        "你有一本书吗"
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "你吗去学校？",
+      "pinyin": "nǐ ma qù xuéxiào?",
+      "hint": "Do not change the statement's word order; just add the question particle at the end.",
+      "answer": "你去学校吗？",
+      "accept": [
+        "你去学校吗",
+        "你 去 学校 吗 ？"
+      ]
+    }
+  ],
+  "wh": [
+    {
+      "type": "cloze",
+      "prompt": "你叫___名字？",
+      "pinyin": "nǐ jiào ___ míngzi?",
+      "hint": "what",
+      "answer": "什么",
+      "accept": [
+        "shénme"
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "Who is he?",
+      "pinyin": "",
+      "hint": "Translate using the structure: Subject + is + who?",
+      "answer": "他是谁？",
+      "accept": [
+        "他是谁",
+        "他是哪位？",
+        "他是哪位"
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "你要去哪里？",
+      "pinyin": "nǐ yào qù nǎlǐ?",
+      "hint": "Translate to English",
+      "answer": "Where are you going?",
+      "accept": [
+        "Where do you want to go?",
+        "Where are you off to?",
+        "Where will you go?"
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "谁你认识？",
+      "pinyin": "shéi nǐ rènshi?",
+      "hint": "Correct the word order. Do not front the question word.",
+      "answer": "你认识谁？",
+      "accept": [
+        "你认识谁",
+        "你认识的是谁？",
+        "你认识的是谁"
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Ask someone 'What do you want to eat?' in Chinese using the in-place question structure.",
+      "pinyin": "",
+      "hint": "Word order: You + want + eat + what?",
+      "answer": "你想吃什么？",
+      "accept": []
+    },
+    {
+      "type": "cloze",
+      "prompt": "这是___的书？",
+      "pinyin": "zhè shì ___ de shū?",
+      "hint": "who",
+      "answer": "谁",
+      "accept": [
+        "shéi",
+        "shuí"
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "What is this?",
+      "pinyin": "",
+      "hint": "Translate using the structure: This + is + what?",
+      "answer": "这是什么？",
+      "accept": [
+        "这是什么",
+        "这个是什么？",
+        "这个是什么"
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "哪里你想去？",
+      "pinyin": "nǎlǐ nǐ xiǎng qù?",
+      "hint": "Correct the word order. Keep the statement format and put 'where' at the end.",
+      "answer": "你想去哪里？",
+      "accept": [
+        "你想去哪里",
+        "你想去哪？",
+        "你想去哪"
+      ]
+    }
+  ],
+  "ne": [
+    {
+      "type": "cloze",
+      "prompt": "我喝茶，你 ___ ？",
+      "pinyin": "wǒ hē chá, nǐ ___ ?",
+      "hint": "I drink tea, and you?",
+      "answer": "呢",
+      "accept": [
+        "呢？",
+        "呢"
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "Where is my cat?",
+      "pinyin": "",
+      "hint": "Use '我的猫' (wǒ de māo) and the soft 'where is...' structure.",
+      "answer": "我的猫呢？",
+      "accept": [
+        "我的猫呢",
+        "我的猫咪呢？",
+        "我的猫咪呢"
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "我去学校，你呢？",
+      "pinyin": "wǒ qù xuéxiào, nǐ ne?",
+      "hint": "Translate the bouncing question.",
+      "answer": "I am going to school, and you?",
+      "accept": [
+        "I'm going to school, how about you?",
+        "I go to school, and you?",
+        "I am going to school, how about you?"
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "我的杯子在呢？",
+      "pinyin": "wǒ de bēizi zài ne?",
+      "hint": "Correct the sentence to mean 'Where is my cup?' using the soft '呢' structure without '在'.",
+      "answer": "我的杯子呢？",
+      "accept": [
+        "我的杯子呢",
+        "我的杯子在哪里？",
+        "我的杯子在哪儿？"
+      ]
+    },
+    {
+      "type": "cloze",
+      "prompt": "爸爸 ___ ？他怎么不在？",
+      "pinyin": "bàba ___ ? tā zěnme bú zài?",
+      "hint": "Where is Dad? Why isn't he here?",
+      "answer": "呢",
+      "accept": [
+        "呢？",
+        "呢"
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "He is a teacher, and his younger brother?",
+      "pinyin": "",
+      "hint": "Use '他是老师' (tā shì lǎoshī) and '他弟弟' (tā dìdi).",
+      "answer": "他是老师，他弟弟呢？",
+      "accept": [
+        "他是老师，他弟弟呢",
+        "他是老师。他弟弟呢？",
+        "他是老师，他的弟弟呢？"
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Write a short sentence saying 'I am busy, and you?' using the '呢' structure.",
+      "pinyin": "",
+      "hint": "Use '忙' (máng) for busy.",
+      "answer": "我很忙，你呢？",
+      "accept": []
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "我的钱呢？",
+      "pinyin": "wǒ de qián ne?",
+      "hint": "A softened question about missing money.",
+      "answer": "Where is my money?",
+      "accept": [
+        "Where's my money?",
+        "And my money?",
+        "Where is my money at?"
+      ]
+    }
+  ],
+  "zmy": [
+    {
+      "type": "cloze",
+      "prompt": "你的汉语老师 ___ ？",
+      "pinyin": "Nǐ de Hànyǔ lǎoshī ___ ?",
+      "hint": "how is it? (3 characters)",
+      "answer": "怎么样",
+      "accept": [
+        "怎么 样",
+        "怎么样呢"
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "How is the movie?",
+      "pinyin": "",
+      "hint": "Use '电影' (movie) and the '怎么样' structure.",
+      "answer": "电影怎么样？",
+      "accept": [
+        "这个电影怎么样？",
+        "那部电影怎么样？",
+        "电影怎么样"
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "今天天气怎么样？",
+      "pinyin": "Jīntiān tiānqì zěnmeyàng?",
+      "hint": "Translate to English.",
+      "answer": "How is the weather today?",
+      "accept": [
+        "How's the weather today?",
+        "How is today's weather?",
+        "What is the weather like today?"
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "这杯茶怎么样不？",
+      "pinyin": "Zhè bēi chá zěnmeyàng bù?",
+      "hint": "Remove the extra question particle at the end.",
+      "answer": "这杯茶怎么样？",
+      "accept": [
+        "这杯茶怎么样",
+        "这个茶怎么样？",
+        "这个茶怎么样"
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Ask how your friend's new Chinese book is.",
+      "pinyin": "",
+      "hint": "Use '汉语书' (Chinese book) and '怎么样'.",
+      "answer": "汉语书怎么样？",
+      "accept": []
+    },
+    {
+      "type": "cloze",
+      "prompt": "今天 ___ 怎么样？",
+      "pinyin": "Jīntiān ___ zěnmeyàng?",
+      "hint": "weather (2 characters)",
+      "answer": "天气",
+      "accept": [
+        "的天气"
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "How is this restaurant?",
+      "pinyin": "",
+      "hint": "Use '这个饭馆' (this restaurant) and '怎么样'.",
+      "answer": "这个饭馆怎么样？",
+      "accept": [
+        "这个饭店怎么样？",
+        "这儿的饭馆怎么样？",
+        "这个饭馆怎么样"
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "你的身体怎么是样？",
+      "pinyin": "Nǐ de shēntǐ zěnme shì yàng?",
+      "hint": "Correct the question word for 'how is it'.",
+      "answer": "你的身体怎么样？",
+      "accept": [
+        "身体怎么样？",
+        "你的身体怎么样",
+        "身体怎么样"
+      ]
+    }
+  ],
+  "jiduoshao": [
+    {
+      "type": "cloze",
+      "prompt": "你家有___口人？",
+      "pinyin": "nǐ jiā yǒu ___ kǒu rén?",
+      "hint": "Fill in the blank with the question word for a small countable number (needs a measure word, here '口').",
+      "answer": "几",
+      "accept": []
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "How much money is this book?",
+      "pinyin": "",
+      "hint": "Use '这本书' (this book) and '多少钱' (how much money).",
+      "answer": "这本书多少钱？",
+      "accept": [
+        "这本书多少钱",
+        "这本书是要多少钱",
+        "这本皮书多少钱"
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "你今天喝了几杯水？",
+      "pinyin": "nǐ jīntiān hē le jǐ bēi shuǐ?",
+      "hint": "Translate to English. '几杯水' means 'how many glasses/cups of water'.",
+      "answer": "How many glasses of water did you drink today?",
+      "accept": [
+        "How many cups of water did you drink today?",
+        "How many glasses of water did you drink today",
+        "How many cups of water did you drink today"
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "我有几书。",
+      "pinyin": "wǒ yǒu jǐ shū.",
+      "hint": "The question/estimation word '几' must be followed by a measure word before the noun.",
+      "answer": "我有几本书。",
+      "accept": [
+        "我有几本书"
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Write a question asking 'How many students are there in your school?' using '多少'.",
+      "pinyin": "",
+      "hint": "Use '你们学校' (your school) and '学生' (students).",
+      "answer": "你们学校有多少学生？",
+      "accept": []
+    },
+    {
+      "type": "cloze",
+      "prompt": "这件衣服___钱？",
+      "pinyin": "zhè jiàn yīfu ___ qián?",
+      "hint": "Fill in the blank with the question word for an open-ended/larger amount (money).",
+      "answer": "多少",
+      "accept": []
+    },
+    {
+      "type": "error_correction",
+      "prompt": "这个杯子几钱？",
+      "pinyin": "zhège bēizi jǐ qián?",
+      "hint": "We use '多少' instead of '几' when asking about money/prices.",
+      "answer": "这个杯子多少钱？",
+      "accept": [
+        "这个杯子多少钱"
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "How many cats do you have?",
+      "pinyin": "",
+      "hint": "Use '几' with the measure word '只' (zhī) for cats.",
+      "answer": "你有几只猫？",
+      "accept": [
+        "你有几只猫",
+        "你养了几只猫？",
+        "你养了几只猫"
+      ]
+    }
+  ],
+  "qingwen": [
+    {
+      "type": "cloze",
+      "prompt": "___ ，医院在哪儿？",
+      "pinyin": "___ , yīyuàn zài nǎr?",
+      "hint": "Excuse me / May I ask",
+      "answer": "请问",
+      "accept": [
+        "请 问",
+        "Qǐngwèn",
+        "qǐngwèn"
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "Excuse me, what is your name?",
+      "pinyin": "",
+      "hint": "Use '请问' and '你叫什么名字'",
+      "answer": "请问，你叫什么名字？",
+      "accept": [
+        "请问你叫什么名字？",
+        "请问，你叫什么名字",
+        "请问你叫什么名字"
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "请问，这儿有人吗？",
+      "pinyin": "qǐngwèn, zhèr yǒu rén ma?",
+      "hint": "Translate to English",
+      "answer": "Excuse me, is anyone here?",
+      "accept": [
+        "Excuse me, is there anyone here?",
+        "May I ask, is someone here?",
+        "Excuse me, is this seat taken?"
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "问请，洗手间在哪儿？",
+      "pinyin": "wèn qǐng, xǐshǒujiān zài nǎr?",
+      "hint": "Correct the word order of the polite opener.",
+      "answer": "请问，洗手间在哪儿？",
+      "accept": [
+        "请问洗手间在哪儿？",
+        "请问洗手间在哪儿",
+        "请问，洗手间在哪儿"
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Write a polite question asking where the shop (商店) is, starting with 'Excuse me'.",
+      "pinyin": "",
+      "hint": "Use 请问 and 商店",
+      "answer": "请问，商店在哪儿？",
+      "accept": []
+    },
+    {
+      "type": "cloze",
+      "prompt": "请问，现在 ___ 点了？",
+      "pinyin": "qǐngwèn, xiànzài ___ diǎn le?",
+      "hint": "how many / what (time)",
+      "answer": "几",
+      "accept": [
+        "几"
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "Excuse me, is this your book?",
+      "pinyin": "",
+      "hint": "Use '请问' and '这是你的书吗'",
+      "answer": "请问，这是你的书吗？",
+      "accept": [
+        "请问这是你的书吗？",
+        "请问，这是你的书吗",
+        "请问这是你的书吗"
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "请问，今天星期几？",
+      "pinyin": "qǐngwèn, jīntiān xīngqījǐ?",
+      "hint": "Translate to English",
+      "answer": "Excuse me, what day is today?",
+      "accept": [
+        "Excuse me, what day of the week is today?",
+        "May I ask, what day is today?",
+        "Excuse me, what day is it today?"
+      ]
+    }
+  ],
+  "duojiu": [
+    {
+      "type": "cloze",
+      "prompt": "从学校到医院要___？",
+      "pinyin": "cóng xuéxiào dào yīyuàn yào ___?",
+      "hint": "Fill in the blank with the question word for 'how long' (2 characters).",
+      "answer": "多久",
+      "accept": [
+        "多长时间"
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "How long does it take from your home to the school?",
+      "pinyin": "",
+      "hint": "Use the structure: 从 A 到 B 要 多久？ Use '你家' (your home) and '学校' (school).",
+      "answer": "从你家到学校要多久？",
+      "accept": [
+        "从你家到学校要多长时间？",
+        "从家到学校要多久？",
+        "从你家到学校需要多久？"
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "从北京到上海要多久？",
+      "pinyin": "cóng Běijīng dào Shànghǎi yào duōjiǔ?",
+      "hint": "Translate the Chinese sentence into English.",
+      "answer": "How long does it take from Beijing to Shanghai?",
+      "accept": [
+        "How long is it from Beijing to Shanghai?",
+        "How long does it take to get from Beijing to Shanghai?"
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "从你家到商店去多久？",
+      "pinyin": "cóng nǐ jiā dào shāngdiàn qù duōjiǔ?",
+      "hint": "Replace the incorrect verb '去' (go) with the verb that means 'takes / needs' in this structure.",
+      "answer": "从你家到商店要多久？",
+      "accept": [
+        "从你家到商店要多长时间？",
+        "从你家到商店需要多久？"
+      ]
+    },
+    {
+      "type": "cloze",
+      "prompt": "A: 从这儿到火车站要多久？ B: ___一个小时。",
+      "pinyin": "A: cóng zhèr dào huǒchēzhàn yào duōjiǔ? B: ___ yí gè xiǎoshí.",
+      "hint": "Fill in the blank with the 1-character verb meaning 'takes' to complete the answer.",
+      "answer": "要",
+      "accept": [
+        "需要"
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Ask someone how long it takes to go from the hotel (饭店) to the airport (机场) using the '从 A 到 B 要 多久？' structure.",
+      "pinyin": "",
+      "hint": "Start with '从饭店' and end with '要多久？'.",
+      "answer": "从饭店到机场要多久？",
+      "accept": []
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "From the company to the restaurant takes ten minutes.",
+      "pinyin": "",
+      "hint": "Use '公司' (company), '饭馆' (restaurant), and '十分钟' (ten minutes) in the '从 A 到 B 要 [duration]' structure.",
+      "answer": "从公司到饭馆要十分钟。",
+      "accept": [
+        "从公司到饭店要十分钟。",
+        "从公司到餐馆要十分钟。",
+        "从公司到饭馆需要十分钟。"
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "从学校到家要多久十分钟。",
+      "pinyin": "cóng xuéxiào dào jiā yào duōjiǔ shí fēnzhōng.",
+      "hint": "This is a statement, not a question. Remove the question word that conflicts with 'ten minutes'.",
+      "answer": "从学校到家要十分钟。",
+      "accept": [
+        "从学校到家需要十分钟。"
+      ]
+    }
+  ],
+  "zai-place": [
+    {
+      "type": "cloze",
+      "prompt": "他 ___ 学校。",
+      "pinyin": "tā ___ xuéxiào.",
+      "hint": "Fill in the word for 'is at' or 'is not at'.",
+      "answer": "在",
+      "accept": [
+        "不在",
+        "没在"
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "My mom is at home.",
+      "pinyin": "",
+      "hint": "Use the 'A 在 place' structure.",
+      "answer": "我妈妈在家",
+      "accept": [
+        "妈妈在家",
+        "我妈在家",
+        "我的妈妈在家"
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "老师不在学校。",
+      "pinyin": "lǎoshī bú zài xuéxiào.",
+      "hint": "Translate to English.",
+      "answer": "The teacher is not at school.",
+      "accept": [
+        "Teacher is not at school.",
+        "The teacher is not at the school.",
+        "My teacher is not at school."
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "他在是北京。",
+      "pinyin": "tā zài shì Běijīng.",
+      "hint": "Remove the unnecessary 'is' verb.",
+      "answer": "他在北京",
+      "accept": [
+        "他在北京。",
+        "他现在在北京",
+        "他现在在北京。"
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Write a sentence in Chinese saying you are at the hospital.",
+      "pinyin": "",
+      "hint": "hospital is 医院 (yīyuàn)",
+      "answer": "我在医院",
+      "accept": []
+    },
+    {
+      "type": "cloze",
+      "prompt": "爸爸 ___ 商店。",
+      "pinyin": "bàba ___ shāngdiàn.",
+      "hint": "Dad is (or is not) at the store.",
+      "answer": "在",
+      "accept": [
+        "不在",
+        "没在"
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "Where are you?",
+      "pinyin": "",
+      "hint": "Use '在' + '哪儿' (nǎr)",
+      "answer": "你在哪儿",
+      "accept": [
+        "你在哪里",
+        "你在哪儿？",
+        "你在哪里？"
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "猫在椅子上。",
+      "pinyin": "māo zài yǐzi shàng.",
+      "hint": "Translate to English.",
+      "answer": "The cat is on the chair.",
+      "accept": [
+        "A cat is on the chair.",
+        "The cat is on top of the chair.",
+        "Cats are on the chairs."
+      ]
+    }
+  ],
+  "you-exist": [
+    {
+      "type": "cloze",
+      "prompt": "桌子上___一本书。",
+      "pinyin": "zhuō zi shang ___ yī běn shū。",
+      "hint": "Fill in the verb that expresses existence (there is).",
+      "answer": "有",
+      "accept": [
+        "桌子上有一本书",
+        "桌子上面有"
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "There is a cat under the chair.",
+      "pinyin": "",
+      "hint": "chair = 椅子, under = 下面, cat = 猫",
+      "answer": "椅子下面有一只猫",
+      "accept": [
+        "椅子下有一只猫",
+        "椅子下面有猫",
+        "椅子下有猫"
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "学校里没有人。",
+      "pinyin": "xué xiào lǐ méi yǒu rén。",
+      "hint": "Translate to English using 'there is/are not...'",
+      "answer": "There is no one in the school",
+      "accept": [
+        "There are no people in the school",
+        "There is nobody in the school",
+        "There are no people inside the school"
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "桌子上不有苹果。",
+      "pinyin": "zhuō zi shang bù yǒu píng guǒ。",
+      "hint": "Correct the negation of the verb '有' (to have/there is).",
+      "answer": "桌子上没有苹果",
+      "accept": [
+        "桌子上没有苹果。",
+        "桌子上面没有苹果",
+        "桌子上面没有苹果。"
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Write a Chinese sentence that means: 'There is a cup on the desk.'",
+      "pinyin": "",
+      "hint": "desk = 桌子, cup = 杯子",
+      "answer": "桌子上有个杯子",
+      "accept": []
+    },
+    {
+      "type": "cloze",
+      "prompt": "杯子___有水。",
+      "pinyin": "bēi zi ___ yǒu shuǐ。",
+      "hint": "Fill in the location word for 'inside'.",
+      "answer": "里",
+      "accept": [
+        "里面",
+        "里边"
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "There is a teacher in the classroom.",
+      "pinyin": "",
+      "hint": "classroom = 教室, teacher = 老师",
+      "answer": "教室里有老师",
+      "accept": [
+        "教室里面有老师",
+        "教室里有一个老师",
+        "教室里面有一个老师"
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "有书在桌子上。",
+      "pinyin": "yǒu shū zài zhuō zi shang。",
+      "hint": "Reorder the sentence to fit the 'place + direction + 有 + thing' structure.",
+      "answer": "桌子上有书",
+      "accept": [
+        "桌子上有一本书",
+        "桌子上面有书",
+        "桌子上面有一本书"
+      ]
+    }
+  ],
+  "fangwei": [
+    {
+      "type": "cloze",
+      "prompt": "苹果在桌子___。",
+      "pinyin": "Píngguǒ zài zhuōzi ___.",
+      "hint": "on / on top of",
+      "answer": "上面",
+      "accept": [
+        "上",
+        "上面",
+        "之上"
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "The dog is behind the chair.",
+      "pinyin": "",
+      "hint": "dog = 狗 (gǒu), chair = 椅子 (yǐzi), behind = 后面 (hòumiàn)",
+      "answer": "狗在椅子后面。",
+      "accept": [
+        "狗在椅子后面",
+        "小狗在椅子后面",
+        "狗在椅子的后面",
+        "狗在椅子后"
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "爸爸在商店里面。",
+      "pinyin": "Bàba zài shāngdiàn lǐmiàn.",
+      "hint": "Translate the sentence into English.",
+      "answer": "Dad is inside the store.",
+      "accept": [
+        "Father is in the store.",
+        "Dad is in the shop.",
+        "My father is inside the store.",
+        "Father is inside the shop."
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "猫在下面椅子。",
+      "pinyin": "Māo zài xiàmiàn yǐzi.",
+      "hint": "Correct the word order: 'The cat is under the chair.'",
+      "answer": "猫在椅子下面。",
+      "accept": [
+        "猫在椅子下面",
+        "猫在椅子下",
+        "猫在椅子下。"
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Write a Chinese sentence saying: 'The book is next to the computer.'",
+      "pinyin": "",
+      "hint": "book = 书 (shū), computer = 电脑 (diànnǎo), next to = 旁边 (pángbiān)",
+      "answer": "书在电脑旁边。",
+      "accept": []
+    },
+    {
+      "type": "cloze",
+      "prompt": "老师___教室里面。",
+      "pinyin": "Lǎoshī ___ jiàoshì lǐmiàn.",
+      "hint": "is (located at)",
+      "answer": "在",
+      "accept": [
+        "在"
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "The cup is on the table.",
+      "pinyin": "",
+      "hint": "cup = 杯子 (bēizi), table = 桌子 (zhuōzi)",
+      "answer": "杯子在桌子上。",
+      "accept": [
+        "杯子在桌子上面",
+        "杯子在桌子上。",
+        "杯子在桌子上面。"
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "我的手机桌子上面。",
+      "pinyin": "Wǒ de shǒujī zhuōzi shàngmiàn.",
+      "hint": "Add the missing verb/preposition: 'My phone is on the table.'",
+      "answer": "我的手机在桌子上面。",
+      "accept": [
+        "我的手机在桌子上。",
+        "手机在桌子上面。",
+        "我的手机在桌子上面"
+      ]
+    }
+  ],
+  "you-have": [
+    {
+      "type": "cloze",
+      "prompt": "我 ___ 猫，我喜欢狗。",
+      "pinyin": "Wǒ ___ māo, wǒ xǐhuan gǒu.",
+      "hint": "don't have",
+      "answer": "没有",
+      "accept": [
+        "没"
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "My teacher has a Chinese book.",
+      "pinyin": "",
+      "hint": "Use '有' (yǒu) and measure word '本' (běn)",
+      "answer": "我的老师有一本中文书。",
+      "accept": [
+        "我的老师有一本汉语书。",
+        "老师有一本中文书。",
+        "老师有一本汉语书。"
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "他不有钱。",
+      "pinyin": "Tā bù yǒu qián.",
+      "hint": "Correct the negation of '有'.",
+      "answer": "他没有钱。",
+      "accept": [
+        "他没钱。"
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "我们家有一只猫。",
+      "pinyin": "Wǒmen jiā yǒu yì zhī māo.",
+      "hint": "Translate to English.",
+      "answer": "Our family has a cat.",
+      "accept": [
+        "My family has a cat.",
+        "We have a cat at home.",
+        "There is a cat in our house."
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Write a sentence in Chinese saying you have two friends.",
+      "pinyin": "",
+      "hint": "Use '有' (yǒu) and the measure word '个' (gè).",
+      "answer": "我有两个朋友。",
+      "accept": []
+    },
+    {
+      "type": "cloze",
+      "prompt": "爸爸有一___电脑。",
+      "pinyin": "Bàba yǒu yì ___ diànnǎo.",
+      "hint": "Measure word for computers/appliances",
+      "answer": "台",
+      "accept": [
+        "个",
+        "部"
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "我是一个妹妹。",
+      "pinyin": "Wǒ shì yí ge mèimei.",
+      "hint": "Change the verb to show possession (having a sister).",
+      "answer": "我有一个妹妹。",
+      "accept": [
+        "我有一位妹妹。"
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "They do not have a car.",
+      "pinyin": "",
+      "hint": "Use '没有' (méiyǒu) and '车' (chē).",
+      "answer": "他们没有车。",
+      "accept": [
+        "他们没车。",
+        "她们没有车。",
+        "她们没车。"
+      ]
+    }
+  ],
+  "cong-dao": [
+    {
+      "type": "cloze",
+      "prompt": "从商店___学校要走十分钟。",
+      "pinyin": "cóng shāng diàn ___ xué xiào yào zǒu shí fēn zhōng.",
+      "hint": "Fill in the missing word meaning 'to' to complete the 'from... to...' structure.",
+      "answer": "到",
+      "accept": [
+        "到",
+        "去"
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "From Monday to Friday, I study Chinese.",
+      "pinyin": "",
+      "hint": "Use the '从...到...' structure with HSK 1 vocabulary.",
+      "answer": "从星期一到星期五我学习汉语。",
+      "accept": [
+        "从星期一到星期五，我学汉语。",
+        "我从星期一到星期五学习汉语。",
+        "我从星期一到星期五学汉语。"
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "从九点到五点，他在工作。",
+      "pinyin": "cóng jiǔ diǎn dào wǔ diǎn, tā zài gōng zuò.",
+      "hint": "Translate the sentence into natural English.",
+      "answer": "From nine to five, he is working.",
+      "accept": [
+        "From nine o'clock to five o'clock, he is working.",
+        "He works from nine to five.",
+        "From 9 to 5, he is working."
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "我从八点在十点看书。",
+      "pinyin": "wǒ cóng bā diǎn zài shí diǎn kàn shū.",
+      "hint": "The preposition indicating the end of the time span is incorrect.",
+      "answer": "我从八点到十点看书。",
+      "accept": [
+        "我从八点到十点钟看书。",
+        "从八点到十点我看书。"
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Write a sentence using '从...到...' to describe your daily work or study hours (e.g., 'I work from 9 to 5').",
+      "pinyin": "",
+      "hint": "Use the pattern: 从 [time] 到 [time] [action]",
+      "answer": "我从九点到五点工作。",
+      "accept": []
+    },
+    {
+      "type": "cloze",
+      "prompt": "我___北京到上海坐火车要五个小时。",
+      "pinyin": "wǒ ___ běi jīng dào shàng hǎi zuò huǒ chē yào wǔ gè xiǎo shí.",
+      "hint": "Fill in the missing word meaning 'from' to start the route.",
+      "answer": "从",
+      "accept": [
+        "从"
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "It is very cold from January to March.",
+      "pinyin": "",
+      "hint": "Use '从...到...' with months (一月, 三月) and '很冷'.",
+      "answer": "从一月到三月很冷。",
+      "accept": [
+        "从一月份到三月份很冷。",
+        "从一月到三月天气很冷。"
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "从我家到商店不远。",
+      "pinyin": "cóng wǒ jiā dào shāng diàn bù yuǎn.",
+      "hint": "Translate the sentence into natural English.",
+      "answer": "It is not far from my home to the store.",
+      "accept": [
+        "From my house to the shop is not far.",
+        "It's not far from my home to the shop.",
+        "From my home to the store is not far."
+      ]
+    }
+  ],
+  "wang": [
+    {
+      "type": "cloze",
+      "prompt": "请 ___ 右拐。",
+      "pinyin": "Qǐng ___ yòu guǎi.",
+      "hint": "Fill in the preposition meaning 'toward'.",
+      "answer": "往",
+      "accept": [
+        "向"
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "Go straight ahead.",
+      "pinyin": "",
+      "hint": "Use the structure: 往 + direction (front) + 走.",
+      "answer": "往前走",
+      "accept": [
+        "向前走",
+        "请往前走",
+        "请向前走"
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "往左拐。",
+      "pinyin": "Wǎng zuǒ guǎi.",
+      "hint": "Translate the action of turning in a direction.",
+      "answer": "Turn left.",
+      "accept": [
+        "Turn left",
+        "Go left.",
+        "Please turn left."
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "走往前。",
+      "pinyin": "Zǒu wǎng qián.",
+      "hint": "The preposition phrase '往前' must go before the verb '走'.",
+      "answer": "往前走",
+      "accept": [
+        "向前走"
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Write a simple Chinese sentence that means 'Turn right' using the structure '往/向 + direction + 拐/转'.",
+      "pinyin": "",
+      "hint": "Use '往' or '向', the word for 'right' (右), and the verb for 'turn' (拐 or 转).",
+      "answer": "往右拐",
+      "accept": []
+    },
+    {
+      "type": "cloze",
+      "prompt": "往 ___ 走。",
+      "pinyin": "Wǎng ___ zǒu.",
+      "hint": "Fill in the direction word for 'back' or 'backward'.",
+      "answer": "后",
+      "accept": [
+        "后面"
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "Please turn left.",
+      "pinyin": "",
+      "hint": "Use '请' (please) followed by the '往/向' structure.",
+      "answer": "请往左拐",
+      "accept": [
+        "请向左拐",
+        "请往左转",
+        "请向左转"
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "去左拐。",
+      "pinyin": "Qù zuǒ guǎi.",
+      "hint": "Replace '去' with the correct preposition '往' or '向' to indicate direction.",
+      "answer": "往左拐",
+      "accept": [
+        "向左拐",
+        "往左转",
+        "向左转"
+      ]
+    }
+  ],
+  "zai-prog": [
+    {
+      "type": "cloze",
+      "prompt": "他 ___ 听 音乐 呢。",
+      "pinyin": "Tā ___ tīng yīnyuè ne.",
+      "hint": "Fill in the word that indicates an action in progress.",
+      "answer": "在",
+      "accept": [
+        "正在"
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "My younger brother is sleeping.",
+      "pinyin": "",
+      "hint": "Use '在' + verb (睡觉). You can add '呢' at the end.",
+      "answer": "弟弟在睡觉。",
+      "accept": [
+        "弟弟在睡觉呢。",
+        "我弟弟在睡觉。",
+        "我弟弟在睡觉呢。"
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "妈妈在做饭呢。",
+      "pinyin": "Māma zài zuòfàn ne.",
+      "hint": "Translate to English.",
+      "answer": "Mom is cooking.",
+      "accept": [
+        "Mother is cooking.",
+        "My mom is cooking.",
+        "My mother is cooking."
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "我吃苹果在呢。",
+      "pinyin": "Wǒ chī píngguǒ zài ne.",
+      "hint": "The continuous marker '在' must go before the verb.",
+      "answer": "我在吃苹果呢。",
+      "accept": [
+        "我在吃苹果。",
+        "我正在吃苹果。"
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Write a sentence in Chinese saying 'I am reading a book' using the '在' structure.",
+      "pinyin": "",
+      "hint": "Use '看书' (kànshū) for reading a book.",
+      "answer": "我在看书。",
+      "accept": []
+    },
+    {
+      "type": "cloze",
+      "prompt": "老师在 ___ 课 呢。",
+      "pinyin": "Lǎoshī zài ___ kè ne.",
+      "hint": "Fill in the verb 'to attend/give a class' (shàng).",
+      "answer": "上",
+      "accept": [
+        "讲"
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "They are learning Chinese.",
+      "pinyin": "",
+      "hint": "Use '在' and '学习汉语' (xuéxí Hànyǔ).",
+      "answer": "他们在学习汉语。",
+      "accept": [
+        "他们在学习中文。",
+        "他们正在学习汉语。",
+        "他们正在学习中文。"
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "你在写字吗？",
+      "pinyin": "Nǐ zài xiězì ma?",
+      "hint": "Translate to English.",
+      "answer": "Are you writing?",
+      "accept": [
+        "Are you writing characters?",
+        "Are you writing words?",
+        "Are you typing?"
+      ]
+    }
+  ],
+  "time-place": [
+    {
+      "type": "cloze",
+      "prompt": "我 ___ 去北京。",
+      "pinyin": "wǒ ___ qù běijīng.",
+      "hint": "Fill in the blank with the time word 'tomorrow' (míngtiān).",
+      "answer": "明天",
+      "accept": [
+        "今天",
+        "下星期",
+        "下个月"
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "Translate to Chinese: 'He watches TV at 8 PM.'",
+      "pinyin": "",
+      "hint": "Use the structure S + time + V + O. Use '晚上八点' (wǎnshang bā diǎn) and '看电视' (kàn diànshì).",
+      "answer": "他晚上八点看电视。",
+      "accept": [
+        "晚上八点他看电视。",
+        "他晚上八点看电视",
+        "晚上八点他看电视"
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "我们星期六去商店。",
+      "pinyin": "wǒmen xīngqīliù qù shāngdiàn.",
+      "hint": "Translate the sentence to English.",
+      "answer": "We go to the store on Saturday.",
+      "accept": [
+        "We are going to the store on Saturday.",
+        "On Saturday we go to the store.",
+        "We go to the shop on Saturday."
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "Correct the mistake: 我去学校早上八点。",
+      "pinyin": "wǒ qù xuéxiào zǎoshang bā diǎn.",
+      "hint": "The time-when (早上八点) must go before the verb (去).",
+      "answer": "我早上八点去学校。",
+      "accept": [
+        "早上八点我去学校。",
+        "我早上八点去学校",
+        "早上八点我去学校"
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Write a Chinese sentence using the S + time + V structure to say what you do at 7:00 AM.",
+      "pinyin": "",
+      "hint": "Use '早上七点' (zǎoshang qī diǎn) and a verb like '起床' (qǐchuáng - to get up).",
+      "answer": "我早上七点起床。",
+      "accept": []
+    },
+    {
+      "type": "cloze",
+      "prompt": "爸爸下午五点 ___ 。",
+      "pinyin": "bàba xiàwǔ wǔ diǎn ___ .",
+      "hint": "Fill in the blank with 'goes home' (huí jiā).",
+      "answer": "回家",
+      "accept": [
+        "回学校",
+        "吃饭",
+        "工作"
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "Translate to Chinese: 'My friend comes to my home on Sunday.'",
+      "pinyin": "",
+      "hint": "Use '星期天' (xīngqītiān) before the verb '来' (lái).",
+      "answer": "我的朋友星期天来我家。",
+      "accept": [
+        "星期天我的朋友来我家。",
+        "我的朋友星期日来我家。",
+        "星期日我的朋友来我家。"
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "Correct the mistake: 姐姐看书晚上。",
+      "pinyin": "jiějie kànshū wǎnshang.",
+      "hint": "Put the time word '晚上' (evening) before the verb '看书' (read books).",
+      "answer": "姐姐晚上看书。",
+      "accept": [
+        "晚上姐姐看书。",
+        "姐姐晚上看书",
+        "晚上姐姐看书"
+      ]
+    }
+  ],
+  "transport": [
+    {
+      "type": "cloze",
+      "prompt": "我们 ___ 火车去北京。",
+      "pinyin": "Wǒmen ___ huǒchē qù Běijīng.",
+      "hint": "take / ride in (verb)",
+      "answer": "坐",
+      "accept": [
+        "zuò"
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "He drives a car to the hospital.",
+      "pinyin": "",
+      "hint": "Use 开 (drive), 车 (car), and 医院 (hospital)",
+      "answer": "他开车去医院。",
+      "accept": [
+        "他开车去医院",
+        "他开车去医院。"
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "我骑自行车去学校。",
+      "pinyin": "Wǒ qí zìxíngchē qù xuéxiào.",
+      "hint": "自行车 = bicycle, 学校 = school",
+      "answer": "I ride a bicycle to school.",
+      "accept": [
+        "I ride a bike to school.",
+        "I go to school by bicycle.",
+        "I go to school by bike."
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "Correct the sentence: 我去商店坐出租车。",
+      "pinyin": "Wǒ qù shāngdiàn zuò chūzūchē.",
+      "hint": "The means of transport must come before '去 + place'.",
+      "answer": "我坐出租车去商店。",
+      "accept": [
+        "我坐出租车去商店",
+        "我坐出租车去商店。"
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Write a Chinese sentence saying: 'I take the subway to the company.'",
+      "pinyin": "",
+      "hint": "subway = 地铁, company = 公司",
+      "answer": "我坐地铁去公司。",
+      "accept": []
+    },
+    {
+      "type": "cloze",
+      "prompt": "哥哥骑___去公园。",
+      "pinyin": "Gēge qí ___ qù gōngyuán.",
+      "hint": "bicycle",
+      "answer": "自行车",
+      "accept": [
+        "单车",
+        "zìxíngchē"
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "My mom goes to China by plane.",
+      "pinyin": "",
+      "hint": "plane = 飞机, China = 中国",
+      "answer": "我妈妈坐飞机去中国。",
+      "accept": [
+        "妈妈坐飞机去中国",
+        "妈妈坐飞机去中国。",
+        "我妈妈坐飞机去中国"
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "Correct the sentence: 我开自行车去学校。",
+      "pinyin": "Wǒ kāi zìxíngchē qù xuéxiào.",
+      "hint": "Use the correct verb for riding a bicycle (not 开).",
+      "answer": "我骑自行车去学校。",
+      "accept": [
+        "我骑自行车去学校",
+        "我骑车去学校",
+        "我骑车去学校。"
+      ]
+    }
+  ],
+  "cong": [
+    {
+      "type": "cloze",
+      "prompt": "他 ___ 家来。",
+      "pinyin": "tā ___ jiā lái.",
+      "hint": "from",
+      "answer": "从",
+      "accept": [
+        "从"
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "I come from Beijing.",
+      "pinyin": "",
+      "hint": "Use the pattern: S + 从 + A + V",
+      "answer": "我从北京来。",
+      "accept": [
+        "我从北京来的。",
+        "我从北京过来。"
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "弟弟从商店回来。",
+      "pinyin": "dìdi cóng shāngdiàn huílái.",
+      "hint": "弟弟 (younger brother), 商店 (store), 回来 (come back)",
+      "answer": "Little brother comes back from the store.",
+      "accept": [
+        "My younger brother came back from the shop.",
+        "My little brother returned from the store.",
+        "Younger brother returns from the store."
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "他来从学校。",
+      "pinyin": "tā lái cóng xuéxiào.",
+      "hint": "Correct the word order of the prepositional phrase '从学校' and the verb '来'.",
+      "answer": "他从学校来。",
+      "accept": [
+        "他从学校来的。",
+        "他从学校回来。"
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Write a Chinese sentence using '从' to say: 'I go from school.'",
+      "pinyin": "",
+      "hint": "Use the pattern S + 从 + 学校 (school) + 去/走 (go/walk).",
+      "answer": "我从学校去。",
+      "accept": []
+    },
+    {
+      "type": "cloze",
+      "prompt": "爸爸从公司 ___ 。",
+      "pinyin": "bàba cóng gōngsī ___ .",
+      "hint": "come (来)",
+      "answer": "来",
+      "accept": [
+        "回来",
+        "走"
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "She walks from here.",
+      "pinyin": "",
+      "hint": "Use '这儿' (here) and '走' (walk/leave).",
+      "answer": "她从这儿走。",
+      "accept": [
+        "她从这里走。",
+        "她从这儿走出去。"
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "姐姐从商店。",
+      "pinyin": "jiějie cóng shāngdiàn.",
+      "hint": "The sentence is missing a verb at the end (e.g., '回来' - come back).",
+      "answer": "姐姐从商店回来。",
+      "accept": [
+        "姐姐从商店来。",
+        "姐姐从商店走。"
+      ]
+    }
+  ],
+  "dasuan": [
+    {
+      "type": "cloze",
+      "prompt": "明天我 ___ 去商店买东西。",
+      "pinyin": "Míngtiān wǒ ___ qù shāngdiàn mǎi dōngxi.",
+      "hint": "plan to (dǎsuàn)",
+      "answer": "打算",
+      "accept": [
+        "打算"
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "I plan to learn Chinese tomorrow.",
+      "pinyin": "",
+      "hint": "Use 打算 (dǎsuàn) and 学习汉语 (xuéxí Hànyǔ).",
+      "answer": "我打算明天学习汉语。",
+      "accept": [
+        "我打算明天学汉语。",
+        "明天我打算学习汉语。",
+        "明天我打算学汉语。"
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "我们打算去北京旅游。",
+      "pinyin": "Wǒmen dǎsuàn qù Běijīng lǚyóu.",
+      "hint": "旅游 (lǚyóu) means to travel.",
+      "answer": "We plan to travel to Beijing.",
+      "accept": [
+        "We plan to go to Beijing for a trip.",
+        "We intend to travel to Beijing.",
+        "We are planning to travel to Beijing."
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "Correct the error in this sentence: 他去打算买电脑。",
+      "pinyin": "Tā qù dǎsuàn mǎi diànnǎo.",
+      "hint": "Place '打算' (plan to) before the verb phrase.",
+      "answer": "他打算去买电脑。",
+      "accept": [
+        "他打算买电脑。"
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Write a Chinese sentence about what you plan to eat for lunch, using '打算'.",
+      "pinyin": "",
+      "hint": "Use '打算' (dǎsuàn) and '吃' (chī).",
+      "answer": "我打算中午吃面条。",
+      "accept": []
+    },
+    {
+      "type": "cloze",
+      "prompt": "你周末 ___ 做什么？",
+      "pinyin": "Nǐ zhōumò ___ zuò shénme?",
+      "hint": "plan to (dǎsuàn)",
+      "answer": "打算",
+      "accept": [
+        "打算"
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "What do you plan to buy?",
+      "pinyin": "",
+      "hint": "Use 打算 (dǎsuàn) and 买 (mǎi).",
+      "answer": "你打算买什么？",
+      "accept": [
+        "你打算买什么东西？",
+        "你打算买点儿什么？"
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "我不打算去学校。",
+      "pinyin": "Wǒ bù dǎsuàn qù xuéxiào.",
+      "hint": "Note the negative form (不打算).",
+      "answer": "I don't plan to go to school.",
+      "accept": [
+        "I do not plan to go to school.",
+        "I am not planning to go to school.",
+        "I don't intend to go to school."
+      ]
     }
   ]
 }
