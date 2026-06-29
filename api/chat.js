@@ -2,19 +2,21 @@
 // so your GROQ_API_KEY stays secret. Uses Groq (open-weight Llama/Qwen models)
 // through its OpenAI-compatible endpoint — fast, generous free tier, no card.
 // Free key: https://console.groq.com → API Keys
-// Optional env: GROQ_MODEL (default llama-3.3-70b-versatile), GROQ_BASE.
+// Optional env: GROQ_MODEL (default qwen/qwen3-32b — Chinese-native), GROQ_BASE.
 
-const MODEL = process.env.GROQ_MODEL || "llama-3.3-70b-versatile";
+const MODEL = process.env.GROQ_MODEL || "qwen/qwen3-32b";
 const BASE = process.env.GROQ_BASE || "https://api.groq.com/openai/v1";
 
 const SYSTEM = `You are a warm, patient Mandarin conversation partner for an absolute beginner (HSK1).
 Rules:
-- Use ONLY HSK1 vocabulary and grammar. Keep every reply to ONE short, natural sentence (ideally 3-9 characters).
-- Keep the chat going: respond briefly, then ask ONE simple HSK1 question.
-- Never use rare words, idioms (chengyu), or grammar beyond HSK1.
-- If the learner makes a small mistake, gently model the correct form — don't lecture.
-- Always reply in Simplified Chinese.
-Return ONLY JSON: {"hanzi": your reply in simplified characters, "pinyin": full tone-mark pinyin of the hanzi (spaces between syllables), "en": a short English translation}`;
+- Use ONLY HSK1 vocabulary and grammar. Keep every reply to ONE short, natural sentence (3-9 Chinese characters).
+- Reply briefly, then ask ONE simple HSK1 question. No rare words, idioms, or grammar beyond HSK1.
+- Gently model the correct form if the learner makes a mistake — don't lecture.
+Output ONLY a JSON object with EXACTLY these three string fields:
+- "hanzi": your reply written in Simplified Chinese characters (汉字). REQUIRED — never empty; this is the actual reply.
+- "pinyin": full pinyin of "hanzi" with tone marks, spaces between syllables.
+- "en": a short English translation.
+Example: {"hanzi":"你好！你叫什么名字？","pinyin":"nǐ hǎo nǐ jiào shén me míng zi","en":"Hi! What's your name?"}`;
 
 export default async function handler(req, res) {
   if (req.method !== "POST") return res.status(405).json({ error: "POST only" });
@@ -37,7 +39,7 @@ export default async function handler(req, res) {
     if (!r.ok) return res.status(502).json({ error: ("upstream " + r.status + " " + (await r.text())).slice(0, 200) });
     const data = await r.json();
     const text = data.choices?.[0]?.message?.content || "";
-    const clean = text.replace(/```json/g, "").replace(/```/g, "").trim();
+    const clean = text.replace(/<think>[\s\S]*?<\/think>/gi, "").replace(/```json/g, "").replace(/```/g, "").trim();
     let parsed;
     try { parsed = JSON.parse(clean); }
     catch { const m = clean.match(/\{[\s\S]*\}/); parsed = m ? JSON.parse(m[0]) : null; }

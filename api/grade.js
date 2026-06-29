@@ -4,9 +4,9 @@
 //
 // Uses Groq (open-weight Llama/Qwen models) via its OpenAI-compatible endpoint —
 // fast, generous free tier, no card. Free key: https://console.groq.com
-// Optional env: GROQ_MODEL (default llama-3.3-70b-versatile), GROQ_BASE.
+// Optional env: GROQ_MODEL (default qwen/qwen3-32b — Chinese-native), GROQ_BASE.
 
-const MODEL = process.env.GROQ_MODEL || "llama-3.3-70b-versatile";
+const MODEL = process.env.GROQ_MODEL || "qwen/qwen3-32b";
 const BASE = process.env.GROQ_BASE || "https://api.groq.com/openai/v1";
 
 export default async function handler(req, res) {
@@ -33,7 +33,7 @@ Return ONLY JSON: {"correct":true|false,"feedback":string (1-2 sentences, specif
     if (!r.ok) return res.status(502).json({ error: "upstream " + r.status });
     const data = await r.json();
     const text = data.choices?.[0]?.message?.content || "";
-    const clean = text.replace(/```json/g, "").replace(/```/g, "").trim();
+    const clean = text.replace(/<think>[\s\S]*?<\/think>/gi, "").replace(/```json/g, "").replace(/```/g, "").trim();
     let parsed;
     try { parsed = JSON.parse(clean); }
     catch { const m = clean.match(/\{[\s\S]*\}/); parsed = m ? JSON.parse(m[0]) : null; }
