@@ -22,13 +22,14 @@ Type: ${type}
 Prompt: ${prompt}
 Reference: ${answer}
 Learner: ${user}
-Return ONLY JSON: {"correct":true|false,"feedback":string (1-2 sentences, specific, encouraging; if wrong explain the fix),"correction":string}`;
+Return ONLY the JSON object, no reasoning or extra text: {"correct":true|false,"feedback":string (1-2 sentences, specific, encouraging; if wrong explain the fix),"correction":string}
+/no_think`;
 
   try {
     const r = await fetch(`${BASE}/chat/completions`, {
       method: "POST",
       headers: { "content-type": "application/json", authorization: `Bearer ${key}` },
-      body: JSON.stringify({ model: MODEL, messages: [{ role: "user", content: grade }], temperature: 0.2, max_tokens: 1000, response_format: { type: "json_object" } }),
+      body: JSON.stringify({ model: MODEL, messages: [{ role: "user", content: grade }], temperature: 0.2, max_tokens: 1200 }),
     });
     if (!r.ok) return res.status(502).json({ error: "upstream " + r.status });
     const data = await r.json();

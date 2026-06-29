@@ -16,7 +16,8 @@ Output ONLY a JSON object with EXACTLY these three string fields:
 - "hanzi": your reply written in Simplified Chinese characters (汉字). REQUIRED — never empty; this is the actual reply.
 - "pinyin": full pinyin of "hanzi" with tone marks, spaces between syllables.
 - "en": a short English translation.
-Example: {"hanzi":"你好！你叫什么名字？","pinyin":"nǐ hǎo nǐ jiào shén me míng zi","en":"Hi! What's your name?"}`;
+Example: {"hanzi":"你好！你叫什么名字？","pinyin":"nǐ hǎo nǐ jiào shén me míng zi","en":"Hi! What's your name?"}
+Reply with the JSON object only — no reasoning, no extra text. /no_think`;
 
 export default async function handler(req, res) {
   if (req.method !== "POST") return res.status(405).json({ error: "POST only" });
@@ -34,7 +35,7 @@ export default async function handler(req, res) {
     const r = await fetch(`${BASE}/chat/completions`, {
       method: "POST",
       headers: { "content-type": "application/json", authorization: `Bearer ${key}` },
-      body: JSON.stringify({ model: MODEL, messages: msgs, temperature: 0.7, max_tokens: 300, response_format: { type: "json_object" } }),
+      body: JSON.stringify({ model: MODEL, messages: msgs, temperature: 0.7, max_tokens: 800 }),
     });
     if (!r.ok) return res.status(502).json({ error: ("upstream " + r.status + " " + (await r.text())).slice(0, 200) });
     const data = await r.json();
