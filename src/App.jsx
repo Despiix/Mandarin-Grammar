@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo, useEffect, useRef } from "react";
 import { STRUCTURES, CATS, CAT_LABEL } from "./structures";
 import banks from "./banks.json";
 import { gradeClosed, isProduction } from "./grade";
@@ -108,6 +108,16 @@ function Speaker({ text, label = "Listen" }) {
         <path d="M11 5 6 9H2v6h4l5 4z" /><path d="M15.5 8.5a5 5 0 0 1 0 7" /><path d="M18.5 5.5a8 8 0 0 1 0 13" />
       </svg>
     </button>
+  );
+}
+
+const SpeechRec = typeof window !== "undefined" && (window.SpeechRecognition || window.webkitSpeechRecognition);
+const CHAT_ERR = "Couldn't reach the tutor. Chat needs the /api/chat function — it runs on the deployed site (or locally via `vercel dev`), not under plain `npm run dev`. Also check GEMINI_API_KEY is set.";
+function MicIcon() {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <rect x="9" y="3" width="6" height="11" rx="3" /><path d="M5 11a7 7 0 0 0 14 0M12 18v3" />
+    </svg>
   );
 }
 
@@ -239,6 +249,14 @@ export default function App() {
   const [justKnown, setJustKnown] = useState(null);
   const [activity, setActivity] = useState(loadActivity);
 
+  const [chat, setChat] = useState([]);
+  const [chatInput, setChatInput] = useState("");
+  const [chatBusy, setChatBusy] = useState(false);
+  const [listening, setListening] = useState(false);
+  const [chatErr, setChatErr] = useState("");
+  const recogRef = useRef(null);
+  const chatEndRef = useRef(null);
+
   useEffect(() => {
     if (!justKnown) return;
     const t = setTimeout(() => setJustKnown(null), 2200);
@@ -317,6 +335,47 @@ export default function App() {
     setResult(null); setInput(""); setShowPy(false); setRevealed(false); setDrawerOpen(false); setIdx((i) => i + 1);
   }
 
+  async function callChat(history) {
+    const r = await fetch("/api/chat", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ messages: history }) });
+    if (!r.ok) throw new Error("chat " + r.status);
+    return r.json();
+  }
+  async function startChat() {
+    if (chatBusy) return;
+    setChatBusy(true); setChatErr("");
+    try { const reply = await callChat([]); if (reply?.hanzi) { setChat([{ role: "ai", ...reply, text: reply.hanzi }]); speak(reply.hanzi); } else setChatErr(CHAT_ERR); }
+    catch { setChatErr(CHAT_ERR); }
+    setChatBusy(false);
+  }
+  async function sendChat() {
+    const text = chatInput.trim();
+    if (!text || chatBusy) return;
+    if (listening) recogRef.current?.stop();
+    const convo = [...chat, { role: "me", text }];
+    setChat(convo); setChatInput(""); setChatBusy(true); setChatErr(""); markToday();
+    try { const reply = await callChat(convo.map((m) => ({ role: m.role, text: m.text }))); if (reply?.hanzi) { setChat([...convo, { role: "ai", ...reply, text: reply.hanzi }]); speak(reply.hanzi); } else setChatErr(CHAT_ERR); }
+    catch { setChatErr(CHAT_ERR); }
+    setChatBusy(false);
+  }
+  function restartChat() { setChatInput(""); setChat([]); startChat(); }
+  function toggleMic() {
+    if (!SpeechRec) return;
+    if (listening) { recogRef.current?.stop(); setListening(false); return; }
+    const rec = new SpeechRec();
+    rec.lang = "zh-CN"; rec.interimResults = true; rec.maxAlternatives = 1;
+    rec.onresult = (e) => { let t = ""; for (let i = 0; i < e.results.length; i++) t += e.results[i][0].transcript; setChatInput(t); };
+    rec.onend = () => setListening(false);
+    rec.onerror = () => setListening(false);
+    recogRef.current = rec; setListening(true);
+    try { rec.start(); } catch { setListening(false); }
+  }
+
+  useEffect(() => {
+    if (tab === "talk" && view === "home" && online && chat.length === 0 && !chatBusy) startChat();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tab, view, online]);
+  useEffect(() => { chatEndRef.current?.scrollIntoView({ behavior: "smooth", block: "end" }); }, [chat, chatBusy]);
+
   const ex = exercises[idx];
   const done = exercises.length > 0 && idx >= exercises.length;
   const total = structures.length;
@@ -339,6 +398,7 @@ export default function App() {
             <nav className="tabs">
               <button className={tab === "today" ? "tab on" : "tab"} onClick={() => setTab("today")}>Today</button>
               <button className={tab === "library" ? "tab on" : "tab"} onClick={() => setTab("library")}>Library</button>
+              <button className={tab === "talk" ? "tab on" : "tab"} onClick={() => setTab("talk")}>Talk</button>
             </nav>
           )}
           <button
@@ -409,6 +469,41 @@ export default function App() {
               </section>
             );
           })}
+        </main>
+      )}
+
+      {view === "home" && tab === "talk" && (
+        <main className="wrap viewfade">
+          <div className="lead"><h1>Talk</h1><p>A simple HSK 1 conversation. Type your reply or tap the mic to speak.</p></div>
+          {!online ? (
+            <div className="note">The conversation partner is online-only. Reconnect to chat — the rest of Frame still works offline.</div>
+          ) : (
+            <>
+              <div className="chatlog">
+                {chat.map((m, i) => m.role === "ai" ? (
+                  <div className="msg ai" key={i}>
+                    <div className="bubble">
+                      <div className="chanzi">{m.hanzi}</div>
+                      <div className="cpy">{(m.pinyin || "").split(/\s+/).filter(Boolean).map((syl, j) => <span key={j} className={"t" + pinyinTone(syl)}>{syl} </span>)}</div>
+                      {m.en && <div className="cen">{m.en}</div>}
+                    </div>
+                    <Speaker text={m.hanzi} label="Replay" />
+                  </div>
+                ) : (
+                  <div className="msg me" key={i}><div className="bubble">{m.text}</div></div>
+                ))}
+                {chatBusy && <div className="msg ai"><div className="bubble typing"><span /><span /><span /></div></div>}
+                <div ref={chatEndRef} />
+              </div>
+              {chatErr && <div className="chaterr">{chatErr}</div>}
+              <div className="chatbar">
+                {SpeechRec && <button className={"micbtn" + (listening ? " on" : "")} onClick={toggleMic} title={listening ? "Listening… tap to stop" : "Speak"} aria-label="Speak"><MicIcon /></button>}
+                <input className="chatfield" placeholder="Type your reply…" value={chatInput} onChange={(e) => setChatInput(e.target.value)} onKeyDown={(e) => { if (e.key === "Enter") sendChat(); }} />
+                <button className="btn" onClick={sendChat} disabled={chatBusy || !chatInput.trim()}>Send</button>
+              </div>
+              <button className="chatrestart" onClick={restartChat}>↺ New conversation</button>
+            </>
+          )}
         </main>
       )}
 
