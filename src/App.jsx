@@ -31,6 +31,10 @@ function loadStates() { try { return JSON.parse(localStorage.getItem(STORE_KEY))
 const ACT_KEY = "frame.activity.v1";
 function dayKey(d) { const y = d.getFullYear(), m = String(d.getMonth() + 1).padStart(2, "0"), a = String(d.getDate()).padStart(2, "0"); return `${y}-${m}-${a}`; }
 function loadActivity() { try { return JSON.parse(localStorage.getItem(ACT_KEY)) || {}; } catch { return {}; } }
+
+const MIS_KEY = "frame.mistakes.v1";
+function loadMistakes() { try { return JSON.parse(localStorage.getItem(MIS_KEY)) || []; } catch { return []; } }
+const misKey = (sid, ex) => sid + "|" + (ex.prompt || "");
 function computeStreak(act) {
   const t = new Date(); t.setHours(0, 0, 0, 0);
   const cur = new Date(t);
@@ -248,6 +252,10 @@ export default function App() {
   const [empty, setEmpty] = useState(false);
   const [justKnown, setJustKnown] = useState(null);
   const [activity, setActivity] = useState(loadActivity);
+  const [mistakes, setMistakes] = useState(loadMistakes);
+  const [mistakeMode, setMistakeMode] = useState(false);
+
+  useEffect(() => { try { localStorage.setItem(MIS_KEY, JSON.stringify(mistakes)); } catch {} }, [mistakes]);
 
   const [chat, setChat] = useState([]);
   const [chatInput, setChatInput] = useState("");
@@ -289,13 +297,30 @@ export default function App() {
     [structures]
   );
 
+  function addMistake(sid, ex) {
+    setMistakes((m) => (m.some((x) => misKey(x.sid, x.ex) === misKey(sid, ex)) ? m : [...m, { sid, ex }]));
+  }
+  function removeMistake(sid, ex) {
+    setMistakes((m) => m.filter((x) => misKey(x.sid, x.ex) !== misKey(sid, ex)));
+  }
+
   function startPractice(s) {
-    setActive(s); setView("practice"); setIdx(0);
+    setActive(s); setView("practice"); setIdx(0); setMistakeMode(false);
     setInput(""); setResult(null); setScore(0); setShowPy(false); setRevealed(false); setDrawerOpen(false);
     const bank = banks[s.id] || [];
     if (!bank.length) { setExercises([]); setEmpty(true); return; }
     setEmpty(false);
     setExercises(shuffle(bank).slice(0, 5));
+  }
+
+  function startMistakes() {
+    const pool = mistakes.filter((m) => STRUCTURES.find((s) => s.id === m.sid));
+    if (!pool.length) return;
+    const list = shuffle(pool).slice(0, 10).map((m) => ({ ...m.ex, _sid: m.sid }));
+    setMistakeMode(true); setView("practice"); setIdx(0);
+    setActive(STRUCTURES.find((s) => s.id === list[0]._sid));
+    setInput(""); setResult(null); setScore(0); setShowPy(false); setRevealed(false); setDrawerOpen(false); setEmpty(false);
+    setExercises(list);
   }
 
   async function check() {
@@ -312,12 +337,19 @@ export default function App() {
       if (isProduction(ex)) { setGrading(false); setRevealed(true); return; }
       r = { correct: gradeClosed(ex, input), correction: ex.answer, source: "local" };
     }
-    if (r.correct) setScore((x) => x + 1);
+    if (r.correct) { setScore((x) => x + 1); if (mistakeMode) removeMistake(ex._sid, ex); }
+    else if (!mistakeMode) addMistake(active.id, ex);
     markToday();
     setResult(r); setGrading(false);
   }
 
-  function selfMark(ok) { if (ok) setScore((x) => x + 1); markToday(); setResult({ correct: ok, source: "self" }); }
+  function selfMark(ok) {
+    const ex = exercises[idx];
+    if (ok) { setScore((x) => x + 1); if (mistakeMode) removeMistake(ex._sid, ex); }
+    else if (!mistakeMode) addMistake(active.id, ex);
+    markToday();
+    setResult({ correct: ok, source: "self" });
+  }
 
   function commit(finalScore) {
     const ratio = exercises.length ? finalScore / exercises.length : 0;
@@ -331,7 +363,9 @@ export default function App() {
     }));
   }
   function next() {
-    if (idx + 1 >= exercises.length) commit(score);
+    const ni = idx + 1;
+    if (ni >= exercises.length) { if (!mistakeMode) commit(score); }
+    else if (mistakeMode && exercises[ni]?._sid) setActive(STRUCTURES.find((s) => s.id === exercises[ni]._sid));
     setResult(null); setInput(""); setShowPy(false); setRevealed(false); setDrawerOpen(false); setIdx((i) => i + 1);
   }
 
@@ -434,6 +468,16 @@ export default function App() {
               ))}
             </div>
           </section>
+          {mistakes.length > 0 && (
+            <section className="qsec">
+              <h2 className="qhead">Fix your mistakes</h2>
+              <div className="trow rise">
+                <span className="dot learning" />
+                <span className="tname">{mistakes.length} {mistakes.length === 1 ? "mistake" : "mistakes"} to redo</span>
+                <button className="btn small" onClick={startMistakes}>Redo</button>
+              </div>
+            </section>
+          )}
           {learningQueue.length > 0 && <section className="qsec"><h2 className="qhead">Keep going</h2>{learningQueue.map((s, i) => <Row key={s.id} s={s} i={i} pulse={s.id === justKnown} onGo={() => startPractice(s)} />)}</section>}
           {newQueue.length > 0 && <section className="qsec"><h2 className="qhead">Start something new</h2>{newQueue.map((s, i) => <Row key={s.id} s={s} i={learningQueue.length + i} pulse={s.id === justKnown} onGo={() => startPractice(s)} />)}</section>}
           {learningQueue.length === 0 && newQueue.length === 0 && <div className="note">Everything's marked known — open the Library to review anything you like.</div>}
@@ -560,8 +604,13 @@ export default function App() {
             <section className="ex summary">
               {score / exercises.length >= 0.6 && <Confetti />}
               <div className="bignum"><CountUp value={score} /><span>/ {exercises.length}</span></div>
-              <p>Marked <strong>{STATE_LABEL[structures.find((s) => s.id === active.id)?.state] || "Learning"}</strong> and saved to this device.</p>
-              <div className="row"><button className="btn" onClick={() => startPractice(active)}>Again</button><button className="btn ghost" onClick={() => setView("home")}>Done</button></div>
+              <p>{mistakeMode
+                ? "Cleared the ones you got right — they're off your mistakes list. Nothing else changed."
+                : <>Marked <strong>{STATE_LABEL[structures.find((s) => s.id === active.id)?.state] || "Learning"}</strong> and saved to this device.</>}</p>
+              <div className="row">
+                {(!mistakeMode || mistakes.length > 0) && <button className="btn" onClick={() => (mistakeMode ? startMistakes() : startPractice(active))}>Again</button>}
+                <button className="btn ghost" onClick={() => setView("home")}>Done</button>
+              </div>
             </section>
           )}
 
