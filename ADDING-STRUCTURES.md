@@ -69,9 +69,12 @@ Field rules:
 (2) An exercises array for that same id. Generate 8 varied HSK 1-2 exercises that
 all use the pattern. Each item:
 {"type":"cloze"|"translate_e2c"|"translate_c2e"|"error_correction"|"production",
- "prompt":string,"pinyin":string,"hint":string,"answer":string,"accept":string[]}
+ "prompt":string,"pinyin":string,"hint":string,"answer":string,"accept":string[],
+ "vocab":[{"w":string,"py":string,"en":string}]}
 - pinyin: tone-mark pinyin of any Chinese in "prompt"; "" if the prompt is English.
 - accept: 2-4 other acceptable answers (alternate phrasings/spellings); [] for production.
+- vocab: 3-6 key content words involved (from the answer, and from the prompt if it's
+  Chinese), each {w: hanzi, py: tone-mark pinyin, en: short gloss}, in sentence order.
 - cloze: a Chinese sentence using the pattern with the key word(s) shown as ___ ;
   answer = the missing word(s).
 - translate_e2c: short English; answer = the Chinese using the pattern.
@@ -103,7 +106,8 @@ Its **exercises** (in `src/banks.json`, as a new top-level key):
 
 ```json
 "jiu": [
-  { "type": "translate_e2c", "prompt": "Go straight ahead and you'll be there.", "pinyin": "", "hint": "use 就…了", "answer": "往前走就到了。", "accept": ["往前走就到了"] }
+  { "type": "translate_e2c", "prompt": "Go straight ahead and you'll be there.", "pinyin": "", "hint": "use 就…了", "answer": "往前走就到了。", "accept": ["往前走就到了"],
+    "vocab": [{ "w": "往前走", "py": "wǎng qián zǒu", "en": "go forward" }, { "w": "就", "py": "jiù", "en": "then / right away" }, { "w": "到", "py": "dào", "en": "arrive" }] }
 ]
 ```
 

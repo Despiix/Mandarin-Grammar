@@ -3,9 +3,9 @@
 // environment variable in your host's project settings.
 //
 // Free: uses Google Gemini's free tier. Get a key at https://aistudio.google.com/apikey
-// Optional: set GEMINI_MODEL (default gemini-2.0-flash; gemini-2.5-flash is higher quality).
+// Optional: set GEMINI_MODEL to override the model (default gemini-3.5-flash).
 
-const MODEL = process.env.GEMINI_MODEL || "gemini-2.0-flash";
+const MODEL = process.env.GEMINI_MODEL || "gemini-3.5-flash";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") return res.status(405).json({ error: "POST only" });
