@@ -1970,5 +1970,2734 @@
         "I don't intend to go to school."
       ]
     }
+  ],
+  "gen": [
+    {
+      "type": "cloze",
+      "prompt": "我___朋友去商店。",
+      "pinyin": "wǒ ___ péngyou qù shāngdiàn",
+      "hint": "with",
+      "answer": "跟",
+      "accept": [
+        "和"
+      ],
+      "vocab": [
+        {
+          "w": "跟",
+          "py": "gēn",
+          "en": "with"
+        },
+        {
+          "w": "朋友",
+          "py": "péngyou",
+          "en": "friend"
+        },
+        {
+          "w": "商店",
+          "py": "shāngdiàn",
+          "en": "shop"
+        }
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "I drink coffee with my mum.",
+      "pinyin": "",
+      "hint": "跟 … 喝",
+      "answer": "我跟妈妈喝咖啡。",
+      "accept": [
+        "我和妈妈喝咖啡。",
+        "我跟妈妈一起喝咖啡。"
+      ],
+      "vocab": [
+        {
+          "w": "跟",
+          "py": "gēn",
+          "en": "with"
+        },
+        {
+          "w": "妈妈",
+          "py": "māma",
+          "en": "mum"
+        },
+        {
+          "w": "咖啡",
+          "py": "kāfēi",
+          "en": "coffee"
+        }
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "我跟老师说话。",
+      "pinyin": "wǒ gēn lǎoshī shuōhuà",
+      "hint": "",
+      "answer": "I talk with the teacher.",
+      "accept": [
+        "I speak with the teacher.",
+        "I'm talking with the teacher."
+      ],
+      "vocab": [
+        {
+          "w": "老师",
+          "py": "lǎoshī",
+          "en": "teacher"
+        },
+        {
+          "w": "说话",
+          "py": "shuōhuà",
+          "en": "to talk"
+        }
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "我去跟妈妈超市。",
+      "pinyin": "wǒ qù gēn māma chāoshì",
+      "hint": "word order",
+      "answer": "我跟妈妈去超市。",
+      "accept": [
+        "我和妈妈去超市。"
+      ],
+      "vocab": [
+        {
+          "w": "超市",
+          "py": "chāoshì",
+          "en": "supermarket"
+        },
+        {
+          "w": "跟",
+          "py": "gēn",
+          "en": "with"
+        }
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Say you go to school with a friend.",
+      "pinyin": "",
+      "hint": "跟 … 去学校",
+      "answer": "我跟朋友去学校。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "朋友",
+          "py": "péngyou",
+          "en": "friend"
+        },
+        {
+          "w": "学校",
+          "py": "xuéxiào",
+          "en": "school"
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "prompt": "你___谁去？",
+      "pinyin": "nǐ ___ shéi qù",
+      "hint": "with whom",
+      "answer": "跟",
+      "accept": [
+        "和"
+      ],
+      "vocab": [
+        {
+          "w": "谁",
+          "py": "shéi",
+          "en": "who"
+        },
+        {
+          "w": "跟",
+          "py": "gēn",
+          "en": "with"
+        }
+      ]
+    }
+  ],
+  "hui": [
+    {
+      "type": "cloze",
+      "prompt": "一个月后我___去北京。",
+      "pinyin": "yí ge yuè hòu wǒ ___ qù Běijīng",
+      "hint": "will",
+      "answer": "会",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "月",
+          "py": "yuè",
+          "en": "month"
+        },
+        {
+          "w": "会",
+          "py": "huì",
+          "en": "will"
+        },
+        {
+          "w": "北京",
+          "py": "Běijīng",
+          "en": "Beijing"
+        }
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "I will go to China.",
+      "pinyin": "",
+      "hint": "会 + verb",
+      "answer": "我会去中国。",
+      "accept": [
+        "我会去中国"
+      ],
+      "vocab": [
+        {
+          "w": "会",
+          "py": "huì",
+          "en": "will"
+        },
+        {
+          "w": "中国",
+          "py": "Zhōngguó",
+          "en": "China"
+        }
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "两天后我会回来。",
+      "pinyin": "liǎng tiān hòu wǒ huì huílái",
+      "hint": "",
+      "answer": "In two days I'll come back.",
+      "accept": [
+        "I'll be back in two days."
+      ],
+      "vocab": [
+        {
+          "w": "天",
+          "py": "tiān",
+          "en": "day"
+        },
+        {
+          "w": "回来",
+          "py": "huílái",
+          "en": "come back"
+        }
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "明天我去会上海。",
+      "pinyin": "míngtiān wǒ qù huì Shànghǎi",
+      "hint": "会 before verb",
+      "answer": "明天我会去上海。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "明天",
+          "py": "míngtiān",
+          "en": "tomorrow"
+        },
+        {
+          "w": "上海",
+          "py": "Shànghǎi",
+          "en": "Shanghai"
+        }
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Say that next week you'll see a friend.",
+      "pinyin": "",
+      "hint": "会见",
+      "answer": "下周我会见朋友。",
+      "accept": [
+        "下个星期我会见朋友。"
+      ],
+      "vocab": [
+        {
+          "w": "下周",
+          "py": "xiàzhōu",
+          "en": "next week"
+        },
+        {
+          "w": "见",
+          "py": "jiàn",
+          "en": "to meet"
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "prompt": "三天后他___来。",
+      "pinyin": "sān tiān hòu tā ___ lái",
+      "hint": "will",
+      "answer": "会",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "会",
+          "py": "huì",
+          "en": "will"
+        },
+        {
+          "w": "来",
+          "py": "lái",
+          "en": "come"
+        }
+      ]
+    }
+  ],
+  "le": [
+    {
+      "type": "cloze",
+      "prompt": "我买___一个手机。",
+      "pinyin": "wǒ mǎi ___ yí ge shǒujī",
+      "hint": "completed",
+      "answer": "了",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "买",
+          "py": "mǎi",
+          "en": "to buy"
+        },
+        {
+          "w": "手机",
+          "py": "shǒujī",
+          "en": "phone"
+        },
+        {
+          "w": "了",
+          "py": "le",
+          "en": "(completed)"
+        }
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "I ate.",
+      "pinyin": "",
+      "hint": "verb + 了",
+      "answer": "我吃了。",
+      "accept": [
+        "我吃饭了。"
+      ],
+      "vocab": [
+        {
+          "w": "吃",
+          "py": "chī",
+          "en": "to eat"
+        },
+        {
+          "w": "了",
+          "py": "le",
+          "en": "(completed)"
+        }
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "我看了那个电影。",
+      "pinyin": "wǒ kàn le nàge diànyǐng",
+      "hint": "",
+      "answer": "I watched that movie.",
+      "accept": [
+        "I saw that movie."
+      ],
+      "vocab": [
+        {
+          "w": "看",
+          "py": "kàn",
+          "en": "to watch"
+        },
+        {
+          "w": "电影",
+          "py": "diànyǐng",
+          "en": "movie"
+        }
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "我了买一本书。",
+      "pinyin": "wǒ le mǎi yì běn shū",
+      "hint": "了 after verb",
+      "answer": "我买了一本书。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "买",
+          "py": "mǎi",
+          "en": "to buy"
+        },
+        {
+          "w": "书",
+          "py": "shū",
+          "en": "book"
+        }
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Say you've already drunk water.",
+      "pinyin": "",
+      "hint": "喝 … 了",
+      "answer": "我喝水了。",
+      "accept": [
+        "我喝了水。"
+      ],
+      "vocab": [
+        {
+          "w": "喝",
+          "py": "hē",
+          "en": "to drink"
+        },
+        {
+          "w": "水",
+          "py": "shuǐ",
+          "en": "water"
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "prompt": "他来___。",
+      "pinyin": "tā lái ___",
+      "hint": "new situation",
+      "answer": "了",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "来",
+          "py": "lái",
+          "en": "to come"
+        },
+        {
+          "w": "了",
+          "py": "le",
+          "en": "(change)"
+        }
+      ]
+    }
+  ],
+  "haimei": [
+    {
+      "type": "cloze",
+      "prompt": "我___吃饭。",
+      "pinyin": "wǒ ___ chīfàn",
+      "hint": "not yet",
+      "answer": "还没",
+      "accept": [
+        "还没有"
+      ],
+      "vocab": [
+        {
+          "w": "还没",
+          "py": "háiméi",
+          "en": "not yet"
+        },
+        {
+          "w": "吃饭",
+          "py": "chīfàn",
+          "en": "to eat"
+        }
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "I haven't eaten yet.",
+      "pinyin": "",
+      "hint": "还没",
+      "answer": "我还没吃饭。",
+      "accept": [
+        "我还没吃。",
+        "还没。"
+      ],
+      "vocab": [
+        {
+          "w": "还没",
+          "py": "háiméi",
+          "en": "not yet"
+        },
+        {
+          "w": "吃饭",
+          "py": "chīfàn",
+          "en": "to eat"
+        }
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "他还没来。",
+      "pinyin": "tā háiméi lái",
+      "hint": "",
+      "answer": "He hasn't come yet.",
+      "accept": [
+        "He hasn't arrived yet."
+      ],
+      "vocab": [
+        {
+          "w": "还没",
+          "py": "háiméi",
+          "en": "not yet"
+        },
+        {
+          "w": "来",
+          "py": "lái",
+          "en": "to come"
+        }
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "我没还吃。",
+      "pinyin": "wǒ méi hái chī",
+      "hint": "word order",
+      "answer": "我还没吃。",
+      "accept": [
+        "我还没吃饭。"
+      ],
+      "vocab": [
+        {
+          "w": "还没",
+          "py": "háiméi",
+          "en": "not yet"
+        },
+        {
+          "w": "吃",
+          "py": "chī",
+          "en": "to eat"
+        }
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Say you haven't done your homework yet.",
+      "pinyin": "",
+      "hint": "还没 … 作业",
+      "answer": "我还没做作业。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "做",
+          "py": "zuò",
+          "en": "to do"
+        },
+        {
+          "w": "作业",
+          "py": "zuòyè",
+          "en": "homework"
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "prompt": "老师___来。",
+      "pinyin": "lǎoshī ___ lái",
+      "hint": "not yet",
+      "answer": "还没",
+      "accept": [
+        "还没有"
+      ],
+      "vocab": [
+        {
+          "w": "老师",
+          "py": "lǎoshī",
+          "en": "teacher"
+        },
+        {
+          "w": "还没",
+          "py": "háiméi",
+          "en": "not yet"
+        }
+      ]
+    }
+  ],
+  "jiu": [
+    {
+      "type": "cloze",
+      "prompt": "往前走___到了。",
+      "pinyin": "wǎng qián zǒu ___ dào le",
+      "hint": "then / soon",
+      "answer": "就",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "往前走",
+          "py": "wǎng qián zǒu",
+          "en": "go forward"
+        },
+        {
+          "w": "就",
+          "py": "jiù",
+          "en": "then"
+        },
+        {
+          "w": "到",
+          "py": "dào",
+          "en": "arrive"
+        }
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "Ten minutes and you're there.",
+      "pinyin": "",
+      "hint": "就 … 了",
+      "answer": "十分钟就到了。",
+      "accept": [
+        "十分钟就到了"
+      ],
+      "vocab": [
+        {
+          "w": "分钟",
+          "py": "fēnzhōng",
+          "en": "minute"
+        },
+        {
+          "w": "就",
+          "py": "jiù",
+          "en": "then"
+        },
+        {
+          "w": "到",
+          "py": "dào",
+          "en": "arrive"
+        }
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "左拐就看见了。",
+      "pinyin": "zuǒ guǎi jiù kànjiàn le",
+      "hint": "",
+      "answer": "Turn left and you'll see it.",
+      "accept": [
+        "Turn left and there it is."
+      ],
+      "vocab": [
+        {
+          "w": "左拐",
+          "py": "zuǒ guǎi",
+          "en": "turn left"
+        },
+        {
+          "w": "看见",
+          "py": "kànjiàn",
+          "en": "to see"
+        }
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "五分钟到就了。",
+      "pinyin": "wǔ fēnzhōng dào jiù le",
+      "hint": "就 before verb",
+      "answer": "五分钟就到了。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "分钟",
+          "py": "fēnzhōng",
+          "en": "minute"
+        },
+        {
+          "w": "就",
+          "py": "jiù",
+          "en": "then"
+        }
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Say you'll arrive in three minutes.",
+      "pinyin": "",
+      "hint": "三分钟就 …",
+      "answer": "三分钟就到了。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "分钟",
+          "py": "fēnzhōng",
+          "en": "minute"
+        },
+        {
+          "w": "到",
+          "py": "dào",
+          "en": "arrive"
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "prompt": "五分钟___到了。",
+      "pinyin": "wǔ fēnzhōng ___ dào le",
+      "hint": "soon",
+      "answer": "就",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "就",
+          "py": "jiù",
+          "en": "then / soon"
+        },
+        {
+          "w": "到",
+          "py": "dào",
+          "en": "arrive"
+        }
+      ]
+    }
+  ],
+  "tai": [
+    {
+      "type": "cloze",
+      "prompt": "今天___热了。",
+      "pinyin": "jīntiān ___ rè le",
+      "hint": "too",
+      "answer": "太",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "太",
+          "py": "tài",
+          "en": "too"
+        },
+        {
+          "w": "热",
+          "py": "rè",
+          "en": "hot"
+        },
+        {
+          "w": "了",
+          "py": "le",
+          "en": "(degree)"
+        }
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "It's too expensive.",
+      "pinyin": "",
+      "hint": "太 … 了",
+      "answer": "太贵了。",
+      "accept": [
+        "太贵了"
+      ],
+      "vocab": [
+        {
+          "w": "太",
+          "py": "tài",
+          "en": "too"
+        },
+        {
+          "w": "贵",
+          "py": "guì",
+          "en": "expensive"
+        }
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "这个太大了。",
+      "pinyin": "zhège tài dà le",
+      "hint": "",
+      "answer": "This is too big.",
+      "accept": [
+        "It's too big."
+      ],
+      "vocab": [
+        {
+          "w": "太",
+          "py": "tài",
+          "en": "too"
+        },
+        {
+          "w": "大",
+          "py": "dà",
+          "en": "big"
+        }
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "今天太热。",
+      "pinyin": "jīntiān tài rè",
+      "hint": "missing 了",
+      "answer": "今天太热了。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "太",
+          "py": "tài",
+          "en": "too"
+        },
+        {
+          "w": "热",
+          "py": "rè",
+          "en": "hot"
+        }
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Say the coffee is too hot.",
+      "pinyin": "",
+      "hint": "太 … 了",
+      "answer": "咖啡太热了。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "咖啡",
+          "py": "kāfēi",
+          "en": "coffee"
+        },
+        {
+          "w": "热",
+          "py": "rè",
+          "en": "hot"
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "prompt": "这件衣服___小了。",
+      "pinyin": "zhè jiàn yīfu ___ xiǎo le",
+      "hint": "too",
+      "answer": "太",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "衣服",
+          "py": "yīfu",
+          "en": "clothes"
+        },
+        {
+          "w": "小",
+          "py": "xiǎo",
+          "en": "small"
+        }
+      ]
+    }
+  ],
+  "ting": [
+    {
+      "type": "cloze",
+      "prompt": "我___好的。",
+      "pinyin": "wǒ ___ hǎo de",
+      "hint": "quite",
+      "answer": "挺",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "挺",
+          "py": "tǐng",
+          "en": "quite"
+        },
+        {
+          "w": "好",
+          "py": "hǎo",
+          "en": "good"
+        },
+        {
+          "w": "的",
+          "py": "de",
+          "en": "(particle)"
+        }
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "It's pretty good.",
+      "pinyin": "",
+      "hint": "挺 … 的",
+      "answer": "挺好的。",
+      "accept": [
+        "挺好的"
+      ],
+      "vocab": [
+        {
+          "w": "挺",
+          "py": "tǐng",
+          "en": "quite"
+        },
+        {
+          "w": "好",
+          "py": "hǎo",
+          "en": "good"
+        }
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "今天挺冷的。",
+      "pinyin": "jīntiān tǐng lěng de",
+      "hint": "",
+      "answer": "It's pretty cold today.",
+      "accept": [
+        "Today is quite cold."
+      ],
+      "vocab": [
+        {
+          "w": "挺",
+          "py": "tǐng",
+          "en": "quite"
+        },
+        {
+          "w": "冷",
+          "py": "lěng",
+          "en": "cold"
+        }
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "这个挺好。",
+      "pinyin": "zhège tǐng hǎo",
+      "hint": "missing 的",
+      "answer": "这个挺好的。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "挺",
+          "py": "tǐng",
+          "en": "quite"
+        },
+        {
+          "w": "好",
+          "py": "hǎo",
+          "en": "good"
+        }
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Say the dish is pretty tasty.",
+      "pinyin": "",
+      "hint": "挺 … 的",
+      "answer": "这个菜挺好吃的。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "菜",
+          "py": "cài",
+          "en": "dish"
+        },
+        {
+          "w": "好吃",
+          "py": "hǎochī",
+          "en": "tasty"
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "prompt": "他___忙的。",
+      "pinyin": "tā ___ máng de",
+      "hint": "quite",
+      "answer": "挺",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "挺",
+          "py": "tǐng",
+          "en": "quite"
+        },
+        {
+          "w": "忙",
+          "py": "máng",
+          "en": "busy"
+        }
+      ]
+    }
+  ],
+  "hao-v": [
+    {
+      "type": "cloze",
+      "prompt": "这个菜很好___。",
+      "pinyin": "zhège cài hěn hǎo ___",
+      "hint": "tasty",
+      "answer": "吃",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "菜",
+          "py": "cài",
+          "en": "dish"
+        },
+        {
+          "w": "好吃",
+          "py": "hǎochī",
+          "en": "tasty"
+        }
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "Tennis is fun.",
+      "pinyin": "",
+      "hint": "好玩",
+      "answer": "网球很好玩。",
+      "accept": [
+        "网球很好玩"
+      ],
+      "vocab": [
+        {
+          "w": "网球",
+          "py": "wǎngqiú",
+          "en": "tennis"
+        },
+        {
+          "w": "好玩",
+          "py": "hǎowán",
+          "en": "fun"
+        }
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "这首歌很好听。",
+      "pinyin": "zhè shǒu gē hěn hǎotīng",
+      "hint": "",
+      "answer": "This song is nice to listen to.",
+      "accept": [
+        "This song sounds nice."
+      ],
+      "vocab": [
+        {
+          "w": "歌",
+          "py": "gē",
+          "en": "song"
+        },
+        {
+          "w": "好听",
+          "py": "hǎotīng",
+          "en": "nice to hear"
+        }
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "这个电影很看好。",
+      "pinyin": "zhège diànyǐng hěn kàn hǎo",
+      "hint": "好 + verb",
+      "answer": "这个电影很好看。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "电影",
+          "py": "diànyǐng",
+          "en": "movie"
+        },
+        {
+          "w": "好看",
+          "py": "hǎokàn",
+          "en": "good-looking"
+        }
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Say that coffee is nice to drink.",
+      "pinyin": "",
+      "hint": "好喝",
+      "answer": "咖啡很好喝。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "咖啡",
+          "py": "kāfēi",
+          "en": "coffee"
+        },
+        {
+          "w": "好喝",
+          "py": "hǎohē",
+          "en": "nice to drink"
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "prompt": "这本书很好___。",
+      "pinyin": "zhè běn shū hěn hǎo ___",
+      "hint": "good to read",
+      "answer": "看",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "书",
+          "py": "shū",
+          "en": "book"
+        },
+        {
+          "w": "好看",
+          "py": "hǎokàn",
+          "en": "good (to read)"
+        }
+      ]
+    }
+  ],
+  "bi": [
+    {
+      "type": "cloze",
+      "prompt": "今天___昨天热。",
+      "pinyin": "jīntiān ___ zuótiān rè",
+      "hint": "than",
+      "answer": "比",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "比",
+          "py": "bǐ",
+          "en": "than"
+        },
+        {
+          "w": "昨天",
+          "py": "zuótiān",
+          "en": "yesterday"
+        },
+        {
+          "w": "热",
+          "py": "rè",
+          "en": "hot"
+        }
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "Today is hotter than yesterday.",
+      "pinyin": "",
+      "hint": "A 比 B 热",
+      "answer": "今天比昨天热。",
+      "accept": [
+        "今天比昨天热"
+      ],
+      "vocab": [
+        {
+          "w": "比",
+          "py": "bǐ",
+          "en": "than"
+        },
+        {
+          "w": "热",
+          "py": "rè",
+          "en": "hot"
+        }
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "他比我高。",
+      "pinyin": "tā bǐ wǒ gāo",
+      "hint": "",
+      "answer": "He is taller than me.",
+      "accept": [
+        "He's taller than I am."
+      ],
+      "vocab": [
+        {
+          "w": "比",
+          "py": "bǐ",
+          "en": "than"
+        },
+        {
+          "w": "高",
+          "py": "gāo",
+          "en": "tall"
+        }
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "今天比昨天很热。",
+      "pinyin": "jīntiān bǐ zuótiān hěn rè",
+      "hint": "no 很 with 比",
+      "answer": "今天比昨天热。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "比",
+          "py": "bǐ",
+          "en": "than"
+        },
+        {
+          "w": "热",
+          "py": "rè",
+          "en": "hot"
+        }
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Say your phone is more expensive than his.",
+      "pinyin": "",
+      "hint": "比 … 贵",
+      "answer": "我的手机比他的贵。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "手机",
+          "py": "shǒujī",
+          "en": "phone"
+        },
+        {
+          "w": "贵",
+          "py": "guì",
+          "en": "expensive"
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "prompt": "哥哥___弟弟大。",
+      "pinyin": "gēge ___ dìdi dà",
+      "hint": "than",
+      "answer": "比",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "哥哥",
+          "py": "gēge",
+          "en": "older brother"
+        },
+        {
+          "w": "弟弟",
+          "py": "dìdi",
+          "en": "younger brother"
+        }
+      ]
+    }
+  ],
+  "li": [
+    {
+      "type": "cloze",
+      "prompt": "我家___学校很近。",
+      "pinyin": "wǒ jiā ___ xuéxiào hěn jìn",
+      "hint": "from",
+      "answer": "离",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "离",
+          "py": "lí",
+          "en": "from (distance)"
+        },
+        {
+          "w": "学校",
+          "py": "xuéxiào",
+          "en": "school"
+        },
+        {
+          "w": "近",
+          "py": "jìn",
+          "en": "near"
+        }
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "My home is far from the school.",
+      "pinyin": "",
+      "hint": "离 … 远",
+      "answer": "我家离学校很远。",
+      "accept": [
+        "我家离学校远。"
+      ],
+      "vocab": [
+        {
+          "w": "离",
+          "py": "lí",
+          "en": "from"
+        },
+        {
+          "w": "远",
+          "py": "yuǎn",
+          "en": "far"
+        }
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "商店离这儿很近。",
+      "pinyin": "shāngdiàn lí zhèr hěn jìn",
+      "hint": "",
+      "answer": "The shop is close to here.",
+      "accept": [
+        "The store is near here."
+      ],
+      "vocab": [
+        {
+          "w": "商店",
+          "py": "shāngdiàn",
+          "en": "shop"
+        },
+        {
+          "w": "近",
+          "py": "jìn",
+          "en": "near"
+        }
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "我家很近离学校。",
+      "pinyin": "wǒ jiā hěn jìn lí xuéxiào",
+      "hint": "word order",
+      "answer": "我家离学校很近。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "离",
+          "py": "lí",
+          "en": "from"
+        },
+        {
+          "w": "近",
+          "py": "jìn",
+          "en": "near"
+        }
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Say the bank is far from your home.",
+      "pinyin": "",
+      "hint": "离 … 远",
+      "answer": "银行离我家很远。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "银行",
+          "py": "yínháng",
+          "en": "bank"
+        },
+        {
+          "w": "远",
+          "py": "yuǎn",
+          "en": "far"
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "prompt": "医院___这儿远吗？",
+      "pinyin": "yīyuàn ___ zhèr yuǎn ma",
+      "hint": "from",
+      "answer": "离",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "医院",
+          "py": "yīyuàn",
+          "en": "hospital"
+        },
+        {
+          "w": "离",
+          "py": "lí",
+          "en": "from"
+        }
+      ]
+    }
+  ],
+  "mw": [
+    {
+      "type": "cloze",
+      "prompt": "我有三___朋友。",
+      "pinyin": "wǒ yǒu sān ___ péngyou",
+      "hint": "measure word",
+      "answer": "个",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "个",
+          "py": "gè",
+          "en": "(measure word)"
+        },
+        {
+          "w": "朋友",
+          "py": "péngyou",
+          "en": "friend"
+        }
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "I have a phone.",
+      "pinyin": "",
+      "hint": "一个",
+      "answer": "我有一个手机。",
+      "accept": [
+        "我有一个手机"
+      ],
+      "vocab": [
+        {
+          "w": "个",
+          "py": "gè",
+          "en": "(measure word)"
+        },
+        {
+          "w": "手机",
+          "py": "shǒujī",
+          "en": "phone"
+        }
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "我家有五口人。",
+      "pinyin": "wǒ jiā yǒu wǔ kǒu rén",
+      "hint": "",
+      "answer": "My family has five people.",
+      "accept": [
+        "There are five people in my family."
+      ],
+      "vocab": [
+        {
+          "w": "口",
+          "py": "kǒu",
+          "en": "(mw for family)"
+        },
+        {
+          "w": "人",
+          "py": "rén",
+          "en": "person"
+        }
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "我有三朋友。",
+      "pinyin": "wǒ yǒu sān péngyou",
+      "hint": "missing measure word",
+      "answer": "我有三个朋友。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "个",
+          "py": "gè",
+          "en": "(measure word)"
+        },
+        {
+          "w": "朋友",
+          "py": "péngyou",
+          "en": "friend"
+        }
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Say you have two books.",
+      "pinyin": "",
+      "hint": "两本",
+      "answer": "我有两本书。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "本",
+          "py": "běn",
+          "en": "(mw for books)"
+        },
+        {
+          "w": "书",
+          "py": "shū",
+          "en": "book"
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "prompt": "我想喝一___水。",
+      "pinyin": "wǒ xiǎng hē yì ___ shuǐ",
+      "hint": "cup",
+      "answer": "杯",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "杯",
+          "py": "bēi",
+          "en": "(mw for cups)"
+        },
+        {
+          "w": "水",
+          "py": "shuǐ",
+          "en": "water"
+        }
+      ]
+    }
+  ],
+  "liang": [
+    {
+      "type": "cloze",
+      "prompt": "我有___个苹果。",
+      "pinyin": "wǒ yǒu ___ ge píngguǒ",
+      "hint": "two",
+      "answer": "两",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "两",
+          "py": "liǎng",
+          "en": "two"
+        },
+        {
+          "w": "苹果",
+          "py": "píngguǒ",
+          "en": "apple"
+        }
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "I have two friends.",
+      "pinyin": "",
+      "hint": "两个",
+      "answer": "我有两个朋友。",
+      "accept": [
+        "我有两个朋友"
+      ],
+      "vocab": [
+        {
+          "w": "两",
+          "py": "liǎng",
+          "en": "two"
+        },
+        {
+          "w": "朋友",
+          "py": "péngyou",
+          "en": "friend"
+        }
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "我要两杯咖啡。",
+      "pinyin": "wǒ yào liǎng bēi kāfēi",
+      "hint": "",
+      "answer": "I want two cups of coffee.",
+      "accept": [
+        "I'd like two coffees."
+      ],
+      "vocab": [
+        {
+          "w": "两",
+          "py": "liǎng",
+          "en": "two"
+        },
+        {
+          "w": "咖啡",
+          "py": "kāfēi",
+          "en": "coffee"
+        }
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "我有二个孩子。",
+      "pinyin": "wǒ yǒu èr ge háizi",
+      "hint": "两 before mw",
+      "answer": "我有两个孩子。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "两",
+          "py": "liǎng",
+          "en": "two"
+        },
+        {
+          "w": "孩子",
+          "py": "háizi",
+          "en": "child"
+        }
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Say you have two phones.",
+      "pinyin": "",
+      "hint": "两个",
+      "answer": "我有两个手机。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "两",
+          "py": "liǎng",
+          "en": "two"
+        },
+        {
+          "w": "手机",
+          "py": "shǒujī",
+          "en": "phone"
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "prompt": "请给我___瓶水。",
+      "pinyin": "qǐng gěi wǒ ___ píng shuǐ",
+      "hint": "two",
+      "answer": "两",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "两",
+          "py": "liǎng",
+          "en": "two"
+        },
+        {
+          "w": "瓶",
+          "py": "píng",
+          "en": "(mw for bottles)"
+        }
+      ]
+    }
+  ],
+  "duo": [
+    {
+      "type": "cloze",
+      "prompt": "他有二十___个朋友。",
+      "pinyin": "tā yǒu èrshí ___ ge péngyou",
+      "hint": "-something",
+      "answer": "多",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "多",
+          "py": "duō",
+          "en": "more than"
+        },
+        {
+          "w": "朋友",
+          "py": "péngyou",
+          "en": "friend"
+        }
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "Our school has over a thousand people.",
+      "pinyin": "",
+      "hint": "一千多",
+      "answer": "我们学校有一千多个人。",
+      "accept": [
+        "我们学校有一千多人。"
+      ],
+      "vocab": [
+        {
+          "w": "多",
+          "py": "duō",
+          "en": "more than"
+        },
+        {
+          "w": "人",
+          "py": "rén",
+          "en": "person"
+        }
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "我等了一个多小时。",
+      "pinyin": "wǒ děng le yí ge duō xiǎoshí",
+      "hint": "",
+      "answer": "I waited for over an hour.",
+      "accept": [
+        "I waited more than an hour."
+      ],
+      "vocab": [
+        {
+          "w": "等",
+          "py": "děng",
+          "en": "to wait"
+        },
+        {
+          "w": "小时",
+          "py": "xiǎoshí",
+          "en": "hour"
+        }
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "我有三十个多朋友。",
+      "pinyin": "wǒ yǒu sānshí ge duō péngyou",
+      "hint": "多 after the number",
+      "answer": "我有三十多个朋友。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "多",
+          "py": "duō",
+          "en": "more than"
+        },
+        {
+          "w": "朋友",
+          "py": "péngyou",
+          "en": "friend"
+        }
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Say something costs over twenty yuan.",
+      "pinyin": "",
+      "hint": "二十多块",
+      "answer": "这个东西二十多块钱。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "多",
+          "py": "duō",
+          "en": "more than"
+        },
+        {
+          "w": "块",
+          "py": "kuài",
+          "en": "yuan"
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "prompt": "这本书十___块钱。",
+      "pinyin": "zhè běn shū shí ___ kuài qián",
+      "hint": "-something",
+      "answer": "多",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "多",
+          "py": "duō",
+          "en": "more than"
+        },
+        {
+          "w": "块",
+          "py": "kuài",
+          "en": "yuan"
+        }
+      ]
+    }
+  ],
+  "bu-mei": [
+    {
+      "type": "cloze",
+      "prompt": "我___有手机。",
+      "pinyin": "wǒ ___ yǒu shǒujī",
+      "hint": "negate 有",
+      "answer": "没",
+      "accept": [
+        "没有"
+      ],
+      "vocab": [
+        {
+          "w": "没",
+          "py": "méi",
+          "en": "not (have)"
+        },
+        {
+          "w": "手机",
+          "py": "shǒujī",
+          "en": "phone"
+        }
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "I don't like coffee.",
+      "pinyin": "",
+      "hint": "不喜欢",
+      "answer": "我不喜欢咖啡。",
+      "accept": [
+        "我不喜欢喝咖啡。"
+      ],
+      "vocab": [
+        {
+          "w": "不",
+          "py": "bù",
+          "en": "not"
+        },
+        {
+          "w": "喜欢",
+          "py": "xǐhuan",
+          "en": "to like"
+        }
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "我没吃饭。",
+      "pinyin": "wǒ méi chīfàn",
+      "hint": "",
+      "answer": "I haven't eaten.",
+      "accept": [
+        "I didn't eat."
+      ],
+      "vocab": [
+        {
+          "w": "没",
+          "py": "méi",
+          "en": "didn't"
+        },
+        {
+          "w": "吃饭",
+          "py": "chīfàn",
+          "en": "to eat"
+        }
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "我不有钱。",
+      "pinyin": "wǒ bù yǒu qián",
+      "hint": "没 negates 有",
+      "answer": "我没有钱。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "没有",
+          "py": "méiyǒu",
+          "en": "not have"
+        },
+        {
+          "w": "钱",
+          "py": "qián",
+          "en": "money"
+        }
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Say you didn't go to school today.",
+      "pinyin": "",
+      "hint": "没去",
+      "answer": "我今天没去学校。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "没",
+          "py": "méi",
+          "en": "didn't"
+        },
+        {
+          "w": "学校",
+          "py": "xuéxiào",
+          "en": "school"
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "prompt": "我___喜欢喝茶。",
+      "pinyin": "wǒ ___ xǐhuan hē chá",
+      "hint": "preference",
+      "answer": "不",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "不",
+          "py": "bù",
+          "en": "not"
+        },
+        {
+          "w": "茶",
+          "py": "chá",
+          "en": "tea"
+        }
+      ]
+    }
+  ],
+  "diyi": [
+    {
+      "type": "cloze",
+      "prompt": "在___一个路口左拐。",
+      "pinyin": "zài ___ yí ge lùkǒu zuǒ guǎi",
+      "hint": "ordinal",
+      "answer": "第",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "第",
+          "py": "dì",
+          "en": "(ordinal)"
+        },
+        {
+          "w": "路口",
+          "py": "lùkǒu",
+          "en": "intersection"
+        },
+        {
+          "w": "左拐",
+          "py": "zuǒ guǎi",
+          "en": "turn left"
+        }
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "Turn left at the first intersection.",
+      "pinyin": "",
+      "hint": "第一个",
+      "answer": "在第一个路口左拐。",
+      "accept": [
+        "第一个路口左拐。"
+      ],
+      "vocab": [
+        {
+          "w": "第一",
+          "py": "dì-yī",
+          "en": "first"
+        },
+        {
+          "w": "路口",
+          "py": "lùkǒu",
+          "en": "intersection"
+        }
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "他是第二个。",
+      "pinyin": "tā shì dì-èr ge",
+      "hint": "",
+      "answer": "He is the second one.",
+      "accept": [
+        "He's the second."
+      ],
+      "vocab": [
+        {
+          "w": "第二",
+          "py": "dì-èr",
+          "en": "second"
+        },
+        {
+          "w": "个",
+          "py": "gè",
+          "en": "(measure word)"
+        }
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "我住在二楼第。",
+      "pinyin": "wǒ zhù zài èr lóu dì",
+      "hint": "第 before number",
+      "answer": "我住在第二楼。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "第二",
+          "py": "dì-èr",
+          "en": "second"
+        },
+        {
+          "w": "楼",
+          "py": "lóu",
+          "en": "floor"
+        }
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Say you are the first.",
+      "pinyin": "",
+      "hint": "第一个",
+      "answer": "我是第一个。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "第一",
+          "py": "dì-yī",
+          "en": "first"
+        },
+        {
+          "w": "个",
+          "py": "gè",
+          "en": "(measure word)"
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "prompt": "这是我___一次来中国。",
+      "pinyin": "zhè shì wǒ ___ yí cì lái Zhōngguó",
+      "hint": "ordinal",
+      "answer": "第",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "第一次",
+          "py": "dì-yī cì",
+          "en": "first time"
+        },
+        {
+          "w": "中国",
+          "py": "Zhōngguó",
+          "en": "China"
+        }
+      ]
+    }
+  ],
+  "ye": [
+    {
+      "type": "cloze",
+      "prompt": "我___是学生。",
+      "pinyin": "wǒ ___ shì xuésheng",
+      "hint": "also",
+      "answer": "也",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "也",
+          "py": "yě",
+          "en": "also"
+        },
+        {
+          "w": "学生",
+          "py": "xuésheng",
+          "en": "student"
+        }
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "I am also a student.",
+      "pinyin": "",
+      "hint": "也",
+      "answer": "我也是学生。",
+      "accept": [
+        "我也是学生"
+      ],
+      "vocab": [
+        {
+          "w": "也",
+          "py": "yě",
+          "en": "also"
+        },
+        {
+          "w": "学生",
+          "py": "xuésheng",
+          "en": "student"
+        }
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "他也喜欢咖啡。",
+      "pinyin": "tā yě xǐhuan kāfēi",
+      "hint": "",
+      "answer": "He also likes coffee.",
+      "accept": [
+        "He likes coffee too."
+      ],
+      "vocab": [
+        {
+          "w": "也",
+          "py": "yě",
+          "en": "also"
+        },
+        {
+          "w": "喜欢",
+          "py": "xǐhuan",
+          "en": "to like"
+        }
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "我是也学生。",
+      "pinyin": "wǒ shì yě xuésheng",
+      "hint": "也 before verb",
+      "answer": "我也是学生。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "也",
+          "py": "yě",
+          "en": "also"
+        },
+        {
+          "w": "学生",
+          "py": "xuésheng",
+          "en": "student"
+        }
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Say you also want to go.",
+      "pinyin": "",
+      "hint": "也想",
+      "answer": "我也想去。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "也",
+          "py": "yě",
+          "en": "also"
+        },
+        {
+          "w": "想",
+          "py": "xiǎng",
+          "en": "to want"
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "prompt": "她___去北京。",
+      "pinyin": "tā ___ qù Běijīng",
+      "hint": "also",
+      "answer": "也",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "也",
+          "py": "yě",
+          "en": "also"
+        },
+        {
+          "w": "北京",
+          "py": "Běijīng",
+          "en": "Beijing"
+        }
+      ]
+    }
+  ],
+  "dou": [
+    {
+      "type": "cloze",
+      "prompt": "我们___是学生。",
+      "pinyin": "wǒmen ___ shì xuésheng",
+      "hint": "all",
+      "answer": "都",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "都",
+          "py": "dōu",
+          "en": "all"
+        },
+        {
+          "w": "学生",
+          "py": "xuésheng",
+          "en": "student"
+        }
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "We are all students.",
+      "pinyin": "",
+      "hint": "都",
+      "answer": "我们都是学生。",
+      "accept": [
+        "我们都是学生"
+      ],
+      "vocab": [
+        {
+          "w": "都",
+          "py": "dōu",
+          "en": "all"
+        },
+        {
+          "w": "学生",
+          "py": "xuésheng",
+          "en": "student"
+        }
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "他们都来了。",
+      "pinyin": "tāmen dōu lái le",
+      "hint": "",
+      "answer": "They have all come.",
+      "accept": [
+        "They all came."
+      ],
+      "vocab": [
+        {
+          "w": "都",
+          "py": "dōu",
+          "en": "all"
+        },
+        {
+          "w": "来",
+          "py": "lái",
+          "en": "to come"
+        }
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "我们是都老师。",
+      "pinyin": "wǒmen shì dōu lǎoshī",
+      "hint": "都 before verb",
+      "answer": "我们都是老师。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "都",
+          "py": "dōu",
+          "en": "all"
+        },
+        {
+          "w": "老师",
+          "py": "lǎoshī",
+          "en": "teacher"
+        }
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Say your whole family likes tea.",
+      "pinyin": "",
+      "hint": "都喜欢",
+      "answer": "我家人都喜欢喝茶。",
+      "accept": [
+        "我们家都喜欢喝茶。"
+      ],
+      "vocab": [
+        {
+          "w": "都",
+          "py": "dōu",
+          "en": "all"
+        },
+        {
+          "w": "茶",
+          "py": "chá",
+          "en": "tea"
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "prompt": "这些苹果___很大。",
+      "pinyin": "zhèxiē píngguǒ ___ hěn dà",
+      "hint": "all",
+      "answer": "都",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "都",
+          "py": "dōu",
+          "en": "all"
+        },
+        {
+          "w": "苹果",
+          "py": "píngguǒ",
+          "en": "apple"
+        }
+      ]
+    }
+  ],
+  "zhi": [
+    {
+      "type": "cloze",
+      "prompt": "我___有一个手机。",
+      "pinyin": "wǒ ___ yǒu yí ge shǒujī",
+      "hint": "only",
+      "answer": "只",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "只",
+          "py": "zhǐ",
+          "en": "only"
+        },
+        {
+          "w": "手机",
+          "py": "shǒujī",
+          "en": "phone"
+        }
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "I only have one phone.",
+      "pinyin": "",
+      "hint": "只有",
+      "answer": "我只有一个手机。",
+      "accept": [
+        "我只有一个手机"
+      ],
+      "vocab": [
+        {
+          "w": "只有",
+          "py": "zhǐyǒu",
+          "en": "only have"
+        },
+        {
+          "w": "手机",
+          "py": "shǒujī",
+          "en": "phone"
+        }
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "我只喝水。",
+      "pinyin": "wǒ zhǐ hē shuǐ",
+      "hint": "",
+      "answer": "I only drink water.",
+      "accept": [
+        "I drink only water."
+      ],
+      "vocab": [
+        {
+          "w": "只",
+          "py": "zhǐ",
+          "en": "only"
+        },
+        {
+          "w": "水",
+          "py": "shuǐ",
+          "en": "water"
+        }
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "我有只一个朋友。",
+      "pinyin": "wǒ yǒu zhǐ yí ge péngyou",
+      "hint": "只 before verb",
+      "answer": "我只有一个朋友。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "只有",
+          "py": "zhǐyǒu",
+          "en": "only have"
+        },
+        {
+          "w": "朋友",
+          "py": "péngyou",
+          "en": "friend"
+        }
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Say you only have ten yuan.",
+      "pinyin": "",
+      "hint": "只有十块",
+      "answer": "我只有十块钱。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "只有",
+          "py": "zhǐyǒu",
+          "en": "only have"
+        },
+        {
+          "w": "块",
+          "py": "kuài",
+          "en": "yuan"
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "prompt": "他___喜欢你。",
+      "pinyin": "tā ___ xǐhuan nǐ",
+      "hint": "only",
+      "answer": "只",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "只",
+          "py": "zhǐ",
+          "en": "only"
+        },
+        {
+          "w": "喜欢",
+          "py": "xǐhuan",
+          "en": "to like"
+        }
+      ]
+    }
+  ],
+  "xuyao": [
+    {
+      "type": "cloze",
+      "prompt": "我___一杯水。",
+      "pinyin": "wǒ ___ yì bēi shuǐ",
+      "hint": "need",
+      "answer": "需要",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "需要",
+          "py": "xūyào",
+          "en": "to need"
+        },
+        {
+          "w": "水",
+          "py": "shuǐ",
+          "en": "water"
+        }
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "I need a cup of water.",
+      "pinyin": "",
+      "hint": "需要",
+      "answer": "我需要一杯水。",
+      "accept": [
+        "我需要一杯水"
+      ],
+      "vocab": [
+        {
+          "w": "需要",
+          "py": "xūyào",
+          "en": "to need"
+        },
+        {
+          "w": "杯",
+          "py": "bēi",
+          "en": "cup"
+        }
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "你需要什么？",
+      "pinyin": "nǐ xūyào shénme",
+      "hint": "",
+      "answer": "What do you need?",
+      "accept": [
+        "What do you need?"
+      ],
+      "vocab": [
+        {
+          "w": "需要",
+          "py": "xūyào",
+          "en": "to need"
+        },
+        {
+          "w": "什么",
+          "py": "shénme",
+          "en": "what"
+        }
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "我要需一本书。",
+      "pinyin": "wǒ yào xū yì běn shū",
+      "hint": "需要",
+      "answer": "我需要一本书。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "需要",
+          "py": "xūyào",
+          "en": "to need"
+        },
+        {
+          "w": "书",
+          "py": "shū",
+          "en": "book"
+        }
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Say you need to rest.",
+      "pinyin": "",
+      "hint": "需要休息",
+      "answer": "我需要休息。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "需要",
+          "py": "xūyào",
+          "en": "to need"
+        },
+        {
+          "w": "休息",
+          "py": "xiūxi",
+          "en": "to rest"
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "prompt": "你___帮助吗？",
+      "pinyin": "nǐ ___ bāngzhù ma",
+      "hint": "need",
+      "answer": "需要",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "需要",
+          "py": "xūyào",
+          "en": "to need"
+        },
+        {
+          "w": "帮助",
+          "py": "bāngzhù",
+          "en": "help"
+        }
+      ]
+    }
+  ],
+  "yinwei": [
+    {
+      "type": "cloze",
+      "prompt": "___米饭很好吃。",
+      "pinyin": "___ mǐfàn hěn hǎochī",
+      "hint": "because",
+      "answer": "因为",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "因为",
+          "py": "yīnwèi",
+          "en": "because"
+        },
+        {
+          "w": "米饭",
+          "py": "mǐfàn",
+          "en": "rice"
+        },
+        {
+          "w": "好吃",
+          "py": "hǎochī",
+          "en": "tasty"
+        }
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "Because rice is delicious.",
+      "pinyin": "",
+      "hint": "因为",
+      "answer": "因为米饭很好吃。",
+      "accept": [
+        "因为米饭好吃。"
+      ],
+      "vocab": [
+        {
+          "w": "因为",
+          "py": "yīnwèi",
+          "en": "because"
+        },
+        {
+          "w": "好吃",
+          "py": "hǎochī",
+          "en": "tasty"
+        }
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "你为什么不来？",
+      "pinyin": "nǐ wèishénme bù lái",
+      "hint": "",
+      "answer": "Why don't you come?",
+      "accept": [
+        "Why aren't you coming?"
+      ],
+      "vocab": [
+        {
+          "w": "为什么",
+          "py": "wèishénme",
+          "en": "why"
+        },
+        {
+          "w": "来",
+          "py": "lái",
+          "en": "to come"
+        }
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "你不来为什么？",
+      "pinyin": "nǐ bù lái wèishénme",
+      "hint": "为什么 before verb",
+      "answer": "你为什么不来？",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "为什么",
+          "py": "wèishénme",
+          "en": "why"
+        },
+        {
+          "w": "来",
+          "py": "lái",
+          "en": "to come"
+        }
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Ask why he didn't come.",
+      "pinyin": "",
+      "hint": "为什么没来",
+      "answer": "他为什么没来？",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "为什么",
+          "py": "wèishénme",
+          "en": "why"
+        },
+        {
+          "w": "没",
+          "py": "méi",
+          "en": "didn't"
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "prompt": "我不去，___我很忙。",
+      "pinyin": "wǒ bú qù, ___ wǒ hěn máng",
+      "hint": "because",
+      "answer": "因为",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "因为",
+          "py": "yīnwèi",
+          "en": "because"
+        },
+        {
+          "w": "忙",
+          "py": "máng",
+          "en": "busy"
+        }
+      ]
+    }
+  ],
+  "yiwei": [
+    {
+      "type": "cloze",
+      "prompt": "我___你在家。",
+      "pinyin": "wǒ ___ nǐ zài jiā",
+      "hint": "thought (wrongly)",
+      "answer": "以为",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "以为",
+          "py": "yǐwéi",
+          "en": "thought (mistakenly)"
+        },
+        {
+          "w": "在家",
+          "py": "zài jiā",
+          "en": "at home"
+        }
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "I thought you were at home.",
+      "pinyin": "",
+      "hint": "以为",
+      "answer": "我以为你在家。",
+      "accept": [
+        "我以为你在家"
+      ],
+      "vocab": [
+        {
+          "w": "以为",
+          "py": "yǐwéi",
+          "en": "thought (wrongly)"
+        },
+        {
+          "w": "家",
+          "py": "jiā",
+          "en": "home"
+        }
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "我以为今天星期六。",
+      "pinyin": "wǒ yǐwéi jīntiān xīngqīliù",
+      "hint": "",
+      "answer": "I thought today was Saturday.",
+      "accept": [
+        "I thought it was Saturday today."
+      ],
+      "vocab": [
+        {
+          "w": "以为",
+          "py": "yǐwéi",
+          "en": "thought (wrongly)"
+        },
+        {
+          "w": "星期六",
+          "py": "xīngqīliù",
+          "en": "Saturday"
+        }
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "我以为为你是老师。",
+      "pinyin": "wǒ yǐwéi wéi nǐ shì lǎoshī",
+      "hint": "以为 once",
+      "answer": "我以为你是老师。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "以为",
+          "py": "yǐwéi",
+          "en": "thought (wrongly)"
+        },
+        {
+          "w": "老师",
+          "py": "lǎoshī",
+          "en": "teacher"
+        }
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Say you thought he had eaten.",
+      "pinyin": "",
+      "hint": "以为 … 了",
+      "answer": "我以为他吃饭了。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "以为",
+          "py": "yǐwéi",
+          "en": "thought (wrongly)"
+        },
+        {
+          "w": "吃饭",
+          "py": "chīfàn",
+          "en": "to eat"
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "prompt": "他___我不来。",
+      "pinyin": "tā ___ wǒ bù lái",
+      "hint": "thought (wrongly)",
+      "answer": "以为",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "以为",
+          "py": "yǐwéi",
+          "en": "thought (wrongly)"
+        },
+        {
+          "w": "来",
+          "py": "lái",
+          "en": "to come"
+        }
+      ]
+    }
   ]
 }
