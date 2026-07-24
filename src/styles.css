@@ -152,6 +152,8 @@ body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--pa
 .bubble{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:12px 15px}
 .msg.ai .bubble{border-top-left-radius:5px}
 .msg.me .bubble{background:var(--jade);color:#fff;border-color:var(--jade);border-top-right-radius:5px;font-family:'Noto Sans SC',Inter,sans-serif;font-size:16px;line-height:1.5}
+.ccorr{white-space:pre-line;font-size:12.5px;line-height:1.55;color:var(--ink);background:var(--track);border-left:3px solid var(--gold);border-radius:8px;padding:9px 11px;margin-bottom:11px}
+.ccorrlbl{font-size:10px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--gold);margin-bottom:4px}
 .chanzi{font-family:'Noto Sans SC',serif;font-size:22px;line-height:1.45;color:var(--ink)}
 .cpy{font-size:13px;color:var(--soft);margin-top:5px;line-height:1.5}
 .cen{font-size:12.5px;color:var(--soft);font-style:italic;margin-top:7px;opacity:.85}

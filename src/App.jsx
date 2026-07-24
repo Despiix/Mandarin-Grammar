@@ -529,6 +529,7 @@ export default function App() {
                 {chat.map((m, i) => m.role === "ai" ? (
                   <div className="msg ai" key={i}>
                     <div className="bubble">
+                      {m.correction && <div className="ccorr"><div className="ccorrlbl">✎ Correction</div>{m.correction}</div>}
                       <div className="chanzi">{m.hanzi}</div>
                       <div className="cpy">{(m.pinyin || "").split(/\s+/).filter(Boolean).map((syl, j) => <span key={j} className={"t" + pinyinTone(syl)}>{syl} </span>)}</div>
                       {m.en && <div className="cen">{m.en}</div>}
