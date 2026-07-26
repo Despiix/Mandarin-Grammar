@@ -2,9 +2,9 @@
 // so your GROQ_API_KEY stays secret. Uses Groq (open-weight Llama/Qwen models)
 // through its OpenAI-compatible endpoint — fast, generous free tier, no card.
 // Free key: https://console.groq.com → API Keys
-// Optional env: GROQ_MODEL (default qwen/qwen3-32b — Chinese-native), GROQ_BASE.
+// Optional env: GROQ_MODEL (default llama-3.3-70b-versatile), GROQ_BASE.
 
-const MODEL = process.env.GROQ_MODEL || "qwen/qwen3-32b";
+const MODEL = process.env.GROQ_MODEL || "llama-3.3-70b-versatile";
 const BASE = process.env.GROQ_BASE || "https://api.groq.com/openai/v1";
 
 const SYSTEM = `You are a warm, patient Mandarin tutor and conversation partner for an HSK1 beginner.

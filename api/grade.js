@@ -4,9 +4,9 @@
 //
 // Uses Groq (open-weight Llama/Qwen models) via its OpenAI-compatible endpoint —
 // fast, generous free tier, no card. Free key: https://console.groq.com
-// Optional env: GROQ_MODEL (default qwen/qwen3-32b — Chinese-native), GROQ_BASE.
+// Optional env: GROQ_MODEL (default llama-3.3-70b-versatile), GROQ_BASE.
 
-const MODEL = process.env.GROQ_MODEL || "qwen/qwen3-32b";
+const MODEL = process.env.GROQ_MODEL || "llama-3.3-70b-versatile";
 const BASE = process.env.GROQ_BASE || "https://api.groq.com/openai/v1";
 
 export default async function handler(req, res) {
