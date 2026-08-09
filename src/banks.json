@@ -6407,5 +6407,131 @@
         }
       ]
     }
+  ],
+  "can-choice": [
+    {
+      "type": "cloze",
+      "prompt": "我___游泳。",
+      "pinyin": "wǒ ___ yóuyǒng",
+      "hint": "a learned skill",
+      "answer": "会",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "会",
+          "py": "huì",
+          "en": "can (a skill)"
+        },
+        {
+          "w": "游泳",
+          "py": "yóuyǒng",
+          "en": "swim"
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "prompt": "你___做饭吗？",
+      "pinyin": "nǐ ___ zuòfàn ma",
+      "hint": "know how to?",
+      "answer": "会",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "会",
+          "py": "huì",
+          "en": "can (a skill)"
+        },
+        {
+          "w": "做饭",
+          "py": "zuòfàn",
+          "en": "cook"
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "prompt": "我今天很累，不___去购物。",
+      "pinyin": "wǒ jīntiān hěn lèi, bù ___ qù gòuwù",
+      "hint": "able right now?",
+      "answer": "能",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "能",
+          "py": "néng",
+          "en": "can (able now)"
+        },
+        {
+          "w": "累",
+          "py": "lèi",
+          "en": "tired"
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "prompt": "这个房间___住五个人。",
+      "pinyin": "zhège fángjiān ___ zhù wǔ ge rén",
+      "hint": "capacity",
+      "answer": "能",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "能",
+          "py": "néng",
+          "en": "can (capacity)"
+        },
+        {
+          "w": "房间",
+          "py": "fángjiān",
+          "en": "room"
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "prompt": "喜欢的话，___试穿。",
+      "pinyin": "xǐhuan dehuà, ___ shìchuān",
+      "hint": "allowed to",
+      "answer": "可以",
+      "accept": [
+        "能"
+      ],
+      "vocab": [
+        {
+          "w": "可以",
+          "py": "kěyǐ",
+          "en": "may (allowed)"
+        },
+        {
+          "w": "试穿",
+          "py": "shìchuān",
+          "en": "try on"
+        }
+      ]
+    },
+    {
+      "type": "cloze",
+      "prompt": "请问，我___走了吗？",
+      "pinyin": "qǐngwèn, wǒ ___ zǒu le ma",
+      "hint": "may I? (permission)",
+      "answer": "可以",
+      "accept": [
+        "能"
+      ],
+      "vocab": [
+        {
+          "w": "可以",
+          "py": "kěyǐ",
+          "en": "may (allowed)"
+        },
+        {
+          "w": "走",
+          "py": "zǒu",
+          "en": "leave"
+        }
+      ]
+    }
   ]
 }

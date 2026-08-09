@@ -162,6 +162,17 @@ export const STRUCTURES = [
   { id: "neng", cat: "action", name: "能 / 可以 — can / may", pattern: "S 能|néng / 可以|kěyǐ V",
     rule: "能 = able to / possible (我不能去); 可以 = allowed to / may (可以试穿). For a learned skill use 会: 我会游泳.",
     zh: "我|wǒ 不|bù 能|néng 去|qù", en: "I can't go." },
+  { id: "can-choice", cat: "action", name: "会 / 能 / 可以 — which “can”?", pattern: "S 会|huì / 能|néng / 可以|kěyǐ V",
+    rule: "Three words for 'can', chosen by meaning: 会 = a learned skill, 能 = able in this situation / possible, 可以 = allowed / permitted.",
+    zh: "我|wǒ 会|huì 说|shuō 中|zhōng 文|wén", en: "I can speak Chinese.",
+    intro: {
+      lead: "Chinese has three words for “can”. Pick the one that matches the meaning:",
+      points: [
+        { t: "会", py: "huì", d: "a skill you learned", e: "我会说中文 — I can (know how to) speak Chinese" },
+        { t: "能", py: "néng", d: "able right now / possible / capacity", e: "我今天不能去 — I can't go today" },
+        { t: "可以", py: "kěyǐ", d: "allowed / permitted", e: "你可以试穿 — you may try it on" },
+      ],
+    } },
   { id: "xian-zai", cat: "action", name: "先 … 再 … — first … then", pattern: "先|xiān V1 … 再|zài V2",
     rule: "先 marks the first action, 再 the next: 我先看菜单，再点菜. Here 再 means 'then', not 'again'.",
     zh: "我|wǒ 先|xiān 吃|chī 饭|fàn 再|zài 去|qù", en: "I'll eat first, then go." },

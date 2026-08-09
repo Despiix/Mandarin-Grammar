@@ -248,6 +248,7 @@ export default function App() {
   const [grading, setGrading] = useState(false);
   const [result, setResult] = useState(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
+  const [showIntro, setShowIntro] = useState(false);
   const [score, setScore] = useState(0);
   const [empty, setEmpty] = useState(false);
   const [justKnown, setJustKnown] = useState(null);
@@ -306,7 +307,7 @@ export default function App() {
 
   function startPractice(s) {
     setActive(s); setView("practice"); setIdx(0); setMode("normal");
-    setInput(""); setResult(null); setScore(0); setShowPy(false); setRevealed(false); setDrawerOpen(false);
+    setInput(""); setResult(null); setScore(0); setShowPy(false); setRevealed(false); setDrawerOpen(false); setShowIntro(!!s.intro);
     const bank = banks[s.id] || [];
     if (!bank.length) { setExercises([]); setEmpty(true); return; }
     setEmpty(false);
@@ -316,7 +317,7 @@ export default function App() {
   function startSession(list, m) {
     setMode(m); setView("practice"); setIdx(0);
     setActive(STRUCTURES.find((s) => s.id === list[0]._sid));
-    setInput(""); setResult(null); setScore(0); setShowPy(false); setRevealed(false); setDrawerOpen(false); setEmpty(false);
+    setInput(""); setResult(null); setScore(0); setShowPy(false); setRevealed(false); setDrawerOpen(false); setEmpty(false); setShowIntro(false);
     setExercises(list);
   }
   function startMistakes() {
@@ -581,9 +582,24 @@ export default function App() {
             <div className="lead"><span className="kicker">{active.name}</span><Frame pattern={active.pattern} /></div>
           )}
 
-          {empty && <div className="note">No exercises for this one yet. Run <code>npm run gen</code> with your API key to build its bank.</div>}
+          {showIntro && active.intro && (
+            <section className="intro rise">
+              {active.intro.lead && <p className="introlead">{active.intro.lead}</p>}
+              <ul className="intropts">
+                {active.intro.points.map((p, i) => (
+                  <li key={i}>
+                    <ruby className={"rb t" + pinyinTone(p.py)}>{p.t}<rt>{p.py}</rt></ruby>
+                    <div><div className="introd">{p.d}</div><div className="introe">{p.e}</div></div>
+                  </li>
+                ))}
+              </ul>
+              <button className="btn" onClick={() => setShowIntro(false)}>Got it! →</button>
+            </section>
+          )}
 
-          {!empty && ex && (
+          {!showIntro && empty && <div className="note">No exercises for this one yet. Run <code>npm run gen</code> with your API key to build its bank.</div>}
+
+          {!showIntro && !empty && ex && (
             <section className="ex">
               <div className="exhead"><span className="extype">{TYPE_LABEL[ex.type] || ex.type}</span><span className="prog">{sessDone} of {exercises.length} done</span></div>
               <div className={"exprog" + (sessPct === 100 ? " done" : "")}><span style={{ width: sessPct + "%" }} /></div>
@@ -625,7 +641,7 @@ export default function App() {
             </section>
           )}
 
-          {done && (
+          {!showIntro && done && (
             <section className="ex summary">
               {score / exercises.length >= 0.6 && <Confetti />}
               <div className="bignum"><CountUp value={score} /><span>/ {exercises.length}</span></div>
@@ -641,7 +657,7 @@ export default function App() {
             </section>
           )}
 
-          {!empty && ex && !done && (
+          {!showIntro && !empty && ex && !done && (
             <>
               <button className={"drawertab" + (drawerOpen ? " up" : "")} onClick={() => setDrawerOpen(true)}>
                 <span className="dtword">译</span> Words ▴
