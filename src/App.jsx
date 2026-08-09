@@ -253,7 +253,7 @@ export default function App() {
   const [justKnown, setJustKnown] = useState(null);
   const [activity, setActivity] = useState(loadActivity);
   const [mistakes, setMistakes] = useState(loadMistakes);
-  const [mistakeMode, setMistakeMode] = useState(false);
+  const [mode, setMode] = useState("normal"); // "normal" | "mistakes" | "mixed"
 
   useEffect(() => { try { localStorage.setItem(MIS_KEY, JSON.stringify(mistakes)); } catch {} }, [mistakes]);
 
@@ -305,7 +305,7 @@ export default function App() {
   }
 
   function startPractice(s) {
-    setActive(s); setView("practice"); setIdx(0); setMistakeMode(false);
+    setActive(s); setView("practice"); setIdx(0); setMode("normal");
     setInput(""); setResult(null); setScore(0); setShowPy(false); setRevealed(false); setDrawerOpen(false);
     const bank = banks[s.id] || [];
     if (!bank.length) { setExercises([]); setEmpty(true); return; }
@@ -313,14 +313,22 @@ export default function App() {
     setExercises(shuffle(bank).slice(0, 5));
   }
 
-  function startMistakes() {
-    const pool = mistakes.filter((m) => STRUCTURES.find((s) => s.id === m.sid));
-    if (!pool.length) return;
-    const list = shuffle(pool).slice(0, 10).map((m) => ({ ...m.ex, _sid: m.sid }));
-    setMistakeMode(true); setView("practice"); setIdx(0);
+  function startSession(list, m) {
+    setMode(m); setView("practice"); setIdx(0);
     setActive(STRUCTURES.find((s) => s.id === list[0]._sid));
     setInput(""); setResult(null); setScore(0); setShowPy(false); setRevealed(false); setDrawerOpen(false); setEmpty(false);
     setExercises(list);
+  }
+  function startMistakes() {
+    const pool = mistakes.filter((m) => STRUCTURES.find((s) => s.id === m.sid));
+    if (!pool.length) return;
+    startSession(shuffle(pool).slice(0, 10).map((m) => ({ ...m.ex, _sid: m.sid })), "mistakes");
+  }
+  function startMixed() {
+    const pool = [];
+    STRUCTURES.forEach((s) => { const b = banks[s.id]; if (Array.isArray(b)) b.forEach((ex) => pool.push({ ...ex, _sid: s.id })); });
+    if (!pool.length) return;
+    startSession(shuffle(pool).slice(0, 8), "mixed");
   }
 
   async function check() {
@@ -337,16 +345,18 @@ export default function App() {
       if (isProduction(ex)) { setGrading(false); setRevealed(true); return; }
       r = { correct: gradeClosed(ex, input), correction: ex.answer, source: "local" };
     }
-    if (r.correct) { setScore((x) => x + 1); if (mistakeMode) removeMistake(ex._sid, ex); }
-    else if (!mistakeMode) addMistake(active.id, ex);
+    const sid = ex._sid || active.id;
+    if (r.correct) { setScore((x) => x + 1); if (mode === "mistakes") removeMistake(sid, ex); }
+    else if (mode !== "mistakes") addMistake(sid, ex);
     markToday();
     setResult(r); setGrading(false);
   }
 
   function selfMark(ok) {
     const ex = exercises[idx];
-    if (ok) { setScore((x) => x + 1); if (mistakeMode) removeMistake(ex._sid, ex); }
-    else if (!mistakeMode) addMistake(active.id, ex);
+    const sid = ex._sid || active.id;
+    if (ok) { setScore((x) => x + 1); if (mode === "mistakes") removeMistake(sid, ex); }
+    else if (mode !== "mistakes") addMistake(sid, ex);
     markToday();
     setResult({ correct: ok, source: "self" });
   }
@@ -364,8 +374,8 @@ export default function App() {
   }
   function next() {
     const ni = idx + 1;
-    if (ni >= exercises.length) { if (!mistakeMode) commit(score); }
-    else if (mistakeMode && exercises[ni]?._sid) setActive(STRUCTURES.find((s) => s.id === exercises[ni]._sid));
+    if (ni >= exercises.length) { if (mode === "normal") commit(score); }
+    else if (mode !== "normal" && exercises[ni]?._sid) setActive(STRUCTURES.find((s) => s.id === exercises[ni]._sid));
     setResult(null); setInput(""); setShowPy(false); setRevealed(false); setDrawerOpen(false); setIdx((i) => i + 1);
   }
 
@@ -470,6 +480,14 @@ export default function App() {
               ))}
             </div>
           </section>
+          <section className="qsec">
+            <h2 className="qhead">Mixed review</h2>
+            <div className="trow rise">
+              <span className="dot known" />
+              <span className="tname">All patterns, shuffled together</span>
+              <button className="btn small" onClick={startMixed}>Start</button>
+            </div>
+          </section>
           {mistakes.length > 0 && (
             <section className="qsec">
               <h2 className="qhead">Fix your mistakes</h2>
@@ -557,7 +575,11 @@ export default function App() {
       {view === "practice" && active && (
         <main className="wrap viewfade">
           <button className="back" onClick={() => setView("home")}>← Back</button>
-          <div className="lead"><span className="kicker">{active.name}</span><Frame pattern={active.pattern} /></div>
+          {mode === "mixed" && ex && !result ? (
+            <div className="lead"><span className="kicker">Mixed review</span><p className="blindnote">Guess which pattern this is — it's revealed after you answer.</p></div>
+          ) : (
+            <div className="lead"><span className="kicker">{active.name}</span><Frame pattern={active.pattern} /></div>
+          )}
 
           {empty && <div className="note">No exercises for this one yet. Run <code>npm run gen</code> with your API key to build its bank.</div>}
 
@@ -607,11 +629,13 @@ export default function App() {
             <section className="ex summary">
               {score / exercises.length >= 0.6 && <Confetti />}
               <div className="bignum"><CountUp value={score} /><span>/ {exercises.length}</span></div>
-              <p>{mistakeMode
+              <p>{mode === "mistakes"
                 ? "Cleared the ones you got right — they're off your mistakes list. Nothing else changed."
+                : mode === "mixed"
+                ? "Mixed review done. Anything you missed is saved to your mistakes list."
                 : <>Marked <strong>{STATE_LABEL[structures.find((s) => s.id === active.id)?.state] || "Learning"}</strong> and saved to this device.</>}</p>
               <div className="row">
-                {(!mistakeMode || mistakes.length > 0) && <button className="btn" onClick={() => (mistakeMode ? startMistakes() : startPractice(active))}>Again</button>}
+                {(mode !== "mistakes" || mistakes.length > 0) && <button className="btn" onClick={() => (mode === "mistakes" ? startMistakes() : mode === "mixed" ? startMixed() : startPractice(active))}>Again</button>}
                 <button className="btn ghost" onClick={() => setView("home")}>Done</button>
               </div>
             </section>

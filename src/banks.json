@@ -4699,5 +4699,1713 @@
         }
       ]
     }
+  ],
+  "yao": [
+    {
+      "type": "cloze",
+      "prompt": "我___一杯水。",
+      "pinyin": "wǒ ___ yì bēi shuǐ",
+      "hint": "want",
+      "answer": "要",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "要",
+          "py": "yào",
+          "en": "want"
+        },
+        {
+          "w": "水",
+          "py": "shuǐ",
+          "en": "water"
+        }
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "I want three apples.",
+      "pinyin": "",
+      "hint": "要 + number",
+      "answer": "我要三个苹果。",
+      "accept": [
+        "我要三个苹果"
+      ],
+      "vocab": [
+        {
+          "w": "要",
+          "py": "yào",
+          "en": "want"
+        },
+        {
+          "w": "苹果",
+          "py": "píngguǒ",
+          "en": "apple"
+        }
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "他要来。",
+      "pinyin": "tā yào lái",
+      "hint": "",
+      "answer": "He is going to come.",
+      "accept": [
+        "He will come.",
+        "He's coming."
+      ],
+      "vocab": [
+        {
+          "w": "要",
+          "py": "yào",
+          "en": "will"
+        },
+        {
+          "w": "来",
+          "py": "lái",
+          "en": "come"
+        }
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "我一杯水要。",
+      "pinyin": "wǒ yì bēi shuǐ yào",
+      "hint": "要 before the object",
+      "answer": "我要一杯水。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "要",
+          "py": "yào",
+          "en": "want"
+        },
+        {
+          "w": "杯",
+          "py": "bēi",
+          "en": "cup"
+        }
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Say you want a cup of coffee.",
+      "pinyin": "",
+      "hint": "要一杯…",
+      "answer": "我要一杯咖啡。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "要",
+          "py": "yào",
+          "en": "want"
+        },
+        {
+          "w": "咖啡",
+          "py": "kāfēi",
+          "en": "coffee"
+        }
+      ]
+    }
+  ],
+  "neng": [
+    {
+      "type": "cloze",
+      "prompt": "我今天很累，不___去购物。",
+      "pinyin": "wǒ jīntiān hěn lèi, bù ___ qù gòuwù",
+      "hint": "can",
+      "answer": "能",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "能",
+          "py": "néng",
+          "en": "can"
+        },
+        {
+          "w": "累",
+          "py": "lèi",
+          "en": "tired"
+        },
+        {
+          "w": "购物",
+          "py": "gòuwù",
+          "en": "shopping"
+        }
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "Can I try it on?",
+      "pinyin": "",
+      "hint": "可以…吗",
+      "answer": "我可以试穿吗？",
+      "accept": [
+        "可以试穿吗？"
+      ],
+      "vocab": [
+        {
+          "w": "可以",
+          "py": "kěyǐ",
+          "en": "may"
+        },
+        {
+          "w": "试穿",
+          "py": "shìchuān",
+          "en": "try on"
+        }
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "你不可以在这里停车。",
+      "pinyin": "nǐ bù kěyǐ zài zhèlǐ tíngchē",
+      "hint": "",
+      "answer": "You may not park here.",
+      "accept": [
+        "You can't park here."
+      ],
+      "vocab": [
+        {
+          "w": "可以",
+          "py": "kěyǐ",
+          "en": "may"
+        },
+        {
+          "w": "停车",
+          "py": "tíngchē",
+          "en": "park"
+        }
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "我不去能。",
+      "pinyin": "wǒ bù qù néng",
+      "hint": "能 before verb",
+      "answer": "我不能去。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "能",
+          "py": "néng",
+          "en": "can"
+        },
+        {
+          "w": "去",
+          "py": "qù",
+          "en": "go"
+        }
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Say this room can't hold five people.",
+      "pinyin": "",
+      "hint": "不能住…",
+      "answer": "这个房间不能住五个人。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "能",
+          "py": "néng",
+          "en": "can"
+        },
+        {
+          "w": "房间",
+          "py": "fángjiān",
+          "en": "room"
+        }
+      ]
+    }
+  ],
+  "juede": [
+    {
+      "type": "cloze",
+      "prompt": "我___咖啡比茶苦。",
+      "pinyin": "wǒ ___ kāfēi bǐ chá kǔ",
+      "hint": "think",
+      "answer": "觉得",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "觉得",
+          "py": "juéde",
+          "en": "think"
+        },
+        {
+          "w": "苦",
+          "py": "kǔ",
+          "en": "bitter"
+        }
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "I think today is hotter than yesterday.",
+      "pinyin": "",
+      "hint": "觉得…比…",
+      "answer": "我觉得今天比昨天热。",
+      "accept": [
+        "我觉得今天比昨天热"
+      ],
+      "vocab": [
+        {
+          "w": "觉得",
+          "py": "juéde",
+          "en": "think"
+        },
+        {
+          "w": "热",
+          "py": "rè",
+          "en": "hot"
+        }
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "你觉得这个电影怎么样？",
+      "pinyin": "nǐ juéde zhège diànyǐng zěnmeyàng",
+      "hint": "",
+      "answer": "What do you think of this movie?",
+      "accept": [
+        "How do you find this movie?"
+      ],
+      "vocab": [
+        {
+          "w": "觉得",
+          "py": "juéde",
+          "en": "think"
+        },
+        {
+          "w": "电影",
+          "py": "diànyǐng",
+          "en": "movie"
+        }
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "我得觉这个很好。",
+      "pinyin": "wǒ de jué zhège hěn hǎo",
+      "hint": "觉得, not 得觉",
+      "answer": "我觉得这个很好。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "觉得",
+          "py": "juéde",
+          "en": "think"
+        },
+        {
+          "w": "好",
+          "py": "hǎo",
+          "en": "good"
+        }
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Say you think dumplings are tastier than noodles.",
+      "pinyin": "",
+      "hint": "觉得…比…好吃",
+      "answer": "我觉得饺子比面条好吃。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "觉得",
+          "py": "juéde",
+          "en": "think"
+        },
+        {
+          "w": "饺子",
+          "py": "jiǎozi",
+          "en": "dumplings"
+        }
+      ]
+    }
+  ],
+  "haishi": [
+    {
+      "type": "cloze",
+      "prompt": "你要咖啡___是茶？",
+      "pinyin": "nǐ yào kāfēi ___ shì chá",
+      "hint": "or (question)",
+      "answer": "还",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "还是",
+          "py": "háishi",
+          "en": "or"
+        },
+        {
+          "w": "茶",
+          "py": "chá",
+          "en": "tea"
+        }
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "Do you want dumplings or noodles?",
+      "pinyin": "",
+      "hint": "A 还是 B",
+      "answer": "你要饺子还是面条？",
+      "accept": [
+        "你要饺子还是面条"
+      ],
+      "vocab": [
+        {
+          "w": "还是",
+          "py": "háishi",
+          "en": "or"
+        },
+        {
+          "w": "面条",
+          "py": "miàntiáo",
+          "en": "noodles"
+        }
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "你要去购物还是去咖啡店？",
+      "pinyin": "nǐ yào qù gòuwù háishi qù kāfēidiàn",
+      "hint": "",
+      "answer": "Do you want to go shopping or to a coffee shop?",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "还是",
+          "py": "háishi",
+          "en": "or"
+        },
+        {
+          "w": "购物",
+          "py": "gòuwù",
+          "en": "shopping"
+        }
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "我喝咖啡还是茶。",
+      "pinyin": "wǒ hē kāfēi háishi chá",
+      "hint": "statement uses 或者",
+      "answer": "我喝咖啡或者茶。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "或者",
+          "py": "huòzhě",
+          "en": "or (statement)"
+        },
+        {
+          "w": "喝",
+          "py": "hē",
+          "en": "drink"
+        }
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Ask if they want tea or coffee.",
+      "pinyin": "",
+      "hint": "…还是…",
+      "answer": "你要茶还是咖啡？",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "还是",
+          "py": "háishi",
+          "en": "or"
+        },
+        {
+          "w": "咖啡",
+          "py": "kāfēi",
+          "en": "coffee"
+        }
+      ]
+    }
+  ],
+  "xian-zai": [
+    {
+      "type": "cloze",
+      "prompt": "我先看菜单，___点菜。",
+      "pinyin": "wǒ xiān kàn càidān, ___ diǎn cài",
+      "hint": "then",
+      "answer": "再",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "先",
+          "py": "xiān",
+          "en": "first"
+        },
+        {
+          "w": "再",
+          "py": "zài",
+          "en": "then"
+        },
+        {
+          "w": "点菜",
+          "py": "diǎn cài",
+          "en": "order"
+        }
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "I'll eat breakfast first, then go to the classroom.",
+      "pinyin": "",
+      "hint": "先…再…",
+      "answer": "我先吃早餐，再去教室。",
+      "accept": [
+        "我先吃早饭，再去教室。"
+      ],
+      "vocab": [
+        {
+          "w": "先",
+          "py": "xiān",
+          "en": "first"
+        },
+        {
+          "w": "教室",
+          "py": "jiàoshì",
+          "en": "classroom"
+        }
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "我们先看看菜单，一会儿再点菜。",
+      "pinyin": "wǒmen xiān kànkan càidān, yíhuìr zài diǎn cài",
+      "hint": "",
+      "answer": "Let's look at the menu first and order in a bit.",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "先",
+          "py": "xiān",
+          "en": "first"
+        },
+        {
+          "w": "一会儿",
+          "py": "yíhuìr",
+          "en": "in a bit"
+        }
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "我再吃饭先睡觉。",
+      "pinyin": "wǒ zài chīfàn xiān shuìjiào",
+      "hint": "先 … 再 order",
+      "answer": "我先吃饭再睡觉。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "先",
+          "py": "xiān",
+          "en": "first"
+        },
+        {
+          "w": "睡觉",
+          "py": "shuìjiào",
+          "en": "sleep"
+        }
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Say you'll first go to class, then eat at the canteen.",
+      "pinyin": "",
+      "hint": "先上课，再…",
+      "answer": "我先上课，再去食堂吃饭。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "先",
+          "py": "xiān",
+          "en": "first"
+        },
+        {
+          "w": "食堂",
+          "py": "shítáng",
+          "en": "canteen"
+        }
+      ]
+    }
+  ],
+  "yixia": [
+    {
+      "type": "cloze",
+      "prompt": "我看___菜单。",
+      "pinyin": "wǒ kàn ___ càidān",
+      "hint": "a quick look",
+      "answer": "一下",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "一下",
+          "py": "yíxià",
+          "en": "a bit"
+        },
+        {
+          "w": "菜单",
+          "py": "càidān",
+          "en": "menu"
+        }
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "I'm tired, I need to rest a bit.",
+      "pinyin": "",
+      "hint": "休息一下",
+      "answer": "我累了，我要休息一下。",
+      "accept": [
+        "我累了，要休息一下。"
+      ],
+      "vocab": [
+        {
+          "w": "休息",
+          "py": "xiūxi",
+          "en": "rest"
+        },
+        {
+          "w": "一下",
+          "py": "yíxià",
+          "en": "a bit"
+        }
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "我试一下这道汤。",
+      "pinyin": "wǒ shì yíxià zhè dào tāng",
+      "hint": "",
+      "answer": "Let me try this soup.",
+      "accept": [
+        "I'll try this soup."
+      ],
+      "vocab": [
+        {
+          "w": "试",
+          "py": "shì",
+          "en": "try"
+        },
+        {
+          "w": "汤",
+          "py": "tāng",
+          "en": "soup"
+        }
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "我看一菜单下。",
+      "pinyin": "wǒ kàn yì càidān xià",
+      "hint": "一下 stays together after the verb",
+      "answer": "我看一下菜单。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "一下",
+          "py": "yíxià",
+          "en": "a bit"
+        },
+        {
+          "w": "看",
+          "py": "kàn",
+          "en": "look"
+        }
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Say let me have a taste.",
+      "pinyin": "",
+      "hint": "尝/试 一下",
+      "answer": "我尝一下。",
+      "accept": [
+        "我试一下。",
+        "我试吃一下。"
+      ],
+      "vocab": [
+        {
+          "w": "尝",
+          "py": "cháng",
+          "en": "taste"
+        },
+        {
+          "w": "一下",
+          "py": "yíxià",
+          "en": "a bit"
+        }
+      ]
+    }
+  ],
+  "wan": [
+    {
+      "type": "cloze",
+      "prompt": "我吃___饭了。",
+      "pinyin": "wǒ chī ___ fàn le",
+      "hint": "finish",
+      "answer": "完",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "完",
+          "py": "wán",
+          "en": "finish"
+        },
+        {
+          "w": "饭",
+          "py": "fàn",
+          "en": "meal"
+        }
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "I've finished my homework.",
+      "pinyin": "",
+      "hint": "做完…了",
+      "answer": "我做完作业了。",
+      "accept": [
+        "我做完作业了"
+      ],
+      "vocab": [
+        {
+          "w": "完",
+          "py": "wán",
+          "en": "finish"
+        },
+        {
+          "w": "作业",
+          "py": "zuòyè",
+          "en": "homework"
+        }
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "我打包完行李了。",
+      "pinyin": "wǒ dǎbāo wán xíngli le",
+      "hint": "",
+      "answer": "I've finished packing my luggage.",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "完",
+          "py": "wán",
+          "en": "finish"
+        },
+        {
+          "w": "行李",
+          "py": "xíngli",
+          "en": "luggage"
+        }
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "我吃了完饭。",
+      "pinyin": "wǒ chī le wán fàn",
+      "hint": "完 before 了",
+      "answer": "我吃完饭了。",
+      "accept": [
+        "我吃完了。"
+      ],
+      "vocab": [
+        {
+          "w": "完",
+          "py": "wán",
+          "en": "finish"
+        },
+        {
+          "w": "吃",
+          "py": "chī",
+          "en": "eat"
+        }
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Say you've finished eating.",
+      "pinyin": "",
+      "hint": "吃完…了",
+      "answer": "我吃完了。",
+      "accept": [
+        "我吃完饭了。"
+      ],
+      "vocab": [
+        {
+          "w": "完",
+          "py": "wán",
+          "en": "finish"
+        },
+        {
+          "w": "了",
+          "py": "le",
+          "en": "(completed)"
+        }
+      ]
+    }
+  ],
+  "gei": [
+    {
+      "type": "cloze",
+      "prompt": "他___我买咖啡。",
+      "pinyin": "tā ___ wǒ mǎi kāfēi",
+      "hint": "for me",
+      "answer": "给",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "给",
+          "py": "gěi",
+          "en": "for / to"
+        },
+        {
+          "w": "买",
+          "py": "mǎi",
+          "en": "buy"
+        }
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "Please give me a glass of water.",
+      "pinyin": "",
+      "hint": "给我…",
+      "answer": "请给我一杯水。",
+      "accept": [
+        "给我一杯水。"
+      ],
+      "vocab": [
+        {
+          "w": "给",
+          "py": "gěi",
+          "en": "give"
+        },
+        {
+          "w": "水",
+          "py": "shuǐ",
+          "en": "water"
+        }
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "我给妈妈做饭。",
+      "pinyin": "wǒ gěi māma zuòfàn",
+      "hint": "",
+      "answer": "I cook for my mum.",
+      "accept": [
+        "I make food for my mum."
+      ],
+      "vocab": [
+        {
+          "w": "给",
+          "py": "gěi",
+          "en": "for"
+        },
+        {
+          "w": "做饭",
+          "py": "zuòfàn",
+          "en": "cook"
+        }
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "他我给买咖啡。",
+      "pinyin": "tā wǒ gěi mǎi kāfēi",
+      "hint": "给 before the person",
+      "answer": "他给我买咖啡。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "给",
+          "py": "gěi",
+          "en": "for"
+        },
+        {
+          "w": "咖啡",
+          "py": "kāfēi",
+          "en": "coffee"
+        }
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Say he gave me ten euros.",
+      "pinyin": "",
+      "hint": "给我…欧元",
+      "answer": "他给我十欧元。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "给",
+          "py": "gěi",
+          "en": "give"
+        },
+        {
+          "w": "欧元",
+          "py": "ōuyuán",
+          "en": "euro"
+        }
+      ]
+    }
+  ],
+  "you-again": [
+    {
+      "type": "cloze",
+      "prompt": "我十点___睡着了。",
+      "pinyin": "wǒ shí diǎn ___ shuìzháo le",
+      "hint": "again (past)",
+      "answer": "又",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "又",
+          "py": "yòu",
+          "en": "again"
+        },
+        {
+          "w": "睡着",
+          "py": "shuìzháo",
+          "en": "fall asleep"
+        }
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "I got up again at twelve.",
+      "pinyin": "",
+      "hint": "又…了",
+      "answer": "我十二点又起床了。",
+      "accept": [
+        "我十二点又起床了"
+      ],
+      "vocab": [
+        {
+          "w": "又",
+          "py": "yòu",
+          "en": "again"
+        },
+        {
+          "w": "起床",
+          "py": "qǐchuáng",
+          "en": "get up"
+        }
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "他又来了。",
+      "pinyin": "tā yòu lái le",
+      "hint": "",
+      "answer": "He came again.",
+      "accept": [
+        "He's here again."
+      ],
+      "vocab": [
+        {
+          "w": "又",
+          "py": "yòu",
+          "en": "again"
+        },
+        {
+          "w": "来",
+          "py": "lái",
+          "en": "come"
+        }
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "我睡着又了。",
+      "pinyin": "wǒ shuìzháo yòu le",
+      "hint": "又 before the verb",
+      "answer": "我又睡着了。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "又",
+          "py": "yòu",
+          "en": "again"
+        },
+        {
+          "w": "睡着",
+          "py": "shuìzháo",
+          "en": "fall asleep"
+        }
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Say you ate again.",
+      "pinyin": "",
+      "hint": "又吃…了",
+      "answer": "我又吃了。",
+      "accept": [
+        "我又吃饭了。"
+      ],
+      "vocab": [
+        {
+          "w": "又",
+          "py": "yòu",
+          "en": "again"
+        },
+        {
+          "w": "吃",
+          "py": "chī",
+          "en": "eat"
+        }
+      ]
+    }
+  ],
+  "time-qian": [
+    {
+      "type": "cloze",
+      "prompt": "我一个小时___起床了。",
+      "pinyin": "wǒ yí ge xiǎoshí ___ qǐchuáng le",
+      "hint": "ago",
+      "answer": "前",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "前",
+          "py": "qián",
+          "en": "ago"
+        },
+        {
+          "w": "小时",
+          "py": "xiǎoshí",
+          "en": "hour"
+        }
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "I got up an hour ago.",
+      "pinyin": "",
+      "hint": "一个小时前",
+      "answer": "我一个小时前起床了。",
+      "accept": [
+        "我一小时前起床了。"
+      ],
+      "vocab": [
+        {
+          "w": "前",
+          "py": "qián",
+          "en": "ago"
+        },
+        {
+          "w": "起床",
+          "py": "qǐchuáng",
+          "en": "get up"
+        }
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "两天前我买了机票。",
+      "pinyin": "liǎng tiān qián wǒ mǎi le jīpiào",
+      "hint": "",
+      "answer": "I bought the ticket two days ago.",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "前",
+          "py": "qián",
+          "en": "ago"
+        },
+        {
+          "w": "机票",
+          "py": "jīpiào",
+          "en": "plane ticket"
+        }
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "我起床了一个小时前。",
+      "pinyin": "wǒ qǐchuáng le yí ge xiǎoshí qián",
+      "hint": "time前 goes before the verb",
+      "answer": "我一个小时前起床了。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "前",
+          "py": "qián",
+          "en": "ago"
+        },
+        {
+          "w": "小时",
+          "py": "xiǎoshí",
+          "en": "hour"
+        }
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Say you ate an hour ago.",
+      "pinyin": "",
+      "hint": "一个小时前…",
+      "answer": "我一个小时前吃饭了。",
+      "accept": [
+        "我一小时前吃了。"
+      ],
+      "vocab": [
+        {
+          "w": "前",
+          "py": "qián",
+          "en": "ago"
+        },
+        {
+          "w": "吃饭",
+          "py": "chīfàn",
+          "en": "eat"
+        }
+      ]
+    }
+  ],
+  "tongchang": [
+    {
+      "type": "cloze",
+      "prompt": "你___几点睡觉？",
+      "pinyin": "nǐ ___ jǐ diǎn shuìjiào",
+      "hint": "usually",
+      "answer": "通常",
+      "accept": [
+        "一般"
+      ],
+      "vocab": [
+        {
+          "w": "通常",
+          "py": "tōngcháng",
+          "en": "usually"
+        },
+        {
+          "w": "睡觉",
+          "py": "shuìjiào",
+          "en": "sleep"
+        }
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "I usually sleep at eleven.",
+      "pinyin": "",
+      "hint": "通常/一般 before verb",
+      "answer": "我通常十一点睡觉。",
+      "accept": [
+        "我一般十一点睡觉。"
+      ],
+      "vocab": [
+        {
+          "w": "通常",
+          "py": "tōngcháng",
+          "en": "usually"
+        },
+        {
+          "w": "点",
+          "py": "diǎn",
+          "en": "o'clock"
+        }
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "你一般几点做运动？",
+      "pinyin": "nǐ yìbān jǐ diǎn zuò yùndòng",
+      "hint": "",
+      "answer": "What time do you usually exercise?",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "一般",
+          "py": "yìbān",
+          "en": "usually"
+        },
+        {
+          "w": "运动",
+          "py": "yùndòng",
+          "en": "exercise"
+        }
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "我睡觉通常十一点。",
+      "pinyin": "wǒ shuìjiào tōngcháng shíyī diǎn",
+      "hint": "通常 before the time+verb",
+      "answer": "我通常十一点睡觉。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "通常",
+          "py": "tōngcháng",
+          "en": "usually"
+        },
+        {
+          "w": "睡觉",
+          "py": "shuìjiào",
+          "en": "sleep"
+        }
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Ask what time they usually get up.",
+      "pinyin": "",
+      "hint": "通常几点…",
+      "answer": "你通常几点起床？",
+      "accept": [
+        "你一般几点起床？"
+      ],
+      "vocab": [
+        {
+          "w": "通常",
+          "py": "tōngcháng",
+          "en": "usually"
+        },
+        {
+          "w": "起床",
+          "py": "qǐchuáng",
+          "en": "get up"
+        }
+      ]
+    }
+  ],
+  "geng": [
+    {
+      "type": "cloze",
+      "prompt": "饺子比面条___好吃。",
+      "pinyin": "jiǎozi bǐ miàntiáo ___ hǎochī",
+      "hint": "even more",
+      "answer": "更",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "更",
+          "py": "gèng",
+          "en": "even more"
+        },
+        {
+          "w": "好吃",
+          "py": "hǎochī",
+          "en": "tasty"
+        }
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "Milk tea is even tastier.",
+      "pinyin": "",
+      "hint": "更好喝",
+      "answer": "奶茶更好喝。",
+      "accept": [
+        "奶茶更好喝"
+      ],
+      "vocab": [
+        {
+          "w": "更",
+          "py": "gèng",
+          "en": "even more"
+        },
+        {
+          "w": "好喝",
+          "py": "hǎohē",
+          "en": "nice to drink"
+        }
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "他比我更高。",
+      "pinyin": "tā bǐ wǒ gèng gāo",
+      "hint": "",
+      "answer": "He is even taller than me.",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "更",
+          "py": "gèng",
+          "en": "even more"
+        },
+        {
+          "w": "高",
+          "py": "gāo",
+          "en": "tall"
+        }
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "这个好吃更。",
+      "pinyin": "zhège hǎochī gèng",
+      "hint": "更 before the adjective",
+      "answer": "这个更好吃。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "更",
+          "py": "gèng",
+          "en": "even more"
+        },
+        {
+          "w": "好吃",
+          "py": "hǎochī",
+          "en": "tasty"
+        }
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Say China is even bigger than the UK.",
+      "pinyin": "",
+      "hint": "比…更大",
+      "answer": "中国比英国更大。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "更",
+          "py": "gèng",
+          "en": "even more"
+        },
+        {
+          "w": "大",
+          "py": "dà",
+          "en": "big"
+        }
+      ]
+    }
+  ],
+  "zui": [
+    {
+      "type": "cloze",
+      "prompt": "我___喜欢奶茶。",
+      "pinyin": "wǒ ___ xǐhuan nǎichá",
+      "hint": "most",
+      "answer": "最",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "最",
+          "py": "zuì",
+          "en": "most"
+        },
+        {
+          "w": "奶茶",
+          "py": "nǎichá",
+          "en": "milk tea"
+        }
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "What food do you like best?",
+      "pinyin": "",
+      "hint": "最喜欢什么…",
+      "answer": "你最喜欢什么食物？",
+      "accept": [
+        "你最喜欢什么食物"
+      ],
+      "vocab": [
+        {
+          "w": "最",
+          "py": "zuì",
+          "en": "most"
+        },
+        {
+          "w": "食物",
+          "py": "shíwù",
+          "en": "food"
+        }
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "我最喜欢草莓。",
+      "pinyin": "wǒ zuì xǐhuan cǎoméi",
+      "hint": "",
+      "answer": "I like strawberries best.",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "最",
+          "py": "zuì",
+          "en": "most"
+        },
+        {
+          "w": "草莓",
+          "py": "cǎoméi",
+          "en": "strawberry"
+        }
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "我喜欢最鸡肉。",
+      "pinyin": "wǒ xǐhuan zuì jīròu",
+      "hint": "最 before the verb",
+      "answer": "我最喜欢鸡肉。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "最",
+          "py": "zuì",
+          "en": "most"
+        },
+        {
+          "w": "鸡肉",
+          "py": "jīròu",
+          "en": "chicken"
+        }
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Say your favourite colour is pink.",
+      "pinyin": "",
+      "hint": "最喜欢…色",
+      "answer": "我最喜欢粉红色。",
+      "accept": [
+        "我最喜欢粉色。"
+      ],
+      "vocab": [
+        {
+          "w": "最",
+          "py": "zuì",
+          "en": "most"
+        },
+        {
+          "w": "粉红色",
+          "py": "fěnhóngsè",
+          "en": "pink"
+        }
+      ]
+    }
+  ],
+  "youdian": [
+    {
+      "type": "cloze",
+      "prompt": "这个菜___辣。",
+      "pinyin": "zhège cài ___ là",
+      "hint": "a bit",
+      "answer": "有点",
+      "accept": [
+        "有点儿"
+      ],
+      "vocab": [
+        {
+          "w": "有点",
+          "py": "yǒudiǎn",
+          "en": "a bit"
+        },
+        {
+          "w": "辣",
+          "py": "là",
+          "en": "spicy"
+        }
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "It's a bit far.",
+      "pinyin": "",
+      "hint": "有点+adj",
+      "answer": "有点远。",
+      "accept": [
+        "有点儿远。"
+      ],
+      "vocab": [
+        {
+          "w": "有点",
+          "py": "yǒudiǎn",
+          "en": "a bit"
+        },
+        {
+          "w": "远",
+          "py": "yuǎn",
+          "en": "far"
+        }
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "今天有点热。",
+      "pinyin": "jīntiān yǒudiǎn rè",
+      "hint": "",
+      "answer": "It's a bit hot today.",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "有点",
+          "py": "yǒudiǎn",
+          "en": "a bit"
+        },
+        {
+          "w": "热",
+          "py": "rè",
+          "en": "hot"
+        }
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "这个辣有点。",
+      "pinyin": "zhège là yǒudiǎn",
+      "hint": "有点 before the adjective",
+      "answer": "这个有点辣。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "有点",
+          "py": "yǒudiǎn",
+          "en": "a bit"
+        },
+        {
+          "w": "辣",
+          "py": "là",
+          "en": "spicy"
+        }
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Say you're a bit tired.",
+      "pinyin": "",
+      "hint": "有点累",
+      "answer": "我有点累。",
+      "accept": [
+        "我有点儿累。"
+      ],
+      "vocab": [
+        {
+          "w": "有点",
+          "py": "yǒudiǎn",
+          "en": "a bit"
+        },
+        {
+          "w": "累",
+          "py": "lèi",
+          "en": "tired"
+        }
+      ]
+    }
+  ],
+  "dehua": [
+    {
+      "type": "cloze",
+      "prompt": "你累了___，先睡觉。",
+      "pinyin": "nǐ lèi le ___, xiān shuìjiào",
+      "hint": "if",
+      "answer": "的话",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "的话",
+          "py": "dehuà",
+          "en": "if"
+        },
+        {
+          "w": "累",
+          "py": "lèi",
+          "en": "tired"
+        }
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "If you're at home, I'll come find you in a bit.",
+      "pinyin": "",
+      "hint": "…的话，…",
+      "answer": "你在家的话，我一会儿去找你。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "的话",
+          "py": "dehuà",
+          "en": "if"
+        },
+        {
+          "w": "找",
+          "py": "zhǎo",
+          "en": "look for"
+        }
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "你会吃辣的话，我推荐宫保鸡丁。",
+      "pinyin": "nǐ huì chī là dehuà, wǒ tuījiàn gōngbǎo jīdīng",
+      "hint": "",
+      "answer": "If you can eat spicy, I recommend Kung Pao chicken.",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "的话",
+          "py": "dehuà",
+          "en": "if"
+        },
+        {
+          "w": "推荐",
+          "py": "tuījiàn",
+          "en": "recommend"
+        }
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "的话你太累了，先睡觉。",
+      "pinyin": "dehuà nǐ tài lèi le, xiān shuìjiào",
+      "hint": "的话 goes after the if-clause",
+      "answer": "你太累了的话，先睡觉。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "的话",
+          "py": "dehuà",
+          "en": "if"
+        },
+        {
+          "w": "先",
+          "py": "xiān",
+          "en": "first"
+        }
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Say if it's not enough, we'll order more later.",
+      "pinyin": "",
+      "hint": "不够的话，…",
+      "answer": "不够的话，我们一会儿再点。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "的话",
+          "py": "dehuà",
+          "en": "if"
+        },
+        {
+          "w": "够",
+          "py": "gòu",
+          "en": "enough"
+        }
+      ]
+    }
+  ],
+  "mei": [
+    {
+      "type": "cloze",
+      "prompt": "___个人十五欧元。",
+      "pinyin": "___ ge rén shíwǔ ōuyuán",
+      "hint": "every",
+      "answer": "每",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "每",
+          "py": "měi",
+          "en": "every"
+        },
+        {
+          "w": "欧元",
+          "py": "ōuyuán",
+          "en": "euro"
+        }
+      ]
+    },
+    {
+      "type": "translate_e2c",
+      "prompt": "Everyone likes it.",
+      "pinyin": "",
+      "hint": "每个人都…",
+      "answer": "每个人都喜欢。",
+      "accept": [
+        "每个人都喜欢"
+      ],
+      "vocab": [
+        {
+          "w": "每",
+          "py": "měi",
+          "en": "every"
+        },
+        {
+          "w": "都",
+          "py": "dōu",
+          "en": "all"
+        }
+      ]
+    },
+    {
+      "type": "translate_c2e",
+      "prompt": "我每天喝咖啡。",
+      "pinyin": "wǒ měi tiān hē kāfēi",
+      "hint": "",
+      "answer": "I drink coffee every day.",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "每天",
+          "py": "měi tiān",
+          "en": "every day"
+        },
+        {
+          "w": "喝",
+          "py": "hē",
+          "en": "drink"
+        }
+      ]
+    },
+    {
+      "type": "error_correction",
+      "prompt": "人每个十五欧元。",
+      "pinyin": "rén měi ge shíwǔ ōuyuán",
+      "hint": "每 comes first",
+      "answer": "每个人十五欧元。",
+      "accept": [],
+      "vocab": [
+        {
+          "w": "每",
+          "py": "měi",
+          "en": "every"
+        },
+        {
+          "w": "人",
+          "py": "rén",
+          "en": "person"
+        }
+      ]
+    },
+    {
+      "type": "production",
+      "prompt": "Say every dish is a bit spicy.",
+      "pinyin": "",
+      "hint": "每个菜都…",
+      "answer": "每个菜都有点辣。",
+      "accept": [
+        "每道菜都有点辣。"
+      ],
+      "vocab": [
+        {
+          "w": "每",
+          "py": "měi",
+          "en": "every"
+        },
+        {
+          "w": "菜",
+          "py": "cài",
+          "en": "dish"
+        }
+      ]
+    }
   ]
 }
