@@ -13,11 +13,14 @@ On EVERY turn do two things, in order:
 2) REPLY: Then continue the conversation naturally — ONE short HSK1 sentence (3-9 Chinese characters) plus one simple question.
 Use ONLY HSK1 vocabulary and grammar. No rare words, idioms, or grammar beyond HSK1.
 Output ONLY a JSON object with EXACTLY these string fields:
-- "correction": the concise feedback from step 1 (English, under ~35 words; may contain \\n line breaks; "" if nothing to correct or no learner message yet).
+- "correction": the concise inline note from step 1 (English, under ~30 words; "" if nothing to correct or no learner message yet).
+- "why": a slightly fuller plain-English explanation of WHY it was wrong and the simple rule, for a beginner (1-2 sentences; "" if correct or no learner message yet).
+- "fixed": the learner's sentence rewritten correctly in Simplified Chinese ("" if there was nothing to fix).
+- "fixedPinyin": full tone-mark pinyin of "fixed", spaces between syllables ("" if "fixed" is "").
 - "hanzi": your reply in Simplified Chinese characters (汉字). REQUIRED — never empty.
 - "pinyin": full pinyin of "hanzi" with tone marks, spaces between syllables.
 - "en": short English translation of "hanzi".
-Example: {"correction":"You wrote 我是叫 Bina. Fix:\\n1. Drop 是 — just use 叫: 我叫 Bina.","hanzi":"你好，Bina！你几岁？","pinyin":"nǐ hǎo Bina nǐ jǐ suì","en":"Hi Bina! How old are you?"}
+Example: {"correction":"Drop 是 — just use 叫.","why":"After 叫 (to be called) you don't add 是. 我叫 Bina already means 'I am called Bina'.","fixed":"我叫 Bina。","fixedPinyin":"wǒ jiào Bina","hanzi":"你好，Bina！你几岁？","pinyin":"nǐ hǎo Bina nǐ jǐ suì","en":"Hi Bina! How old are you?"}
 Reply with the JSON object only — no reasoning, no extra text. /no_think`;
 
 export default async function handler(req, res) {

@@ -286,6 +286,13 @@ export default function App() {
 
   const streak = useMemo(() => computeStreak(activity), [activity]);
   const heat = useMemo(() => heatCells(activity, 10), [activity]);
+  const corrections = useMemo(
+    () => chat
+      .filter((m) => m.role === "ai" && (m.why || m.fixed || (m.correction && m.correction.trim())))
+      .map((m) => ({ why: m.why || m.correction || "", fixed: m.fixed || "", fixedPinyin: m.fixedPinyin || "" }))
+      .reverse(),
+    [chat]
+  );
   function markToday() {
     const k = dayKey(new Date());
     setActivity((a) => { const n = { ...a, [k]: (a[k] || 0) + 1 }; try { localStorage.setItem(ACT_KEY, JSON.stringify(n)); } catch {} return n; });
@@ -543,7 +550,8 @@ export default function App() {
           {!online ? (
             <div className="note">The conversation partner is online-only. Reconnect to chat — the rest of Frame still works offline.</div>
           ) : (
-            <>
+            <div className="talkgrid">
+              <div className="chatcol">
               <div className="chatlog">
                 {chat.map((m, i) => m.role === "ai" ? (
                   <div className="msg ai" key={i}>
@@ -568,7 +576,26 @@ export default function App() {
                 <button className="btn" onClick={sendChat} disabled={chatBusy || !chatInput.trim()}>Send</button>
               </div>
               <button className="chatrestart" onClick={restartChat}>↺ New conversation</button>
-            </>
+              </div>
+              <aside className="corrbar">
+                <div className="corrhead">Corrections</div>
+                <div className="corrbody">
+                  {corrections.length === 0 ? (
+                    <p className="corrempty">Corrections — with pinyin, and why they're wrong — appear here as you chat.</p>
+                  ) : corrections.map((c, i) => (
+                    <div className="corritem" key={i}>
+                      {c.fixed && (
+                        <div className="corrfix">
+                          <div className="corrhanzi">{c.fixed}</div>
+                          {c.fixedPinyin && <div className="corrpy">{c.fixedPinyin.split(/\s+/).filter(Boolean).map((syl, j) => <span key={j} className={"t" + pinyinTone(syl)}>{syl} </span>)}</div>}
+                        </div>
+                      )}
+                      {c.why && <div className="corrwhy">{c.why}</div>}
+                    </div>
+                  ))}
+                </div>
+              </aside>
+            </div>
           )}
         </main>
       )}
